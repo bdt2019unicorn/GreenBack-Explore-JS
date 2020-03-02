@@ -39,6 +39,7 @@ function Distance(points_object)
                 ); 
         }
     }; 
+    Object.freeze(points_object); 
     var points = support_functions.ConvertObject(points_object); 
     console.log("points object changed"); 
     console.log(points_object); 
