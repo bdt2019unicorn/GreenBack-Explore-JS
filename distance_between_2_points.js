@@ -31,13 +31,13 @@ function Distance(points_object)
         }, 
         CalculateDistance(points)
         {
-            var sin2halfangles = function(angle1,angle2)
+            var Haversine = function(angle1,angle2)
             {
                 return Math.pow
                 (
                     Math.sin
                     (
-                        (angle1 - angle2)/2
+                        (angle2 - angle1)/2
                     ),
                     2
                 );
@@ -46,9 +46,9 @@ function Distance(points_object)
             return 2 * earth_radius * 
                 Math.asin
                 (
-                    sin2halfangles(points.current_location.latitude,points.destination.latitude)
+                    Haversine(points.current_location.latitude,points.destination.latitude)
                     + 
-                    Math.cos(points.current_location.latitude) * Math.cos(points.destination.latitude) * sin2halfangles(points.destination.longitude, points.current_location.longitude)
+                    Math.cos(points.current_location.latitude) * Math.cos(points.destination.latitude) * Haversine(points.destination.longitude, points.current_location.longitude)
                 ); 
         }
     }; 
