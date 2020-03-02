@@ -36,9 +36,10 @@ function PutPointInTheMap(tree)
     ); 
     window.map_view.graphics.add(point); 
     console.log(point); 
+    console.log(point.uid); 
 }
 
-function GetDataAroundLocation(location, condition=undefined)
+function GetDataAroundLocation(condition=undefined)
 {
     var support_functions = 
     {
