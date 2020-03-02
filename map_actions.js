@@ -102,6 +102,17 @@ function Directions(button)
                 }
             }
         }, 
+        RemoveIrrelevantPoints(points)
+        {
+            window.map_view.graphics.removeAll();
+            points.forEach
+            (
+                point => 
+                {
+                    window.map_view.graphics.add(point); 
+                }
+            );
+        }, 
         GetDirection(points)
         {
             var routeTask = new window.ArcGis.RouteTask
@@ -156,6 +167,8 @@ function Directions(button)
             var uid = button.getAttribute("data-uid"); 
             var point_location_graphic = support_functions.FindCurrentGraphic(uid); 
             var points = [current_location_graphic, point_location_graphic]; 
+            support_functions.RemoveIrrelevantPoints(points); 
+            return; 
             support_functions.GetDirection(points); 
         }
     ); 
