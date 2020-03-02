@@ -38,7 +38,9 @@ function GetDataAroundLocation(location, condition=undefined)
     {
         GetAllPoints()
         {
-            var url = "/Explore/all_trees"; 
+            var url = new URL("/Explore/all_trees","/").href;
+            console.log(url); 
+            return;  
             var points = AjaxRequest("get",url); 
             console.log(points); 
         }
