@@ -2,93 +2,91 @@ function Directions(button)
 {
     var support_functions = 
     {
-        CreateGraphic(point)
+        DrawDirectionOnMap(current_location_point)
         {
-            return new window.ArcGis.Graphic 
-            (
-                {
-                    geometry: point, 
-                    symbol: 
-                    {
-                        type: "simple-marker",
-                        color: "blue",  
-                        size: "8px"
-                    }
-                }
-            ); 
-        }, 
-        FindCurrentGraphic(uid)
-        {
-            uid = Number(uid); 
-            for (let index = 0; index < window.map_view.graphics.length; index++) 
+            var support_functions = 
             {
-                if(window.map_view.graphics.items[index].uid==uid)
+                CreateGraphic(point)
                 {
-                    return window.map_view.graphics.items[index]; 
-                }
-            }
-        }, 
-        RemoveIrrelevantPoints(points)
-        {
-            window.map_view.graphics.removeAll();
-            points.forEach
-            (
-                point => 
-                {
-                    window.map_view.graphics.add(point); 
-                }
-            );
-        }, 
-        GetDirection(points)
-        {
-            var routeTask = new window.ArcGis.RouteTask
-            (
-                {
-                    url: "https://utility.arcgis.com/usrsvcs/appservices/AVA7HfDc1IGamElH/rest/services/World/Route/NAServer/Route_World/solve"
-                }
-            );
-
-            var routeParams = new window.ArcGis.RouteParameters
-            (
-                {
-                    stops: new window.ArcGis.FeatureSet
+                    return new window.ArcGis.Graphic 
                     (
                         {
-                            features: points
-                        }
-                    ),
-                    returnDirections: true
-                }
-            );
-
-            routeTask.solve(routeParams)
-            .then
-            (
-                function(data)
-                {
-                    data.routeResults.forEach
-                    (
-                        function(direction)
-                        {
-                            direction.route.symbol = 
+                            geometry: point, 
+                            symbol: 
                             {
-                                type: "simple-line",
-                                color: "blue",
-                                width: 3
+                                type: "simple-marker",
+                                color: "blue",  
+                                size: "8px"
                             }
-                            window.map_view.graphics.add(direction.route); 
+                        }
+                    ); 
+                }, 
+                FindCurrentGraphic(uid)
+                {
+                    uid = Number(uid); 
+                    for (let index = 0; index < window.map_view.graphics.length; index++) 
+                    {
+                        if(window.map_view.graphics.items[index].uid==uid)
+                        {
+                            return window.map_view.graphics.items[index]; 
+                        }
+                    }
+                }, 
+                RemoveIrrelevantPoints(points)
+                {
+                    window.map_view.graphics.removeAll();
+                    points.forEach
+                    (
+                        point => 
+                        {
+                            window.map_view.graphics.add(point); 
+                        }
+                    );
+                }, 
+                GetDirection(points)
+                {
+                    var routeTask = new window.ArcGis.RouteTask
+                    (
+                        {
+                            url: "https://utility.arcgis.com/usrsvcs/appservices/AVA7HfDc1IGamElH/rest/services/World/Route/NAServer/Route_World/solve"
+                        }
+                    );
+        
+                    var routeParams = new window.ArcGis.RouteParameters
+                    (
+                        {
+                            stops: new window.ArcGis.FeatureSet
+                            (
+                                {
+                                    features: points
+                                }
+                            ),
+                            returnDirections: true
+                        }
+                    );
+        
+                    routeTask.solve(routeParams)
+                    .then
+                    (
+                        function(data)
+                        {
+                            data.routeResults.forEach
+                            (
+                                function(direction)
+                                {
+                                    direction.route.symbol = 
+                                    {
+                                        type: "simple-line",
+                                        color: "blue",
+                                        width: 3
+                                    }
+                                    window.map_view.graphics.add(direction.route); 
+                                }
+                            ); 
                         }
                     ); 
                 }
-            ); 
-        }
-    }
-
-    window.dectect_current_location. 
-    then
-    (
-        function(current_location_point)
-        {
+            }
             return new Promise
             (
                 (resolve,reject)=>
@@ -99,13 +97,18 @@ function Directions(button)
                     var points = [current_location_graphic, point_location_graphic]; 
                     support_functions.RemoveIrrelevantPoints(points); 
                     support_functions.GetDirection(points); 
-                    button.setAttribute("hidden", false); 
                     resolve(point_location_graphic); 
                 }
             ); 
+        }, 
+        ChangeButtonAttributes(point_location_graphic)
+        {
+            button.onclick = TrackMyLocation(point_location_graphic); 
         }
-    ).
-    then(TrackMyLocation); 
+    }
+
+
+    window.dectect_current_location.then(support_functions.DrawDirectionOnMap).then(support_functions.ChangeButtonAttributes); 
 }
 
 function TrackMyLocation(point_location_graphic)
@@ -127,12 +130,7 @@ function TrackMyLocation(point_location_graphic)
                     latitude: location.coords.latitude
                 }
             }; 
-            console.log("point object begins"); 
-            console.log(points_object); 
-            console.log("***********"); 
-            var distance_in_km = Distance(points_object); 
-            console.log("distance is "); 
-            console.log(distance_in_km*1000); 
+            var distance_in_m = 1000* Distance(points_object); 
         }
     ); 
 }
