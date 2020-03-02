@@ -1,8 +1,5 @@
 function Distance(points_object)
 {
-    console.log("at the calculate distance function"); 
-    console.log(points_object); 
-    console.log("*******************"); 
     var support_functions = 
     {
         ConvertObject(points_object)
@@ -30,5 +27,10 @@ function Distance(points_object)
         }
     }; 
     points_object = support_functions.ConvertObject(points_object); 
+    console.log("return number "); 
+    console.log("new points object"); 
+    console.log(points_object); 
+    console.log("result"); 
+    console.log(support_functions.CalculateDistance(points_object)); 
     return support_functions.CalculateDistance(points_object); 
 }
