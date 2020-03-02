@@ -79,6 +79,8 @@ function Directions(button)
     //     CurrentLocation
     // }
 
+    console.log(window.dectect_current_location); 
+
 
     console.log(button); 
 }

@@ -7,7 +7,6 @@ var symbol =
 
 function PopUpTemplate(tree)
 {
-    console.log(tree); 
     var content_node = document.createElement("div"); 
     content_node.innerHTML = 
     `
