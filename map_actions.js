@@ -105,11 +105,18 @@ function Directions(button)
                 }
             ); 
         }
-    ); 
+    ).
+    then (TrackMyLocation); 
 }
 
-function TrackMyLocation()
+function TrackMyLocation(point_location_graphic)
 {
+    var destination = 
+    {
+        longitude: point_location_graphic.geometry.latitude, 
+        latitude: point_location_graphic.geometry.longitude
+    }; 
+    console.log(destination); 
     var track_my_location = navigator.geolocation.watchPosition
     (
         function(location)
