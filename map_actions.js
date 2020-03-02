@@ -122,6 +122,18 @@ function TrackMyLocation(point_location_graphic)
         function(location)
         {
             console.log(location); 
+            var points_object = 
+            {
+                destination: destination, 
+                current_location: 
+                {
+                    longitude: location.coords.longitude, 
+                    latitude: location.coords.latitude
+                }
+            }; 
+            console.log(points_object); 
+            var distance_in_km = Distance(points_object); 
+            console.log(distance_in_km); 
         }
     ); 
 }
