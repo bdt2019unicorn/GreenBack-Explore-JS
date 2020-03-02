@@ -95,7 +95,7 @@ function Directions(button)
             var points = [current_location_graphic, point_location_graphic]; 
             support_functions.RemoveIrrelevantPoints(points); 
             support_functions.GetDirection(points); 
-            button.disabled = true; 
+            button.setAttribute("disabled", true); 
             var btn = document.createElement("button"); 
             btn.innerText = "click me "; 
             window.map_view.ui.add(btn, "bottom-left"); 
