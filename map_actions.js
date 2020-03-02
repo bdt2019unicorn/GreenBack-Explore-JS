@@ -106,17 +106,11 @@ function Directions(button)
             ); 
         }
     ).
-    then (TrackMyLocation); 
+    then(TrackMyLocation); 
 }
 
 function TrackMyLocation(point_location_graphic)
 {
-    var destination = 
-    {
-        longitude: point_location_graphic.geometry.latitude, 
-        latitude: point_location_graphic.geometry.longitude
-    }; 
-    console.log(destination); 
     var track_my_location = navigator.geolocation.watchPosition
     (
         function(location)
@@ -124,7 +118,11 @@ function TrackMyLocation(point_location_graphic)
             console.log(location); 
             var points_object = 
             {
-                destination: destination, 
+                destination: 
+                {
+                    longitude: point_location_graphic.geometry.latitude, 
+                    latitude: point_location_graphic.geometry.longitude
+                }, 
                 current_location: 
                 {
                     longitude: location.coords.longitude, 

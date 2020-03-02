@@ -1,5 +1,8 @@
 function Distance(points_object)
 {
+    console.log("at the calculate distance function"); 
+    console.log(points_object); 
+    console.log("*******************"); 
     var support_functions = 
     {
         ConvertObject(points_object)
@@ -25,7 +28,7 @@ function Distance(points_object)
                     Math.sin(points_object.current_location.latitude) * Math.sin(points_object.destination.latitude) + Math.cos(points_object.current_location.latitude) * Math.cos(points_object.destination.latitude) * Math.cos(points_object.destination.longtitude - points_object.current_location.longtitude)
                 ); 
         }
-    }
+    }; 
     points_object = support_functions.ConvertObject(points_object); 
     return support_functions.CalculateDistance(points_object); 
 }
