@@ -97,7 +97,7 @@ function Directions(button)
             support_functions.GetDirection(points); 
             var btn = document.createElement("button"); 
             btn.innerText = "click me "; 
-            window.map_view.ui.add(btn); 
+            window.map_view.ui.add(btn, "bottom-left"); 
         }
     ); 
 }
