@@ -118,8 +118,8 @@ function TrackMyLocation(point_location_graphic)
             {
                 destination: 
                 {
-                    longitude: point_location_graphic.geometry.latitude, 
-                    latitude: point_location_graphic.geometry.longitude
+                    longitude: point_location_graphic.geometry.longitude, 
+                    latitude: point_location_graphic.geometry.latitude
                 }, 
                 current_location: 
                 {
