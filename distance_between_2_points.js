@@ -2,21 +2,21 @@ function Distance(points_object)
 {
     var support_functions = 
     {
-        ConvertObject(points_object)
+        ConvertObject(points)
         {
             var ChangeToRadian = function(number)
             {
                 return Math.PI * number / 180; 
             }
-            points_object.current_location.longitude = ChangeToRadian(points_object.current_location.longitude); 
-            points_object.current_location.latitude = ChangeToRadian(points_object.current_location.latitude); 
+            points.current_location.longitude = ChangeToRadian(points.current_location.longitude); 
+            points.current_location.latitude = ChangeToRadian(points.current_location.latitude); 
 
-            points_object.destination.longitude = ChangeToRadian(points_object.destination.longitude); 
-            points_object.destination.latitude = ChangeToRadian(points_object.destination.latitude); 
+            points.destination.longitude = ChangeToRadian(points.destination.longitude); 
+            points.destination.latitude = ChangeToRadian(points.destination.latitude); 
 
-            return points_object; 
+            return points; 
         }, 
-        CalculateDistance(points_object)
+        CalculateDistance(points)
         {
             var sin2halfangles = function(angle1,angle2)
             {
@@ -24,7 +24,7 @@ function Distance(points_object)
                 (
                     Math.sin
                     (
-                        (points_object.current_location.latitude - points_object.destination.latitude)/2
+                        (points.current_location.latitude - points.destination.latitude)/2
                     ),
                     2
                 ) 
@@ -33,16 +33,19 @@ function Distance(points_object)
             return 2 * earth_radius * 
                 Math.asin
                 (
-                    sin2halfangles(points_object.current_location.latitude,points_object.destination.latitude)
+                    sin2halfangles(points.current_location.latitude,points.destination.latitude)
                     + 
-                    Math.cos(points_object.current_location.latitude) * Math.cos(points_object.destination.latitude) * sin2halfangles(points_object.destination.longitude, points_object.current_location.longitude)
+                    Math.cos(points.current_location.latitude) * Math.cos(points.destination.latitude) * sin2halfangles(points.destination.longitude, points.current_location.longitude)
                 ); 
         }
     }; 
-    points_object = support_functions.ConvertObject(points_object); 
+    var points = support_functions.ConvertObject(points_object); 
     console.log("points object changed"); 
     console.log(points_object); 
     console.log("---------------------------");
+    console.log("//////////////////////");
+    console.log(points); 
+    console.log("+++++++++++++++++++++++++"); 
     return 0; 
     return support_functions.CalculateDistance(points_object); 
 }
