@@ -83,4 +83,13 @@ function Directions(button)
 
 
     console.log(button); 
+
+    window.dectect_current_location. 
+    then
+    (
+        function(data)
+        {
+            console.log(data); 
+        }
+    ); 
 }
