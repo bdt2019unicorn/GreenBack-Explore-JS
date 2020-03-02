@@ -95,10 +95,19 @@ function Directions(button)
             var points = [current_location_graphic, point_location_graphic]; 
             support_functions.RemoveIrrelevantPoints(points); 
             support_functions.GetDirection(points); 
-            button.setAttribute("hidden", false); 
-            var btn = document.createElement("button"); 
-            btn.innerText = "click me "; 
-            window.map_view.ui.add(btn, "bottom-left"); 
+            // button.setAttribute("hidden", false); 
+            button.onclick = TrackMyLocation; 
+        }
+    ); 
+}
+
+function TrackMyLocation()
+{
+    var track_my_location = navigator.geolocation.watchPosition
+    (
+        function(location)
+        {
+            console.log(location); 
         }
     ); 
 }
