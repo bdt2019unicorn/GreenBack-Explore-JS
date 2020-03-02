@@ -110,8 +110,9 @@ function Directions(button)
         function(current_location_point)
         {
             var current_location_graphic = support_functions.CreateGraphic(current_location_point); 
+            console.log(current_location_graphic); 
             console.log(current_location_point); 
-            var uid = button.data-uid; 
+            var uid = button.getAttribute("data-uid"); 
             console.log(uid); 
             var point_location_graphic = support_functions.FindCurrentGraphic(uid); 
             console.log(point_location_graphic); 
