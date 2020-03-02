@@ -25,6 +25,6 @@ InnitizeMap.then
             longitude: 174,
             latitude: -36
         }; 
-        GetDataAroundLocation(location, condition=undefined)
+        GetDataAroundLocation(location); 
     }
 )
