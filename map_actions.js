@@ -100,7 +100,6 @@ function Directions(button)
                     support_functions.RemoveIrrelevantPoints(points); 
                     support_functions.GetDirection(points); 
                     button.setAttribute("hidden", false); 
-                    console.log(point_location_graphic); 
                     resolve(point_location_graphic); 
                 }
             ); 
@@ -131,6 +130,7 @@ function TrackMyLocation(point_location_graphic)
             console.log("point object begins"); 
             console.log(points_object); 
             console.log("***********"); 
+            return; 
             var distance_in_km = Distance(points_object); 
             console.log("distance is "); 
             console.log(distance_in_km); 
