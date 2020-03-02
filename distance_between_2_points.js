@@ -18,7 +18,6 @@ function Distance(points_object)
         }, 
         CalculateDistance(points_object)
         {
-            console.log(points_object);
             const earth_radius = 6378; 
             console.log
             (
@@ -27,6 +26,12 @@ function Distance(points_object)
                     Math.sin(points_object.current_location.latitude) * Math.sin(points_object.destination.latitude) + Math.cos(points_object.current_location.latitude) * Math.cos(points_object.destination.latitude) * Math.cos(points_object.destination.longitude - points_object.current_location.longitude)
                 )
             ); 
+            var sin = Math.sin(points_object.current_location.latitude) * Math.sin(points_object.destination.latitude); 
+            var cos = Math.cos(points_object.current_location.latitude) * Math.cos(points_object.destination.latitude) * Math.cos(points_object.destination.longitude - points_object.current_location.longitude); 
+            var sin_cos = sin+cos; 
+            console.log(sin,cos,sin_cos); 
+            var acos = Math.acos(sin_cos); 
+            console.log(acos); 
             return earth_radius * 
                 Math.acos
                 (
