@@ -69,3 +69,9 @@ function GetDirection(points, view)
         }
     ); 
 }
+
+
+function Directions(button)
+{
+    console.log(button); 
+}
