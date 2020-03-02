@@ -74,22 +74,47 @@ function GetDirection(points, view)
 
 function Directions(button)
 {
-    // var support_functions = 
-    // {
-    //     CurrentLocation
-    // }
-
-    console.log(window.dectect_current_location); 
-
-
-    console.log(button); 
+    var support_functions = 
+    {
+        CreateGraphic(point)
+        {
+            return new window.ArcGis.Graphic 
+            (
+                {
+                    geometry: point, 
+                    symbol: 
+                    {
+                        type: "simple-marker",
+                        color: "blue",  
+                        size: "8px"
+                    }
+                }
+            ); 
+        }, 
+        FindCurrentGraphic(uid)
+        {
+            uid = Number(uid); 
+            for (let index = 0; index < window.map_view.graphics.length; index++) 
+            {
+                if(window.map_view.graphics.items[index].uid==uid)
+                {
+                    return window.map_view.graphics.items[index]; 
+                }
+            }
+        }
+    }
 
     window.dectect_current_location. 
     then
     (
-        function(data)
+        function(current_location_point)
         {
-            console.log(data); 
+            var current_location_graphic = support_functions.CreateGraphic(current_location_point); 
+            console.log(current_location_point); 
+            var uid = button.data-uid; 
+            console.log(uid); 
+            var point_location_graphic = support_functions.FindCurrentGraphic(uid); 
+            console.log(point_location_graphic); 
         }
     ); 
 }
