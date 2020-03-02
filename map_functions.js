@@ -22,4 +22,4 @@ InnitizeMap.then
     {
         GetDataAroundLocation(); 
     }
-)
+);
