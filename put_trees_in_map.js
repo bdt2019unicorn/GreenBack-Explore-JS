@@ -19,9 +19,9 @@ function PopUpTemplate()
 }
 
 
-function PutPointInTheMap(Graphic, map_point, view, popupTemplate)
+function PutPointInTheMap(map_point, popupTemplate)
 {
-    var point = new Graphic 
+    var point = new window.ArcGis.Graphic 
     (
         {
             geometry: map_point, 
@@ -29,23 +29,26 @@ function PutPointInTheMap(Graphic, map_point, view, popupTemplate)
             popupTemplate: popupTemplate
         }
     ); 
-    view.graphics.add(point); 
+    window.map_view.graphics.add(point); 
 }
 
-function GetDataAroundLocation(location, view, ArcGis, condition=undefined)
+function GetDataAroundLocation(location, condition=undefined)
 {
     var support_functions = 
     {
         GetAllPoints()
         {
             var url = "/Explore/all_trees"; 
+            var points = AjaxRequest("get",url); 
+            console.log(points); 
         }
     }
 
 
 
     var variation = 0.01; 
-    var new_location = new ArcGis.Point(location.longitude-variation, location.latitude-variation); 
+    var new_location = new window.ArcGis.Point(location.longitude-variation, location.latitude-variation); 
     var popupTemplate = PopUpTemplate(); 
-    PutPointInTheMap(ArcGis.Graphic, new_location, view, popupTemplate); 
+    PutPointInTheMap(new_location, popupTemplate); 
+    support_functions.GetAllPoints(); 
 }

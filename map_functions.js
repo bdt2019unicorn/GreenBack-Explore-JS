@@ -5,8 +5,26 @@ InnitizeMap.then
 (
     function(view_and_arcgis_class)
     {
-        window.map_view = view_and_arcgis_class.view; 
-        window.ArcGis = view_and_arcgis_class.ArcGis; 
-        AddLocationWidget(window.ArcGis.Locate, window.map_view); 
+        return new Promise 
+        (
+            (resolve, reject)=>
+            {
+                window.map_view = view_and_arcgis_class.view; 
+                window.ArcGis = view_and_arcgis_class.ArcGis; 
+                AddLocationWidget(window.ArcGis.Locate, window.map_view); 
+                resolve(); 
+            }
+        ); 
     }
-); 
+).then 
+(
+    function()
+    {
+        var location = 
+        {
+            longitude: 174,
+            latitude: -36
+        }; 
+        GetDataAroundLocation(location, condition=undefined)
+    }
+)
