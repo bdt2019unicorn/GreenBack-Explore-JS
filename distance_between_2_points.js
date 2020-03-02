@@ -43,12 +43,15 @@ function Distance(points_object)
                 );
             }
             const earth_radius = 6378; 
-            return 2 * earth_radius * 
+            return 2 * earth_radius *
                 Math.asin
                 (
-                    Haversine(points.current_location.latitude,points.destination.latitude)
-                    + 
-                    Math.cos(points.current_location.latitude) * Math.cos(points.destination.latitude) * Haversine(points.destination.longitude, points.current_location.longitude)
+                    Math.sqrt
+                    (
+                        Haversine(points.destination.latitude,points.current_location.latitude)
+                        + 
+                        Math.cos(points.current_location.latitude) * Math.cos(points.destination.latitude) * Haversine(points.destination.longitude, points.current_location.longitude)
+                    )
                 ); 
         }
     }; 
