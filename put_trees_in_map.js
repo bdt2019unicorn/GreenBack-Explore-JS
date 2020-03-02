@@ -40,7 +40,9 @@ function GetDataAroundLocation(location, condition=undefined)
         {
             var url = "/Explore/all_trees";
             var points = AjaxRequest("get",url); 
-            console.log(points); 
+            var points_object = JSON.parse(points); 
+            console.log(points_object); 
+            // return points;  
         }
     }
 
