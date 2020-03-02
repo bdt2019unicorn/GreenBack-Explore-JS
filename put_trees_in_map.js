@@ -38,7 +38,7 @@ function GetDataAroundLocation(location, view, ArcGis, condition=undefined)
     {
         GetAllPoints()
         {
-            
+
         }
     }
 
@@ -49,6 +49,3 @@ function GetDataAroundLocation(location, view, ArcGis, condition=undefined)
     var popupTemplate = PopUpTemplate(); 
     PutPointInTheMap(ArcGis.Graphic, new_location, view, popupTemplate); 
 }
-
-export{PopUpTemplate, PutPointInTheMap, GetDataAroundLocation}
-
