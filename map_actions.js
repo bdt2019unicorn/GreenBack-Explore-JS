@@ -131,6 +131,7 @@ function TrackMyLocation(point_location_graphic)
                 }
             }; 
             var distance_in_m = 1000* Distance(points_object); 
+            console.log(distance_in_m); 
         }
     ); 
 }
