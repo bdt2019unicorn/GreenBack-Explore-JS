@@ -18,24 +18,24 @@ function Distance(points_object)
         }, 
         CalculateDistance(points_object)
         {
+            var sin2halfangles = function(angle1,angle2)
+            {
+                return Math.pow
+                (
+                    Math.sin
+                    (
+                        (points_object.current_location.latitude - points_object.destination.latitude)/2
+                    ),
+                    2
+                ) 
+            }
             const earth_radius = 6378; 
-            console.log
-            (
-                Math.acos
+            return 2 * earth_radius * 
+                Math.asin
                 (
-                    Math.sin(points_object.current_location.latitude) * Math.sin(points_object.destination.latitude) + Math.cos(points_object.current_location.latitude) * Math.cos(points_object.destination.latitude) * Math.cos(points_object.destination.longitude - points_object.current_location.longitude)
-                )
-            ); 
-            var sin = Math.sin(points_object.current_location.latitude) * Math.sin(points_object.destination.latitude); 
-            var cos = Math.cos(points_object.current_location.latitude) * Math.cos(points_object.destination.latitude) * Math.cos(points_object.destination.longitude - points_object.current_location.longitude); 
-            var sin_cos = sin+cos; 
-            console.log(sin,cos,sin_cos); 
-            var acos = Math.acos(sin_cos); 
-            console.log(acos); 
-            return earth_radius * 
-                Math.acos
-                (
-                    Math.sin(points_object.current_location.latitude) * Math.sin(points_object.destination.latitude) + Math.cos(points_object.current_location.latitude) * Math.cos(points_object.destination.latitude) * Math.cos(points_object.destination.longitude - points_object.current_location.longitude)
+                    sin2halfangles(points_object.current_location.latitude,points_object.destination.latitude)
+                    + 
+                    Math.cos(points_object.current_location.latitude) * Math.cos(points_object.destination.latitude) * sin2halfangles(points_object.destination.longitude, points_object.current_location.longitude)
                 ); 
         }
     }; 
