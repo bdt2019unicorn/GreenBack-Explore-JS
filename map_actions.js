@@ -132,7 +132,7 @@ function TrackMyLocation(point_location_graphic)
             console.log("***********"); 
             var distance_in_km = Distance(points_object); 
             console.log("distance is "); 
-            console.log(distance_in_km); 
+            console.log(distance_in_km*1000); 
         }
     ); 
 }
