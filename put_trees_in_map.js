@@ -38,7 +38,7 @@ function GetDataAroundLocation(location, view, ArcGis, condition=undefined)
     {
         GetAllPoints()
         {
-
+            var url = "/Explore/all_trees"; 
         }
     }
 
