@@ -89,14 +89,21 @@ function Directions(button)
     (
         function(current_location_point)
         {
-            var current_location_graphic = support_functions.CreateGraphic(current_location_point); 
-            var uid = button.getAttribute("data-uid"); 
-            var point_location_graphic = support_functions.FindCurrentGraphic(uid); 
-            var points = [current_location_graphic, point_location_graphic]; 
-            support_functions.RemoveIrrelevantPoints(points); 
-            support_functions.GetDirection(points); 
-            // button.setAttribute("hidden", false); 
-            button.onclick = TrackMyLocation; 
+            return new Promise
+            (
+                (resolve,reject)=>
+                {
+                    var current_location_graphic = support_functions.CreateGraphic(current_location_point); 
+                    var uid = button.getAttribute("data-uid"); 
+                    var point_location_graphic = support_functions.FindCurrentGraphic(uid); 
+                    var points = [current_location_graphic, point_location_graphic]; 
+                    support_functions.RemoveIrrelevantPoints(points); 
+                    support_functions.GetDirection(points); 
+                    button.setAttribute("hidden", false); 
+                    console.log(point_location_graphic); 
+                    resolve(point_location_graphic); 
+                }
+            ); 
         }
     ); 
 }
