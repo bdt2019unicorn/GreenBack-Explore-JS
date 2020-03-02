@@ -20,11 +20,6 @@ InnitizeMap.then
 (
     function()
     {
-        var location = 
-        {
-            longitude: 174,
-            latitude: -36
-        }; 
-        GetDataAroundLocation(location); 
+        GetDataAroundLocation(); 
     }
 )
