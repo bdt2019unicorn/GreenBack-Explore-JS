@@ -8,10 +8,10 @@ function Distance(points_object)
             {
                 return Math.PI * number / 180; 
             }
-            points_object.current_location.longtitude = ChangeToRadian(points_object.current_location.longtitude); 
+            points_object.current_location.longitude = ChangeToRadian(points_object.current_location.longitude); 
             points_object.current_location.latitude = ChangeToRadian(points_object.current_location.latitude); 
 
-            points_object.destination.longtitude = ChangeToRadian(points_object.destination.longtitude); 
+            points_object.destination.longitude = ChangeToRadian(points_object.destination.longitude); 
             points_object.destination.latitude = ChangeToRadian(points_object.destination.latitude); 
 
             return points_object; 
@@ -24,13 +24,13 @@ function Distance(points_object)
             (
                 Math.acos
                 (
-                    Math.sin(points_object.current_location.latitude) * Math.sin(points_object.destination.latitude) + Math.cos(points_object.current_location.latitude) * Math.cos(points_object.destination.latitude) * Math.cos(points_object.destination.longtitude - points_object.current_location.longtitude)
+                    Math.sin(points_object.current_location.latitude) * Math.sin(points_object.destination.latitude) + Math.cos(points_object.current_location.latitude) * Math.cos(points_object.destination.latitude) * Math.cos(points_object.destination.longitude - points_object.current_location.longitude)
                 )
             ); 
             return earth_radius * 
                 Math.acos
                 (
-                    Math.sin(points_object.current_location.latitude) * Math.sin(points_object.destination.latitude) + Math.cos(points_object.current_location.latitude) * Math.cos(points_object.destination.latitude) * Math.cos(points_object.destination.longtitude - points_object.current_location.longtitude)
+                    Math.sin(points_object.current_location.latitude) * Math.sin(points_object.destination.latitude) + Math.cos(points_object.current_location.latitude) * Math.cos(points_object.destination.latitude) * Math.cos(points_object.destination.longitude - points_object.current_location.longitude)
                 ); 
         }
     }; 
