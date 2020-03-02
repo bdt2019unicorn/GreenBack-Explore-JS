@@ -71,7 +71,14 @@ function GetDirection(points, view)
 }
 
 
+
 function Directions(button)
 {
+    // var support_functions = 
+    // {
+    //     CurrentLocation
+    // }
+
+
     console.log(button); 
 }

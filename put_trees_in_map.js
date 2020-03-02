@@ -15,7 +15,9 @@ function PopUpTemplate(tree)
         <p><b>Tips: </b><p>`+ tree.tree_types.tips +`</p></p>
         <p><b>How to collect seed: </b><p>`+ tree.tree_types.collect +`</p></p>
         <p><b>How to store seed: </b><p>`+ tree.tree_types.store +`</p></p>
-        <p><button type="button" class="btn btn-primary btn-circle btn-lg" onclick="Directions(this)" data-uid="` + tree.uid + `" data-longitude=` + tree.longitude + ` data-latitude=`+ tree.latitude +`><i class="fas fa-directions"></i></button>
+        <p>
+            <button title="Get Direction" type="button" class="btn btn-primary btn-circle btn-lg" onclick="Directions(this)" data-uid=` + tree.uid + ` data-longitude=` + tree.longitude + ` data-latitude=`+ tree.latitude +`><i class="fas fa-directions"></i></button>
+        </p>
     `; 
     return {
         title: tree.name, 
@@ -26,20 +28,16 @@ function PopUpTemplate(tree)
 
 function PutPointInTheMap(tree)
 {
-    // var popup_template = PopUpTemplate(tree); 
     var point = new window.ArcGis.Graphic 
     (
         {
             geometry: new window.ArcGis.Point(tree.longitude, tree.latitude), 
             symbol: symbol
-            // popupTemplate: popup_template
         }
     ); 
     tree.uid = point.uid; 
     point.popupTemplate = PopUpTemplate(tree); 
     window.map_view.graphics.add(point); 
-    // console.log(point); 
-    // console.log(point.uid); 
 }
 
 function GetDataAroundLocation(condition=undefined)

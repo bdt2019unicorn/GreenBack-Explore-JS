@@ -33,6 +33,7 @@ export var InnitizeMap = ArcGisClass.then
 
         var create_view = function(center)
         {
+            window.dectect_current_location = dectect_current_location; 
             return new Promise
             (
                 (resolve,reject)=>
