@@ -14,6 +14,7 @@ function PopUpTemplate(tree)
         <p><b>Tips: </b><p>`+ tree.tree_types.tips +`</p></p>
         <p><b>How to collect seed: </b><p>`+ tree.tree_types.collect +`</p></p>
         <p><b>How to store seed: </b><p>`+ tree.tree_types.store +`</p></p>
+        <p><button type="button" class="btn btn-primary btn-circle btn-lg"><i class="fas fa-directions"></i></button>
     `; 
     return {
         title: tree.name, 
