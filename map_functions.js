@@ -7,6 +7,6 @@ InnitizeMap.then
     {
         window.map_view = view_and_arcgis_class.view; 
         window.ArcGis = view_and_arcgis_class.ArcGis; 
-        AddLocationWidget(window.ArcGis.Locate, view); 
+        AddLocationWidget(window.ArcGis.Locate, window.map_view); 
     }
 ); 
