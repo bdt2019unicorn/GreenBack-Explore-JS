@@ -115,7 +115,6 @@ function TrackMyLocation(point_location_graphic)
     (
         function(location)
         {
-            console.log(location); 
             var points_object = 
             {
                 destination: 
@@ -129,8 +128,11 @@ function TrackMyLocation(point_location_graphic)
                     latitude: location.coords.latitude
                 }
             }; 
+            console.log("point object begins"); 
             console.log(points_object); 
+            console.log("***********"); 
             var distance_in_km = Distance(points_object); 
+            console.log("distance is "); 
             console.log(distance_in_km); 
         }
     ); 
