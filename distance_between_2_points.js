@@ -40,5 +40,9 @@ function Distance(points_object)
         }
     }; 
     points_object = support_functions.ConvertObject(points_object); 
+    console.log("points object changed"); 
+    console.log(points_object); 
+    console.log("---------------------------");
+    return 0; 
     return support_functions.CalculateDistance(points_object); 
 }
