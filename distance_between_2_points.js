@@ -37,10 +37,10 @@ function Distance(points_object)
                 (
                     Math.sin
                     (
-                        (points.current_location.latitude - points.destination.latitude)/2
+                        (angle1 - angle2)/2
                     ),
                     2
-                ) 
+                );
             }
             const earth_radius = 6378; 
             return 2 * earth_radius * 
@@ -53,11 +53,5 @@ function Distance(points_object)
         }
     }; 
     var points = support_functions.ConvertObject(points_object); 
-    console.log("points object changed"); 
-    console.log(points_object); 
-    console.log("---------------------------");
-    console.log("//////////////////////");
-    console.log(points); 
-    console.log("+++++++++++++++++++++++++"); 
     return support_functions.CalculateDistance(points); 
 }
