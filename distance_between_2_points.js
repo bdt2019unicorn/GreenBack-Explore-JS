@@ -18,6 +18,7 @@ function Distance(points_object)
         }, 
         CalculateDistance(points_object)
         {
+            console.log(points_object);
             const earth_radius = 6378; 
             console.log
             (
