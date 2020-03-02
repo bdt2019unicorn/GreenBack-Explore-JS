@@ -168,7 +168,6 @@ function Directions(button)
             var point_location_graphic = support_functions.FindCurrentGraphic(uid); 
             var points = [current_location_graphic, point_location_graphic]; 
             support_functions.RemoveIrrelevantPoints(points); 
-            return; 
             support_functions.GetDirection(points); 
         }
     ); 
