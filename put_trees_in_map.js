@@ -34,6 +34,16 @@ function PutPointInTheMap(Graphic, map_point, view, popupTemplate)
 
 function GetDataAroundLocation(location, view, ArcGis, condition=undefined)
 {
+    var support_functions = 
+    {
+        GetAllPoints()
+        {
+            
+        }
+    }
+
+
+
     var variation = 0.01; 
     var new_location = new ArcGis.Point(location.longitude-variation, location.latitude-variation); 
     var popupTemplate = PopUpTemplate(); 
