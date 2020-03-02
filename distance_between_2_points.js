@@ -2,17 +2,18 @@ function Distance(points_object)
 {
     var support_functions = 
     {
-        ConvertObject(points)
+        ConvertObject(points_object)
         {
             var ChangeToRadian = function(number)
             {
                 return Math.PI * number / 180; 
             }
-            points.current_location.longitude = ChangeToRadian(points.current_location.longitude); 
-            points.current_location.latitude = ChangeToRadian(points.current_location.latitude); 
+            var points = {}; 
+            points.current_location.longitude = ChangeToRadian(points_object.current_location.longitude); 
+            points.current_location.latitude = ChangeToRadian(points_object.current_location.latitude); 
 
-            points.destination.longitude = ChangeToRadian(points.destination.longitude); 
-            points.destination.latitude = ChangeToRadian(points.destination.latitude); 
+            points.destination.longitude = ChangeToRadian(points_object.destination.longitude); 
+            points.destination.latitude = ChangeToRadian(points_object.destination.latitude); 
 
             return points; 
         }, 
