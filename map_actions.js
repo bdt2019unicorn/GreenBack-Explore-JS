@@ -130,7 +130,6 @@ function TrackMyLocation(point_location_graphic)
             console.log("point object begins"); 
             console.log(points_object); 
             console.log("***********"); 
-            return; 
             var distance_in_km = Distance(points_object); 
             console.log("distance is "); 
             console.log(distance_in_km); 
