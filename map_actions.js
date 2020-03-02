@@ -26,7 +26,7 @@ function GetDirectionPointsAndWork()
 }
 
 
-function GetDirection(points, view)
+function GetDirection(points)
 {
     var routeTask = new window.ArcGis.RouteTask
     (
@@ -63,7 +63,7 @@ function GetDirection(points, view)
                         color: "blue",
                         width: 3
                     }
-                    view.graphics.add(direction.route); 
+                    window.map_view.graphics.add(direction.route); 
                 }
             ); 
         }
@@ -101,6 +101,49 @@ function Directions(button)
                     return window.map_view.graphics.items[index]; 
                 }
             }
+        }, 
+        GetDirection(points)
+        {
+            var routeTask = new window.ArcGis.RouteTask
+            (
+                {
+                    url: "https://utility.arcgis.com/usrsvcs/appservices/AVA7HfDc1IGamElH/rest/services/World/Route/NAServer/Route_World/solve"
+                }
+            );
+
+            var routeParams = new window.ArcGis.RouteParameters
+            (
+                {
+                    stops: new window.ArcGis.FeatureSet
+                    (
+                        {
+                            features: points
+                        }
+                    ),
+                    returnDirections: true
+                }
+            );
+
+            routeTask.solve(routeParams)
+            .then
+            (
+                function(data)
+                {
+                    data.routeResults.forEach
+                    (
+                        function(direction)
+                        {
+                            direction.route.symbol = 
+                            {
+                                type: "simple-line",
+                                color: "blue",
+                                width: 3
+                            }
+                            window.map_view.graphics.add(direction.route); 
+                        }
+                    ); 
+                }
+            ); 
         }
     }
 
@@ -110,12 +153,10 @@ function Directions(button)
         function(current_location_point)
         {
             var current_location_graphic = support_functions.CreateGraphic(current_location_point); 
-            console.log(current_location_graphic); 
-            console.log(current_location_point); 
             var uid = button.getAttribute("data-uid"); 
-            console.log(uid); 
             var point_location_graphic = support_functions.FindCurrentGraphic(uid); 
-            console.log(point_location_graphic); 
+            var points = [current_location_graphic, point_location_graphic]; 
+            support_functions.GetDirection(points); 
         }
     ); 
 }
