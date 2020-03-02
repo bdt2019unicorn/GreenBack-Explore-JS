@@ -59,6 +59,5 @@ function Distance(points_object)
     console.log("//////////////////////");
     console.log(points); 
     console.log("+++++++++++++++++++++++++"); 
-    return 0; 
-    return support_functions.CalculateDistance(points_object); 
+    return support_functions.CalculateDistance(points); 
 }
