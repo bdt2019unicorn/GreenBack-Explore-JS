@@ -35,6 +35,7 @@ function PutPointInTheMap(tree)
         }
     ); 
     window.map_view.graphics.add(point); 
+    console.log(point); 
 }
 
 function GetDataAroundLocation(location, condition=undefined)
@@ -48,13 +49,6 @@ function GetDataAroundLocation(location, condition=undefined)
             return JSON.parse(points); 
         }
     }
-
-
-
-    // var variation = 0.01; 
-    // var new_location = new window.ArcGis.Point(location.longitude-variation, location.latitude-variation); 
-    // var popupTemplate = PopUpTemplate(); 
-    // PutPointInTheMap(new_location, popupTemplate); 
     var all_trees = support_functions.GetAllPoints(); 
     all_trees.forEach
     (
