@@ -8,7 +8,19 @@ function Distance(points_object)
             {
                 return Math.PI * number / 180; 
             }
-            var points = {}; 
+            var points = 
+            {
+                current_location: 
+                {
+                    longitude: 0,
+                    latitude: 0
+                }, 
+                destination: 
+                {
+                    longitude: 0,
+                    latitude: 0
+                }
+            }; 
             points.current_location.longitude = ChangeToRadian(points_object.current_location.longitude); 
             points.current_location.latitude = ChangeToRadian(points_object.current_location.latitude); 
 
@@ -40,7 +52,6 @@ function Distance(points_object)
                 ); 
         }
     }; 
-    Object.freeze(points_object); 
     var points = support_functions.ConvertObject(points_object); 
     console.log("points object changed"); 
     console.log(points_object); 
