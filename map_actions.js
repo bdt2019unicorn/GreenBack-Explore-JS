@@ -113,6 +113,7 @@ function Directions(button)
 
 function TrackMyLocation(point_location_graphic)
 {
+    console.log("it goes here now"); 
     var track_my_location = navigator.geolocation.watchPosition
     (
         function(location)
