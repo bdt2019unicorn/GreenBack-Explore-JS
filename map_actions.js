@@ -107,6 +107,7 @@ function Directions(button)
             var btn = document.createElement("button"); 
             btn.addEventListener("click", TrackMyLocation(point_location_graphic)); 
             console.log(btn); 
+            btn.click(); 
         }
     }
 
