@@ -15,7 +15,7 @@ function PopUpTemplate(tree)
         <p><b>How to collect seed: </b><p>`+ tree.tree_types.collect +`</p></p>
         <p><b>How to store seed: </b><p>`+ tree.tree_types.store +`</p></p>
         <p>
-            <button title="Get Direction" type="button" class="btn btn-primary btn-circle btn-lg" onclick="Directions(this)" data-uid=` + tree.uid + `><i class="fas fa-directions"></i></button>
+            <button title="Go to this tree" type="button" class="btn btn-primary btn-circle btn-lg" data-uid=` + tree.uid + `><i class="fas fa-directions"></i></button>
         </p>
     `; 
     return {
