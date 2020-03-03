@@ -95,7 +95,6 @@ function Directions(destination_graphic)
 
 function FindDirectionToPoint()
 {
-    console.log("get here"); 
     window.map_view.on 
     (
         "click", 
