@@ -109,7 +109,7 @@ function Directions(button)
                 longitude: point_location_graphic.geometry.longitude, 
                 latitude: point_location_graphic.geometry.latitude
             }; 
-            console.log(direction.toString()); 
+            console.log(JSON.stringify(direction)); 
             // var btn = document.createElement("button"); 
             // btn.addEventListener("click", TrackMyLocation(point_location_graphic)); 
             // console.log(btn); 
@@ -122,7 +122,6 @@ function Directions(button)
 
 function TrackMyLocation(point_location_graphic)
 {
-    console.log("it goes here now"); 
     var track_my_location = navigator.geolocation.watchPosition
     (
         function(location)
