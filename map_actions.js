@@ -104,15 +104,15 @@ function Directions(button)
         ChangeButtonAttributes(point_location_graphic)
         {
             button.setAttribute("hidden",true); 
-            var direction = 
+            var destination = 
             {
                 longitude: point_location_graphic.geometry.longitude, 
                 latitude: point_location_graphic.geometry.latitude
             }; 
-            console.log(JSON.stringify(direction)); 
-            // var btn = document.createElement("button"); 
-            // btn.addEventListener("click", TrackMyLocation(point_location_graphic)); 
-            // console.log(btn); 
+            console.log(JSON.stringify(destination)); 
+            var btn = document.createElement("button"); 
+            btn.setAttribute("onclick","TrackMyLocation("+JSON.stringify(destination)+")"); 
+            console.log(btn); 
         }
     }
 
@@ -122,6 +122,8 @@ function Directions(button)
 
 function TrackMyLocation(point_location_graphic)
 {
+    console.log(point_location_graphic);
+    return; 
     var track_my_location = navigator.geolocation.watchPosition
     (
         function(location)
