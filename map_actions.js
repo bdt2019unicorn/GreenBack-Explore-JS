@@ -105,6 +105,8 @@ function Directions(button)
         {
             // button.onclick = TrackMyLocation(point_location_graphic); 
             console.log(button.onclick); 
+            button.removeEventListener("click",button.onclick); 
+            console.log(button.onclick); 
         }
     }
 
