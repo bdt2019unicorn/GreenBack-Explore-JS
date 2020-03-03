@@ -47,6 +47,14 @@ InnitizeMap.then
                         graphics: [graphic]
                     }
                 ); 
+                graphic_layer.on 
+                (
+                    "click", 
+                    function(event)
+                    {
+                        console.log("graphic layer has just got clicked"); 
+                    }
+                );
                 window.map_view.map.add(graphic_layer); 
             }
         ); 
