@@ -56,6 +56,23 @@ InnitizeMap.then
                     }
                 );
                 window.map_view.map.add(graphic_layer); 
+
+
+                window.map_view.on 
+                (
+                    "click", 
+                    function(event)
+                    {
+                        var screen_point = event.screenPoint; 
+                        window.map_view.hitTest(screen_point).then 
+                        (
+                            function(response)
+                            {
+                                console.log(response); 
+                            }
+                        );
+                    } 
+                ); 
             }
         ); 
         window.map_view.ui.add(button,"bottom-right"); 
