@@ -103,10 +103,10 @@ function Directions(button)
         }, 
         ChangeButtonAttributes(point_location_graphic)
         {
-            // button.onclick = TrackMyLocation(point_location_graphic); 
-            console.log(button.onclick); 
-            button.removeEventListener("click",button.onclick); 
-            console.log(button.onclick); 
+            button.setAttribute("hidden",true); 
+            var btn = document.createElement("button"); 
+            btn.addEventListener("click", TrackMyLocation(point_location_graphic)); 
+            console.log(btn); 
         }
     }
 
