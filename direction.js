@@ -101,6 +101,7 @@ function FindDirectionToPoint()
         "click", 
         function(event)
         {
+            console.log("I got clicked"); 
             var screen_point = event.screenPoint; 
             window.map_view.hitTest(screen_point).then 
             (
