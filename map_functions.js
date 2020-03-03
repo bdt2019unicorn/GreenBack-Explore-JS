@@ -21,5 +21,6 @@ InnitizeMap.then
     function()
     {
         GetDataAroundLocation();
+        FindDirectionToPoint();
     }
 );
