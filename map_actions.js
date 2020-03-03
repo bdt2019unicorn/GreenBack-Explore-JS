@@ -103,7 +103,8 @@ function Directions(button)
         }, 
         ChangeButtonAttributes(point_location_graphic)
         {
-            button.onclick = TrackMyLocation(point_location_graphic); 
+            // button.onclick = TrackMyLocation(point_location_graphic); 
+            console.log(button.onclick); 
         }
     }
 
