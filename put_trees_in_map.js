@@ -39,7 +39,7 @@ function PopUpTemplate(tree)
     content_node.append(support_functions.TreeInformation("Tips",tree.tree_types.tips)); 
     content_node.append(support_functions.TreeInformation("How to collect seed",tree.tree_types.collect)); 
     content_node.append(support_functions.TreeInformation("How to store seed",tree.tree_types.store)); 
-    content_node.append(GoToThisTreeButton(tree)); 
+    content_node.append(support_functions.GoToThisTreeButton(tree)); 
 
     // content_node.innerHTML = 
     // `
