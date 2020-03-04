@@ -1,6 +1,6 @@
-function TrackMyLocation(destination)
+function TrackMyLocation(button)
 {
-    console.log(destination);
+    console.log(button);
     return; 
     var track_my_location = navigator.geolocation.watchPosition
     (

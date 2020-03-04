@@ -85,7 +85,7 @@ function Directions(destination_graphic)
                         }
                     ); 
                 }
-            ).catch(function(error){console.log(error);}); 
+            ); 
         }
     }
 
