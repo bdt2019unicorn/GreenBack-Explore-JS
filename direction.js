@@ -80,6 +80,7 @@ function Directions(destination_graphic)
             (
                 (resolve,reject)=>
                 {
+                    console.log("this runs after the other promise resolve, after finding the point destination"); 
                     var current_location_graphic = support_functions.CreateGraphic(current_location_point); 
                     var points = [current_location_graphic, destination_graphic]; 
                     support_functions.RemoveIrrelevantPoints(points); 
@@ -100,37 +101,31 @@ function FindDirectionToPoint()
         "click", 
         function(event)
         {
-            var screen_point = event.screenPoint; 
-            window.map_view.hitTest(screen_point).then 
-            (
-                function(response)
+            var support_functions = 
+            {
+                PointDestination(response)
                 {
-                    var support_functions = 
-                    {
-                        PointDestination()
+                    return new Promise 
+                    (
+                        (resolve, reject)=>
                         {
                             console.log(response); 
+                            console.log("this run after the hit test"); 
                             for (let index = 0; index < response.results.length; index++) 
                             {
                                 let graphic = response.results[index].graphic; 
                                 if(window.map_view.graphics.includes(graphic))
                                 {
-                                    return graphic; 
+                                    resolve(graphic); 
                                 }
                             }
-                            return null; 
+                            reject(); 
                         }
-                    };
-                    var point_element = support_functions.PointDestination(); 
-                    console.log(point_element); 
-                    return; 
-                    try 
-                    {
-                        Directions(point_element); 
-                    }
-                    catch{}
+                    ); 
                 }
-            );
+            }
+            var screen_point = event.screenPoint; 
+            window.map_view.hitTest(screen_point).then(PointDestination).then(Directions); 
         }
     ); 
 }
