@@ -71,7 +71,6 @@ function Directions(destination_graphic)
             (
                 function(data)
                 {
-                    debugger; 
                     data.routeResults.forEach
                     (
                         function(direction)
@@ -86,7 +85,7 @@ function Directions(destination_graphic)
                         }
                     ); 
                 }
-            ); 
+            ).catch(function(error){console.log(error);}); 
         }
     }
 
