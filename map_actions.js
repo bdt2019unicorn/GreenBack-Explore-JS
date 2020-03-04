@@ -20,7 +20,6 @@ function TrackMyLocation(button)
                 }
             }; 
             console.log(points_object); 
-            console.log(JSON.stringify(points_object)); 
             var distance_in_m = 1000* Distance(points_object); 
             console.log(distance_in_m); 
         }
