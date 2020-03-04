@@ -123,6 +123,7 @@ function FindDirectionToPoint()
                     };
                     var point_element = support_functions.PointDestination(); 
                     console.log(point_element); 
+                    return; 
                     try 
                     {
                         Directions(point_element); 
