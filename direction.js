@@ -88,7 +88,8 @@ function Directions(destination_graphic)
             ); 
         }
     }
-    window.dectect_current_location.then(support_functions.PutRelevantPoints).then(GetDirection); 
+
+    window.dectect_current_location.then(support_functions.PutRelevantPoints).then(support_functions.GetDirection); 
 }
 
 
