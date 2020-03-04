@@ -5,12 +5,19 @@ function TrackMyLocation(button)
         for(var graphic of window.map_view.graphics.items)
         {
             console.log(graphic); 
+            if((graphic.uid!=uid)&&(graphic.geometry.type=="point"))
+            {
+                return graphic; 
+            }
+            return undefined; 
         }
     }
     var tree = $(button).attr("data-tree"); 
     tree = JSON.parse(tree); 
     console.log(tree); 
-    CurrentLocationGraphic(tree.uid); 
+    var current_location_graphic = CurrentLocationGraphic(tree.uid); 
+    console.log(current_location_graphic); 
+    return; 
     var track_my_location = navigator.geolocation.watchPosition
     (
         function(location)
