@@ -105,8 +105,6 @@ function FindDirectionToPoint()
             (
                 function(response)
                 {
-                    console.log("hit test received"); 
-                    console.log(response); 
                     var support_functions = 
                     {
                         PointDestination()
@@ -114,10 +112,8 @@ function FindDirectionToPoint()
                             for (let index = 0; index < response.results.length; index++) 
                             {
                                 let graphic = response.results[index].graphic; 
-                                console.log(graphic); 
                                 if(window.map_view.graphics.includes(graphic))
                                 {
-                                    console.log("yes, I am here - this view include me as the graphic"); 
                                     return graphic; 
                                 }
                             }
@@ -126,7 +122,6 @@ function FindDirectionToPoint()
                     };
                     var point_element = support_functions.PointDestination(); 
                     console.log(point_element); 
-                    return; 
                     Directions(point_element); 
                 }
             );
