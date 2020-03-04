@@ -101,31 +101,27 @@ function FindDirectionToPoint()
         "click", 
         function(event)
         {
-            var support_functions = 
+            let PointDestination = function(response)
             {
-                PointDestination(response)
-                {
-                    return new Promise 
-                    (
-                        (resolve, reject)=>
+                return new Promise 
+                (
+                    (resolve, reject)=>
+                    {
+                        console.log(response); 
+                        console.log("this run after the hit test"); 
+                        for (let index = 0; index < response.results.length; index++) 
                         {
-                            console.log(response); 
-                            console.log("this run after the hit test"); 
-                            for (let index = 0; index < response.results.length; index++) 
+                            let graphic = response.results[index].graphic; 
+                            if(window.map_view.graphics.includes(graphic))
                             {
-                                let graphic = response.results[index].graphic; 
-                                if(window.map_view.graphics.includes(graphic))
-                                {
-                                    resolve(graphic); 
-                                }
+                                resolve(graphic); 
                             }
-                            reject(); 
                         }
-                    ); 
-                }
+                        reject(); 
+                    }
+                ); 
             }
-            var screen_point = event.screenPoint; 
-            window.map_view.hitTest(screen_point).then(PointDestination).then(Directions); 
+            window.map_view.hitTest(event.screenPoint).then(PointDestination).then(Directions); 
         }
     ); 
 }
