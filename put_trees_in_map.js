@@ -27,6 +27,7 @@ function PopUpTemplate(tree)
             button.setAttribute("onclick","TrackMyLocation(this)"); 
             button.setAttribute("data-tree",JSON.stringify(tree)); 
             button.classList.add("btn","btn-primary","btn-circle","btn-lg"); 
+            button.title = "Go to this tree"; 
             let button_icon = document.createElement("i"); 
             button_icon.classList.add("fas", "fa-directions"); 
             button.append(button_icon); 
@@ -40,7 +41,7 @@ function PopUpTemplate(tree)
     content_node.append(support_functions.TreeInformation("How to collect seed",tree.tree_types.collect)); 
     content_node.append(support_functions.TreeInformation("How to store seed",tree.tree_types.store)); 
     content_node.append(support_functions.GoToThisTreeButton(tree)); 
-    
+
     return {
         title: tree.name, 
         content: content_node
