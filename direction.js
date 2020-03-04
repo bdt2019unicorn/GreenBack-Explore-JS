@@ -46,8 +46,6 @@ function Directions(destination_graphic)
         }, 
         GetDirection(points)
         {
-            console.log(points); 
-            debugger; 
             var routeTask = new window.ArcGis.RouteTask
             (
                 {
@@ -73,6 +71,7 @@ function Directions(destination_graphic)
             (
                 function(data)
                 {
+                    debugger; 
                     data.routeResults.forEach
                     (
                         function(direction)
