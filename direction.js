@@ -113,7 +113,7 @@ function FindDirectionToPoint()
                         {
                             for (let index = 0; index < response.results.length; index++) 
                             {
-                                let graphic = response.results[i].graphic; 
+                                let graphic = response.results[index].graphic; 
                                 console.log(graphic); 
                                 if(window.map_view.graphics.includes(graphic))
                                 {
