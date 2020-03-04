@@ -107,6 +107,9 @@ function FindDirectionToPoint()
             (
                 function(response)
                 {
+                    console.log("hit test received"); 
+                    console.log(response); 
+                    return; 
                     var support_functions = 
                     {
                         PointDestination()
