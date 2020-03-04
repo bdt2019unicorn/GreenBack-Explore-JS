@@ -100,16 +100,13 @@ function FindDirectionToPoint()
         "click", 
         function(event)
         {
-            console.log("I got clicked"); 
             var screen_point = event.screenPoint; 
-            console.log(screen_point); 
             window.map_view.hitTest(screen_point).then 
             (
                 function(response)
                 {
                     console.log("hit test received"); 
                     console.log(response); 
-                    return; 
                     var support_functions = 
                     {
                         PointDestination()
@@ -117,8 +114,10 @@ function FindDirectionToPoint()
                             for (let index = 0; index < response.results.length; index++) 
                             {
                                 let graphic = response.results[i].graphic; 
+                                console.log(graphic); 
                                 if(window.map_view.graphics.includes(graphic))
                                 {
+                                    console.log("yes, I am here - this view include me as the graphic"); 
                                     return graphic; 
                                 }
                             }
