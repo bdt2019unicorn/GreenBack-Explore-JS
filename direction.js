@@ -102,6 +102,7 @@ function FindDirectionToPoint()
         {
             console.log("I got clicked"); 
             var screen_point = event.screenPoint; 
+            console.log(screen_point); 
             window.map_view.hitTest(screen_point).then 
             (
                 function(response)
@@ -122,6 +123,8 @@ function FindDirectionToPoint()
                         }
                     };
                     var point_element = support_functions.PointDestination(); 
+                    console.log(point_element); 
+                    return; 
                     Directions(point_element); 
                 }
             );
