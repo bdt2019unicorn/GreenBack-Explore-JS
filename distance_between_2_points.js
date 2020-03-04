@@ -8,26 +8,13 @@ function Distance(points_object)
             {
                 return Math.PI * number / 180; 
             }
-            var points = 
-            {
-                current_location: 
-                {
-                    longitude: 0,
-                    latitude: 0
-                }, 
-                destination: 
-                {
-                    longitude: 0,
-                    latitude: 0
-                }
-            }; 
-            points.current_location.longitude = ChangeToRadian(points_object.current_location.longitude); 
-            points.current_location.latitude = ChangeToRadian(points_object.current_location.latitude); 
+            points_object.current_location.longitude = ChangeToRadian(points_object.current_location.longitude); 
+            points_object.current_location.latitude = ChangeToRadian(points_object.current_location.latitude); 
 
-            points.destination.longitude = ChangeToRadian(points_object.destination.longitude); 
-            points.destination.latitude = ChangeToRadian(points_object.destination.latitude); 
+            points_object.destination.longitude = ChangeToRadian(points_object.destination.longitude); 
+            points_object.destination.latitude = ChangeToRadian(points_object.destination.latitude); 
 
-            return points; 
+            return points_object; 
         }, 
         CalculateDistance(points)
         {
@@ -55,6 +42,6 @@ function Distance(points_object)
                 ); 
         }
     }; 
-    var points = support_functions.ConvertObject(points_object); 
-    return support_functions.CalculateDistance(points); 
+    points_object = support_functions.ConvertObject(points_object); 
+    return support_functions.CalculateDistance(points_object); 
 }

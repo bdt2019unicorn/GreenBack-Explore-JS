@@ -2,11 +2,12 @@ function TrackMyLocation(button)
 {
     var tree = $(button).attr("data-tree"); 
     tree = JSON.parse(tree); 
+    console.log(tree); 
     var track_my_location = navigator.geolocation.watchPosition
     (
         function(location)
         {
-            var points_object = 
+            let points_object = 
             {
                 destination: 
                 {
