@@ -109,6 +109,7 @@ function FindDirectionToPoint()
                     {
                         PointDestination()
                         {
+                            console.log(response); 
                             for (let index = 0; index < response.results.length; index++) 
                             {
                                 let graphic = response.results[index].graphic; 
@@ -122,7 +123,11 @@ function FindDirectionToPoint()
                     };
                     var point_element = support_functions.PointDestination(); 
                     console.log(point_element); 
-                    Directions(point_element); 
+                    try 
+                    {
+                        Directions(point_element); 
+                    }
+                    catch{}
                 }
             );
         }
