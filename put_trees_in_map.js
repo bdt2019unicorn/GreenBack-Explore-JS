@@ -40,17 +40,7 @@ function PopUpTemplate(tree)
     content_node.append(support_functions.TreeInformation("How to collect seed",tree.tree_types.collect)); 
     content_node.append(support_functions.TreeInformation("How to store seed",tree.tree_types.store)); 
     content_node.append(support_functions.GoToThisTreeButton(tree)); 
-
-    // content_node.innerHTML = 
-    // `
-    //     <p><b>Type: </b>`+ tree.tree_types.name +`</p>
-    //     <p><b>Tips: </b><p>`+ tree.tree_types.tips +`</p></p>
-    //     <p><b>How to collect seed: </b><p>`+ tree.tree_types.collect +`</p></p>
-    //     <p><b>How to store seed: </b><p>`+ tree.tree_types.store +`</p></p>
-    //     <p>
-    //         <button title="Go to this tree" type="button" class="btn btn-primary btn-circle btn-lg" data-tree=` + JSON.stringify(tree) + ` onclick="TrackMyLocation(this)"><i class="fas fa-directions"></i></button>
-    //     </p>
-    // `; 
+    
     return {
         title: tree.name, 
         content: content_node
