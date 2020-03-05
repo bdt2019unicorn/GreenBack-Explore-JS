@@ -46,7 +46,9 @@ function TrackMyLocation(button)
                         current_location_graphic = CreateGraphicCurrentLocation(location_point); 
                         window.map_view.graphics.add(current_location_graphic); 
                     }
-                    current_location_graphic.geometry = location_point; 
+                    // current_location_graphic.geometry = location_point; 
+                    current_location_graphic.geometry.longitude = location.coords.longitude; 
+                    current_location_graphic.geometry.latitude = location.coords.latitude; 
                 }
             }
 
