@@ -39,6 +39,7 @@ function TrackMyLocation(button)
                 }, 
                 MoveLocationPoint()
                 {
+                    console.log(current_location_graphic); 
                     if(current_location_graphic==undefined)
                     {
                         let location_point = new ArcGis.Point(location.coords.longitude, location.coords.latitude); 
