@@ -13,36 +13,46 @@ function TrackMyLocation(button)
     }
     var tree = $(button).attr("data-tree"); 
     tree = JSON.parse(tree); 
-    console.log(tree); 
     var current_location_graphic = CurrentLocationGraphic(tree.uid); 
-    console.log(current_location_graphic); 
     var track_my_location = navigator.geolocation.watchPosition
     (
         function(location)
         {
-            let points_object = 
+            var support_functions =
             {
-                destination: 
+                DistanceTowardDestination()
                 {
-                    longitude: tree.longitude, 
-                    latitude: tree.latitude
+                    let points_object = 
+                    {
+                        destination: 
+                        {
+                            longitude: tree.longitude, 
+                            latitude: tree.latitude
+                        }, 
+                        current_location: 
+                        {
+                            longitude: location.coords.longitude, 
+                            latitude: location.coords.latitude
+                        }
+                    }; 
+                    return 1000* Distance(points_object); 
                 }, 
-                current_location: 
+                MoveLocationPoint()
                 {
-                    longitude: location.coords.longitude, 
-                    latitude: location.coords.latitude
+                    if(current_location_graphic==undefined)
+                    {
+                        let location_point = new ArcGis.Point(location.coords.longitude, location.coords.latitude); 
+                        current_location_graphic = CreateGraphicCurrentLocation(location_point); 
+                        window.map_view.graphics.add(current_location_graphic); 
+                    }
+                    current_location_graphic.geometry.longitude = location.coords.longitude; 
+                    current_location_graphic.geometry.latitude = location.coords.latitude; 
                 }
-            }; 
-            console.log(points_object); 
-            var distance_in_m = 1000* Distance(points_object); 
-            console.log(distance_in_m); 
-            var location_point = new ArcGis.Point(location.coords.longitude, location.coords.latitude); 
-            if(current_location_graphic==undefined)
-            {
-                current_location_graphic = CreateGraphicCurrentLocation(location_point); 
-                window.map_view.graphics.add(current_location_graphic); 
             }
-            current_location_graphic.geometry = location_point; 
+
+            var distance_in_m = support_functions.DistanceTowardDestination(); 
+            console.log(distance_in_m); 
+            support_functions.MoveLocationPoint(); 
         }
     ); 
 }
