@@ -1,3 +1,33 @@
+function DetectCurrentLocation()
+{
+    return new Promise
+    (
+        (resolve,reject)=>
+        {
+            var current_location_functions = 
+            {
+                SuccessGettingLocation(location)
+                {
+                    resolve(new window.ArcGis.Point(location.coords.longitude,location.coords.latitude)); 
+                }, 
+                ErrorGettingLocation(error=null)
+                {
+                    resolve(new window.ArcGis.Point(174.7633, -36.8485)); 
+                }
+            }
+            if(navigator.geolocation)
+            {
+                navigator.geolocation.getCurrentPosition(current_location_functions.SuccessGettingLocation, current_location_functions.ErrorGettingLocation); 
+            }
+            else 
+            {
+                current_location_functions.ErrorGettingLocation(); 
+            }
+        }
+    ); 
+} 
+
+
 function CreateGraphicCurrentLocation(point)
 {
     return new window.ArcGis.Graphic 

@@ -1,26 +1,20 @@
 import {InnitizeMap} from "./innitialize_map.js"; 
 import {AddLocationWidget} from "./add_location_widget.js"; 
 
-InnitizeMap.then
+InnitizeMap.then(DetectCurrentLocation).then 
 (
-    function(view_and_arcgis_class)
+    function(point)
     {
+        window.map_view.center = point;
         return new Promise 
         (
             (resolve, reject)=>
             {
-                window.map_view = view_and_arcgis_class.view; 
-                window.ArcGis = view_and_arcgis_class.ArcGis; 
                 AddLocationWidget(window.ArcGis.Locate, window.map_view); 
+                GetDataAroundLocation();
+                FindDirectionToPoint();
                 resolve(); 
             }
         ); 
     }
-).then 
-(
-    function()
-    {
-        GetDataAroundLocation();
-        FindDirectionToPoint();
-    }
-);
+); 
