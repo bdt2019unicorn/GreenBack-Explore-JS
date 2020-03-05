@@ -37,9 +37,6 @@ function PopUpTemplate(tree)
     }
     var content_node = document.createElement("div"); 
     content_node.append(support_functions.TreeInformation("Type",tree.tree_types.name)); 
-    content_node.append(support_functions.TreeInformation("Tips",tree.tree_types.tips)); 
-    content_node.append(support_functions.TreeInformation("How to collect seed",tree.tree_types.collect)); 
-    content_node.append(support_functions.TreeInformation("How to store seed",tree.tree_types.store)); 
     content_node.append(support_functions.GoToThisTreeButton(tree)); 
 
     return {
