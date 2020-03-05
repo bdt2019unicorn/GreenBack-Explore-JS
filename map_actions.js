@@ -55,7 +55,6 @@ function TrackMyLocation(button)
             {
                 navigator.geolocation.clearWatch(track_my_location);
                 alert("I am here"); 
-                return; 
             }
         }
     ); 
