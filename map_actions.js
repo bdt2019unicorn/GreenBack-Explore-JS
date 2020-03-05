@@ -4,7 +4,6 @@ function TrackMyLocation(button)
     {
         for(var graphic of window.map_view.graphics.items)
         {
-            console.log(graphic); 
             if((graphic.uid!=uid)&&(graphic.geometry.type=="point"))
             {
                 return graphic; 
@@ -17,7 +16,6 @@ function TrackMyLocation(button)
     console.log(tree); 
     var current_location_graphic = CurrentLocationGraphic(tree.uid); 
     console.log(current_location_graphic); 
-    return; 
     var track_my_location = navigator.geolocation.watchPosition
     (
         function(location)
@@ -38,6 +36,13 @@ function TrackMyLocation(button)
             console.log(points_object); 
             var distance_in_m = 1000* Distance(points_object); 
             console.log(distance_in_m); 
+            var location_point = new ArcGis.Point(location.coords.longitude, location.coords.latitude); 
+            if(current_location_graphic==undefined)
+            {
+                current_location_graphic = CreateGraphicCurrentLocation(location_point); 
+                window.map_view.graphics.add(current_location_graphic); 
+            }
+            current_location_graphic.geometry = location_point; 
         }
     ); 
 }

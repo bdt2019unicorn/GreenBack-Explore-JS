@@ -1,3 +1,19 @@
+function CreateGraphicCurrentLocation(point)
+{
+    return new window.ArcGis.Graphic 
+    (
+        {
+            geometry: point, 
+            symbol: 
+            {
+                type: "simple-marker",
+                color: "blue",  
+                size: "8px"
+            }
+        }
+    ); 
+}
+
 function Directions(destination_graphic)
 {
     var support_functions = 
@@ -8,39 +24,21 @@ function Directions(destination_graphic)
             (
                 (resolve,reject)=>
                 {
-                    var support_functions = 
+                    var RemoveIrrelevantPoints = function(points)
                     {
-                        CreateGraphic(point)
-                        {
-                            return new window.ArcGis.Graphic 
-                            (
-                                {
-                                    geometry: point, 
-                                    symbol: 
-                                    {
-                                        type: "simple-marker",
-                                        color: "blue",  
-                                        size: "8px"
-                                    }
-                                }
-                            ); 
-                        }, 
-                        RemoveIrrelevantPoints(points)
-                        {
-                            window.map_view.graphics.removeAll();
-                            points.forEach
-                            (
-                                point => 
-                                {
-                                    window.map_view.graphics.add(point); 
-                                }
-                            );
-                            resolve(points); 
-                        }
-                    }
-                    var current_location_graphic = support_functions.CreateGraphic(current_location_point); 
+                        window.map_view.graphics.removeAll();
+                        points.forEach
+                        (
+                            point => 
+                            {
+                                window.map_view.graphics.add(point); 
+                            }
+                        );
+                        resolve(points); 
+                    }; 
+                    var current_location_graphic = CreateGraphicCurrentLocation(current_location_point); 
                     var points = [current_location_graphic, destination_graphic]; 
-                    support_functions.RemoveIrrelevantPoints(points); 
+                    RemoveIrrelevantPoints(points); 
                 }
             );  
         }, 
