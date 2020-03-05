@@ -117,7 +117,7 @@ function Directions(destination_graphic)
         }
     }
 
-    window.dectect_current_location.then(support_functions.PutRelevantPoints).then(support_functions.GetDirection); 
+    DetectCurrentLocation().then(support_functions.PutRelevantPoints).then(support_functions.GetDirection); 
 }
 
 
@@ -134,13 +134,11 @@ function FindDirectionToPoint()
                 (
                     (resolve, reject)=>
                     {
-                        console.log("I am in the Point Destination now "); 
                         for (let index = 0; index < response.results.length; index++) 
                         {
                             let graphic = response.results[index].graphic; 
                             if(window.map_view.graphics.includes(graphic))
                             {
-                                console.log(graphic); 
                                 resolve(graphic); 
                             }
                         }
