@@ -1,5 +1,5 @@
-import {InnitizeMap} from "./innitialize_map.js"; 
-import {AddLocationWidget} from "./add_location_widget.js"; 
+import {InnitizeMap} from "./Map Module/innitialize_map.js"; 
+import {AddLocationWidget} from "./Map Module/add_location_widget.js"; 
 
 InnitizeMap.then(DetectCurrentLocation).then 
 (
