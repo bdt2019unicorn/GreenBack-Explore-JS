@@ -18,6 +18,7 @@ function TrackMyLocation(button)
     (
         function(location)
         {
+            const max_distance_to_destination = 50; 
             var support_functions =
             {
                 DistanceTowardDestination()
@@ -39,7 +40,6 @@ function TrackMyLocation(button)
                 }, 
                 MoveLocationPoint()
                 {
-                    console.log(current_location_graphic); 
                     let location_point = new ArcGis.Point(location.coords.longitude, location.coords.latitude); 
                     if(current_location_graphic==undefined)
                     {
@@ -49,10 +49,13 @@ function TrackMyLocation(button)
                     current_location_graphic.geometry = location_point; 
                 }
             }
-
             var distance_in_m = support_functions.DistanceTowardDestination(); 
-            console.log(distance_in_m); 
             support_functions.MoveLocationPoint(); 
+            if(distance_in_m<=max_distance_to_destination)
+            {
+                navigator.geolocation.clearWatch(track_my_location);
+                alert("I am here"); 
+            }
         }
     ); 
 }
