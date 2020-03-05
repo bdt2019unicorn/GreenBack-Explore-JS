@@ -134,11 +134,13 @@ function FindDirectionToPoint()
                 (
                     (resolve, reject)=>
                     {
+                        console.log("I am in the Point Destination now "); 
                         for (let index = 0; index < response.results.length; index++) 
                         {
                             let graphic = response.results[index].graphic; 
                             if(window.map_view.graphics.includes(graphic))
                             {
+                                console.log(graphic); 
                                 resolve(graphic); 
                             }
                         }
