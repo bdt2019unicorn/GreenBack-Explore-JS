@@ -40,14 +40,13 @@ function TrackMyLocation(button)
                 MoveLocationPoint()
                 {
                     console.log(current_location_graphic); 
+                    let location_point = new ArcGis.Point(location.coords.longitude, location.coords.latitude); 
                     if(current_location_graphic==undefined)
                     {
-                        let location_point = new ArcGis.Point(location.coords.longitude, location.coords.latitude); 
                         current_location_graphic = CreateGraphicCurrentLocation(location_point); 
                         window.map_view.graphics.add(current_location_graphic); 
                     }
-                    current_location_graphic.geometry.longitude = location.coords.longitude; 
-                    current_location_graphic.geometry.latitude = location.coords.latitude; 
+                    current_location_graphic.geometry = location_point; 
                 }
             }
 
