@@ -12,9 +12,9 @@ InnitizeMap.then(DetectCurrentLocation).then
             {
                 AddLocationWidget(window.ArcGis.Locate, window.map_view); 
                 GetDataAroundLocation();
+                FindDirectionToPoint(); 
                 resolve(); 
             }
-        ). 
-        then(FindDirectionToPoint); 
+        ); 
     }
 ); 
