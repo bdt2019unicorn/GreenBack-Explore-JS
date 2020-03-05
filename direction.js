@@ -128,6 +128,7 @@ function FindDirectionToPoint()
         "click", 
         function(event)
         {
+            console.log(event.mapPoint); 
             let PointDestination = function(response)
             {
                 return new Promise 
