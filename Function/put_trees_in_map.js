@@ -17,7 +17,7 @@ function PopUpTemplate(tree)
             let paragraph_information = document.createElement("p"); 
             paragraph_information.innerText = information; 
             paragraph.append(paragraph_title); 
-            paragraph_title.append(paragraph_information); 
+            paragraph.append(paragraph_information); 
             return paragraph; 
         }, 
         GoToThisTreeButton(tree)
