@@ -11,6 +11,7 @@ var seed_collection = new Vue
             title: "Seed Collection", 
             menu: ["Collect","Store"], 
             current_tab: "Collect", 
+            db_top_key: "", 
             tree: {}
         }, 
         methods: 
@@ -44,6 +45,20 @@ var seed_collection = new Vue
                         collect 1
                         collect 2
                         collect 3
+                    `, 
+                    tips_store: 
+                    `
+                        tips store 1
+                        tips store 2 
+                        tips store 3
+                        tips store 4
+                    `,
+                    tips_collect: 
+                    `
+                        tips collect 1
+                        tips collect 2
+                        tips collect 3
+                        tips collect 4
                     `
                 }
             }    
