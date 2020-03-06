@@ -17,7 +17,7 @@ export var Information = Vue.component
             <ul>
                 <ListItem
                     v-for="item in ItemArray"
-                    :value="@{{item}}"
+                    :value="item"
                 >
                 </ListItem>
             </ul>
