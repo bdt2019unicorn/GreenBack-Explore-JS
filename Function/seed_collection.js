@@ -8,10 +8,14 @@ var seed_collection = new Vue
         el: "#seed_collection", 
         data: 
         {
-            title: "Seed Collection", 
             menu: ["Collect","Store"], 
             current_tab: "Collect", 
             db_top_key: "", 
+            db_key_title: 
+            {
+                "": "Seed Collection", 
+                "tips_": "Tips"
+            },
             tree: {}
         }, 
         methods: 
