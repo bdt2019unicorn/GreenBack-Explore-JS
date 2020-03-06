@@ -63,7 +63,7 @@ function TrackMyLocation(button)
 function ChangeTipsAndCollection(button)
 {
     var attributes = ["","tips_"]; 
-    var db_top_key = button.getAttribute("data-db_top_key").trim(); 
+    var db_top_key = button.getAttribute("data-db_top_key"); 
     window.seed_collection.db_top_key = db_top_key; 
     let new_index = (attributes.indexOf(db_top_key) + 1)%2; 
     button.setAttribute("data-db_top_key",attributes[new_index]); 
