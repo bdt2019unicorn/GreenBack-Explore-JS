@@ -1,5 +1,5 @@
-// import 
-
+import {Li} from "./SeedCollection/list_item_component.js"; 
+import {Information} from "./SeedCollection/information_component.js"; 
 
 
 var seed_collection = new Vue 
@@ -12,6 +12,11 @@ var seed_collection = new Vue
             menu: ["Collect","Store"], 
             current_tab: "Collect", 
             tree: {}
+        }, 
+        component:
+        {
+            "Information": Information, 
+            "ListItem": Li
         }, 
         methods: 
         {
