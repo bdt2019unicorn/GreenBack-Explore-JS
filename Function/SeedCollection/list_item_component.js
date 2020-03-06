@@ -1,5 +1,6 @@
-export var Li = Vue.extend
+export var Li = Vue.component
 (
+    "ListItem", 
     {
         props: ["value"], 
         template: "<li>@{{value}}</li>"

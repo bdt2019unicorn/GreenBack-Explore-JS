@@ -1,7 +1,8 @@
 // import {LI} from "./list_item_component.js"; 
 
-export var Information = Vue.extend
+export var Information = Vue.component
 (
+    "Information", 
     {
         props: ["data"], 
         computed: 

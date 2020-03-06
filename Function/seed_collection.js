@@ -13,11 +13,6 @@ var seed_collection = new Vue
             current_tab: "Collect", 
             tree: {}
         }, 
-        component:
-        {
-            "Information": Information, 
-            "ListItem": Li
-        }, 
         methods: 
         {
             ButtonClass(item)
