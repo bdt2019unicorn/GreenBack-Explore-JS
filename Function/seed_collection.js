@@ -1,5 +1,6 @@
 import {Li} from "./SeedCollection/LearnComponent/list_item_component.js"; 
 import {Information} from "./SeedCollection/LearnComponent/information_component.js/index.js"; 
+import {Learn} from "./SeedCollection/learn_component.js"; 
 
 
 var seed_collection = new Vue 
@@ -16,6 +17,7 @@ var seed_collection = new Vue
                 "": "Seed Collection", 
                 "tips_": "Tips"
             },
+            current_component: "LearnComponent", 
             tree: {}
         }, 
         methods: 
