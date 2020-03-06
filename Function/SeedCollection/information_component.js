@@ -9,7 +9,7 @@ export var Information = Vue.component
         {
             ItemArray: function()
             {
-                return this.data.trim().split("\n"); 
+                return this.data!=undefined? this.data.trim().split("\n"):[]; 
             }
         },
         template:
