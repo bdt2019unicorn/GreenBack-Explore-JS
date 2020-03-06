@@ -1,4 +1,4 @@
-// import {Li} from "./SeedCollection/list_item_component.js"; 
+import {Li} from "./SeedCollection/list_item_component.js"; 
 import {Information} from "./SeedCollection/information_component.js"; 
 
 
@@ -16,7 +16,7 @@ var seed_collection = new Vue
         component:
         {
             "Information": Information, 
-            // "ListItem": Li
+            "ListItem": Li
         }, 
         methods: 
         {

@@ -1,4 +1,4 @@
-export var Li = Vue.extends
+export var Li = Vue.extend
 (
     {
         props: ["value"], 
