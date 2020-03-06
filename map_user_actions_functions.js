@@ -59,3 +59,8 @@ function TrackMyLocation(button)
         }
     ); 
 }
+
+function ChangeTipsAndCollection(button)
+{
+    window.seed_collection.db_top_key = button.getAttribute("data-db_top_key"); 
+}

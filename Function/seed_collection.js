@@ -65,3 +65,5 @@ var seed_collection = new Vue
         },
     }
 ); 
+
+window.seed_collection = seed_collection; 
