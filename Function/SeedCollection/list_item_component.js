@@ -1,4 +1,3 @@
-const Vue = require("vue").default; 
 export var Li = Vue.extends
 (
     {
