@@ -9,6 +9,7 @@ var seed_collection = new Vue
         data: 
         {
             title: "Seed Collection", 
+            menu: ["Collect","Store"], 
             tree: {}
         }, 
         methods: 
