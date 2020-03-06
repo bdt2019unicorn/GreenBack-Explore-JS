@@ -16,7 +16,7 @@ var seed_collection = new Vue
         component:
         {
             "Information": Information, 
-            "ListItem": Li
+            // "ListItem": Li
         }, 
         methods: 
         {
