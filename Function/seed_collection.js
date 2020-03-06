@@ -13,7 +13,7 @@ var seed_collection = new Vue
         }, 
         methods: 
         {
-            GiveMeAFakeTree()
+            GiveMeAFakeTree: function()
             {
                 this.tree = 
                 {
