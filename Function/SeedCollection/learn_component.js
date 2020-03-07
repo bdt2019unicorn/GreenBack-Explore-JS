@@ -5,7 +5,7 @@ export var Learn = Vue.component
         props: ["tree", "current_tab", "db_top_key", "db_key_title", "menu"], 
         template:
         `
-            <div>
+            <div style="width: 100%;">
                 <div class="row">
                     <button 
                         v-for="item in menu" 
