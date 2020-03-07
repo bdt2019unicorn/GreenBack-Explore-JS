@@ -73,7 +73,7 @@ var seed_collection = new Vue
         {
             PassAllData: function()
             {
-                return $data; 
+                return this.$data; 
             }   
         },
     }
