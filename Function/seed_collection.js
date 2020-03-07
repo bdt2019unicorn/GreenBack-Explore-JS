@@ -68,14 +68,7 @@ var seed_collection = new Vue
                     `
                 }
             }    
-        },
-        computed: 
-        {
-            PassAllData: function()
-            {
-                return this.$data; 
-            }   
-        },
+        }
     }
 ); 
 
