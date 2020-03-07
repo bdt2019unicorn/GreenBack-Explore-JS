@@ -5,7 +5,7 @@ export var Learn = Vue.component
         props: ["tree", "current_tab", "db_top_key", "db_key_title", "menu"], 
         template:
         `
-            <template>
+            <div>
                 <div class="row">
                     <button 
                         v-for="item in menu" 
@@ -18,7 +18,7 @@ export var Learn = Vue.component
 
                 <Information :data="tree[db_top_key+current_tab.toLowerCase()]">
                 </Information>
-            </template>
+            </div>
 
         `, 
         methods: 
