@@ -5,8 +5,8 @@ export var Learn = Vue.component
         props: ["tree", "current_tab", "db_top_key", "db_key_title", "menu"], 
         template:
         `
-            <keep-alive>
-                <div class="row">
+            <div class="row">
+                <div class="col-12">
                     <button 
                         v-for="item in menu" 
                         :class='ButtonClass(item)'
@@ -18,7 +18,7 @@ export var Learn = Vue.component
 
                 <Information :data="tree[db_top_key+current_tab.toLowerCase()]">
                 </Information>
-            </keep-alive>
+            </div>
 
         `, 
         methods: 
