@@ -1,5 +1,5 @@
-import {ListItem} from "./SeedCollection/LearnComponent/list_item_component.js"; 
-import {Information} from "./SeedCollection/LearnComponent/information_component.js"; 
+import {ListItem} from "./LearnComponent/list_item_component.js"; 
+import {Information} from "./LearnComponent/information_component.js"; 
 
 
 var Learn = Vue.component
