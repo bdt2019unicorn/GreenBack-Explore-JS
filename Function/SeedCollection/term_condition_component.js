@@ -40,8 +40,9 @@ var TermConditionComponent = Vue.component
 
                 <div class="card">
                     <div class="row">
-                        <button class="col">Accept</button>
-                        <button class="col">Decline</button>
+                        <button class="btn btn-success col">Accept</button>
+                        <div class="col"></div>
+                        <button class="btn btn-danger col">Decline</button>
                     </div>
                 </div>
             </div>
