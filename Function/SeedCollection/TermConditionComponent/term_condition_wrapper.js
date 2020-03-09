@@ -29,19 +29,16 @@ var TermCondition = Vue.component
             return {
                 checkbox: 
                 `
-                    <span style="float: right;">
-                        <input type="checkbox" class="checkbox-circle">
+                    <span class="form-check" style="float: right;">
+                        <input type="checkbox" class="form-check-input" id="materialUnchecked">
                     </span>
+                    
                 `
             }
         },
         template: 
         `
             <p class="card-text" v-html="text+checkbox">
-                // {{text}}
-                // <span style="float: right;">
-                //     <input type="checkbox" class="checkbox-circle">
-                // </span>
             </p>
         `
 
