@@ -1,7 +1,3 @@
-// import {ListItem} from "./SeedCollection/LearnComponent/list_item_component.js"; 
-// import {Information} from "./SeedCollection/LearnComponent/information_component.js"; 
-// import {Learn} from "./SeedCollection/learn_component.js"; 
-
 import * as learn_component from "./SeedCollection/learn_component.js"; 
 import * as term_condition_component from "./SeedCollection/term_condition_component.js"; 
 
