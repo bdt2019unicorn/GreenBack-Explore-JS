@@ -60,6 +60,18 @@ function TrackMyLocation(button)
     ); 
 }
 
+
+
+function ChangeComponent(button) 
+{
+    console.log(button); 
+    return; 
+    window.seed_collection.current_component = button.getAttribute("data-current_component"); 
+}
+
+
+
+//see if you can get rid of this at the end
 function ChangeTipsAndCollection(button)
 {
     var attributes = ["","tips_"]; 

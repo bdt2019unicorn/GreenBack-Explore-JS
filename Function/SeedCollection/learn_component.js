@@ -1,4 +1,8 @@
-export var Learn = Vue.component
+import {ListItem} from "./SeedCollection/LearnComponent/list_item_component.js"; 
+import {Information} from "./SeedCollection/LearnComponent/information_component.js"; 
+
+
+var Learn = Vue.component
 (
     "LearnComponent", 
     {
@@ -36,3 +40,6 @@ export var Learn = Vue.component
         },
     }
 ); 
+
+
+export{ListItem, Information, Learn}; 

@@ -1,4 +1,4 @@
-export var Li = Vue.component
+export var ListItem = Vue.component
 (
     "ListItem", 
     {
