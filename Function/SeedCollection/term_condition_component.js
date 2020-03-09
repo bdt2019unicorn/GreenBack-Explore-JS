@@ -37,6 +37,13 @@ var TermConditionComponent = Vue.component
 
                     </TermConditionWrapper>
                 </div>
+
+                <div class="card>
+                    <div class="row">
+                        <button class="col">Accept</button>
+                        <button class="col">Decline</button>
+                    </div>
+                </div>
             </div>
         `
     }
