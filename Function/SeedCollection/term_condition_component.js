@@ -17,7 +17,7 @@ var TermConditionComponent = Vue.component
         },
         template: 
         `
-            <div>
+            <div style="width:100%;">
                 <div 
                     class="card" 
                     v-for="collapse_id of Object.keys(terms)"
