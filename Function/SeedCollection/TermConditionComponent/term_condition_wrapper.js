@@ -6,7 +6,7 @@ var TermConditionWrapper = Vue.component
         
         template: 
         `
-            <div :id="collapse_id" class="collapse show">
+            <div :id="collapse_id" class="collapse show" style="width:100%;">
                 <div class="card-body">
                     <TermCondition 
                         v-for="term in term_condition.text"
@@ -32,7 +32,7 @@ var TermCondition = Vue.component
                     <span class="form-check" style="float: right;">
                         <input type="checkbox" class="form-check-input" id="materialUnchecked">
                     </span>
-                    
+
                 `
             }
         },
