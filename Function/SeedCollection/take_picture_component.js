@@ -53,9 +53,10 @@ export var TakePictureComponent = Vue.component
                         <div class="row">
 
                             <div class="col-2"></div>
-                            <div class="col" align="center">
-                                <p>When shooting, be sure </p>
-                                <p>the subject’s image is in focus</p>
+                            <div class="col text-white" align="center">
+                                <br>
+                                <p>When shooting, be sure <br>
+                                the subject’s image is in focus</p>
                             </div>
                             <div class="col-2"></div>
                         </div>
