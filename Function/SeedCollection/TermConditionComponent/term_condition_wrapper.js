@@ -39,8 +39,8 @@ var TermCondition = Vue.component
         template: 
         `
             <p class="card-text">
-                <p v-html="text">
-                </p>
+                <span v-html="text">
+                </span>
                 <span class="form-check" style="float: right;">
                     <input type="checkbox" class="form-check-input" onchange="GetChecked">
                 </span>
