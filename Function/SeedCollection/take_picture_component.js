@@ -74,7 +74,7 @@ export var TakePictureComponent = Vue.component
                 var height = this.$refs.video.offsetHeight; 
                 this.$refs.canvas.width = width; 
                 this.$refs.canvas.height = height; 
-                context.drawImage(video, 0, 0, width, height);
+                context.drawImage(this.$refs.video, 0, 0, width, height);
                 this.show_picture = true; 
             }
         },
