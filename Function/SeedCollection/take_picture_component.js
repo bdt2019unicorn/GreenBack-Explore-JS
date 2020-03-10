@@ -25,7 +25,7 @@ export var TakePictureComponent = Vue.component
                             </div>
         
                             <div class="col-6" align="right">
-                                <button class="btn btn-link">V</button>
+                                <button class="btn btn-link"><i class="fa fa-plus"></i></button>
                             </div>
                         </div>
                     </div>
@@ -45,7 +45,7 @@ export var TakePictureComponent = Vue.component
                         <div class="row">
 
                             <div class="col-2"></div>
-                            <canvas class="col" ref="canvas"></canvas>
+                            <canvas v-show="show_picture" class="col" ref="canvas"></canvas>
                             <div class="col-2"></div>
                         </div>
 
