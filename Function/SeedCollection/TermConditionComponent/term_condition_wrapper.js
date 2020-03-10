@@ -40,9 +40,9 @@ var TermCondition = Vue.component
                 checkbox: 
                 `
                     <span class="form-check" style="float: right;">
-                        <input type="checkbox" class="form-check-input" id="materialUnchecked" @change="OnCheckChanged">
+                        <input type="checkbox" class="form-check-input" id="materialUnchecked" @change="this.OnCheckChanged">
                     </span>
-                    
+
                 `
             }
         },
