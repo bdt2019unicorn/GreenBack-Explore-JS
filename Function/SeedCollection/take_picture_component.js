@@ -24,6 +24,9 @@ export var TakePictureComponent = Vue.component
                     <div class="col-6">
                         <button class="col-6 top-left">X</button>
                     </div>
+                </div>
+
+                <div class="row">
 
                     <div class="col-12" style="background-color:red;">
                         <p>ha ha</p>
@@ -31,6 +34,7 @@ export var TakePictureComponent = Vue.component
                     <div class="col-12" style="background-color:blue;">
                         <p>ha ha </p>
                     </div>
+                    
                 </div>
             </div>
 
