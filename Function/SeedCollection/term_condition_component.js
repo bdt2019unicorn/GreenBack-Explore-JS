@@ -35,6 +35,7 @@ var TermConditionComponent = Vue.component
                     <TermConditionWrapper
                         :collapse_id="collapse_id"
                         :term_condition="terms[collapse_id]"
+                        @check-changed="UpdateChecking"
                     >
 
                     </TermConditionWrapper>
@@ -65,11 +66,14 @@ var TermConditionComponent = Vue.component
         },
         methods: 
         {
-            OnCheckChanged(checked)
+            UpdateChecking(checked)
             {
                 var value = Number(checked); 
                 value = 2*value - 1; 
                 this.count+=value; 
+                console.log(checked);
+                console.log(value);
+                console.log("I am updating the checking"); 
             }   
         },
         watch: 

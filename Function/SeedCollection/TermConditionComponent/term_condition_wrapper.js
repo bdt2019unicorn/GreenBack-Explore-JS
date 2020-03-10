@@ -24,43 +24,26 @@ var TermCondition = Vue.component
     "TermCondition", 
     {
         props: ["text"], 
-        data()
-        {
-            return {
-                checkbox: 
-                `
-                    <span class="form-check" style="float: right;">
-                        <input type="checkbox" class="form-check-input" @change="GetChecked">
-                    </span>
-
-                `
-            }
-        },
         template: 
         `
             <p class="card-text">
                 <span v-html="text">
                 </span>
                 <span class="form-check" style="float: right;">
-                    <input type="checkbox" class="form-check-input" @change="GetChecked">
+                    <input type="checkbox" class="form-check-input" @change="OnCheckChanged">
                 </span>
             </p>
 
         `, 
         methods: 
         {
-            GetChecked: function(event)
+            OnCheckChanged: function(event)
             {
-                console.log(event); 
                 var checked = event.currentTarget.checked; 
-                console.log(checked); 
+                this.$emit("check-changed", checked); 
             }
         },
     }
 ); 
 
 export {TermConditionWrapper, TermCondition}; 
-
-
-            // <p class="card-text" v-html="text+checkbox">
-            // </p>
