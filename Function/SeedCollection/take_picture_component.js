@@ -15,10 +15,16 @@ export var TakePictureComponent = Vue.component
         template: 
         `
             <div class="full-width full-page take-picture">
-                <button class="top-right">V</button>
-                <button class="top-left">X</button>
                 
                 <div class="row">
+                    <div class="col-6">
+                        <button class="top-right">V</button>
+                    </div>
+
+                    <div class="col-6">
+                        <button class="col-6 top-left">X</button>
+                    </div>
+
                     <div class="col-12" style="background-color:red;">
                         <p>ha ha</p>
                     </div>
