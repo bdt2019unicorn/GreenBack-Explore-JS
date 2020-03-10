@@ -48,8 +48,13 @@ var TermCondition = Vue.component
         },
         template: 
         `
-            <p class="card-text" v-html="text+checkbox">
-            </p>
+            // <p class="card-text" v-html="text+checkbox">
+            // </p>
+
+
+            <span class="form-check" style="float: right;">
+                <input type="checkbox" class="form-check-input" @change="GetChecked">
+            </span>
         `, 
         methods: 
         {
