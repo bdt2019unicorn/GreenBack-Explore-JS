@@ -21,6 +21,11 @@ var seed_collection = new Vue
         }, 
         methods: 
         {
+
+            GetChecked: function(event)
+            {
+                console.log(event); 
+            },
             //get rid of this at the end
             GiveMeAFakeTree: function()
             {
