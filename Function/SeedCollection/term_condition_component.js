@@ -59,7 +59,7 @@ var TermConditionComponent = Vue.component
                 var total = 0; 
                 for(var term in this.terms)
                 {
-                    total+= this.term[term].text.length; 
+                    total+= this.terms[term].text.length; 
                 }
                 return total; 
             } 
