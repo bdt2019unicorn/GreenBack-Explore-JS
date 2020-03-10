@@ -51,11 +51,11 @@ var TermCondition = Vue.component
             <div>
             // <p class="card-text" v-html="text+checkbox">
             // </p>
+                {{text}}
 
-
-            <span class="form-check" style="float: right;">
-                <input type="checkbox" class="form-check-input" @change="GetChecked">
-            </span>
+                <span class="form-check" style="float: right;">
+                    <input type="checkbox" class="form-check-input" @change="GetChecked">
+                </span>
             </div>
         `, 
         methods: 
