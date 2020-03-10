@@ -15,9 +15,9 @@ export var TakePictureComponent = Vue.component
         template: 
         `
 
-            <div class="full-width full-page card bg-secondary">
+            <div class="full-width full-page card">
 
-                <div class="card-header">
+                <div class="card-header bg-secondary">
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-6" align="left">
@@ -31,7 +31,7 @@ export var TakePictureComponent = Vue.component
                     </div>
                 </div>
 
-                <div class="card-body">
+                <div class="card-body bg-secondary">
                     <div class="container-fluid">
                         <div class="row">
 
@@ -52,7 +52,7 @@ export var TakePictureComponent = Vue.component
                     </div>
                 </div>
 
-                <div class="card-footer" align="center">
+                <div class="card-footer bg-light" align="center">
                     <button>Take picture</button>
                 </div>
 
