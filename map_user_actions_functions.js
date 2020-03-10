@@ -65,6 +65,7 @@ function TrackMyLocation(button)
 function ChangeComponent(button) 
 {
     window.seed_collection.current_component = button.getAttribute("data-current_component"); 
+    window.seed_collection.db_top_key = button.getAttribute("data-db_top_key"); 
 }
 
 

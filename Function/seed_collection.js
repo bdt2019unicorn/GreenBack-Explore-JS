@@ -15,7 +15,9 @@ var seed_collection = new Vue
             db_key_title: 
             {
                 "": "Seed Collection", 
-                "tips_": "Tips"
+                "tips_": "Tips", 
+                "term_condition": "Warning before collecting" + tree.type + "cones!",
+                "congratuations": "CONGRATUATIONS!"
             },
             current_component: "LearnComponent", 
             tree: {}

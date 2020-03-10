@@ -26,7 +26,15 @@ export var TakePictureComponent = Vue.component
                             </div>
         
                             <div class="col-6" align="right">
-                                <button class="btn" :disable="!show_picture"><i :class="tick_picture_icon[show_picture]"></i></button>
+                                <button 
+                                    class="btn" 
+                                    :disable="!show_picture"
+                                    data-db_top_key="congratuations" 
+                                    data-current_component="CongratulationsComponent"
+                                    onclick="ChangeComponent(this)"
+                                >
+                                    <i :class="tick_picture_icon[show_picture]"></i>
+                                </button>
                             </div>
                         </div>
                     </div>
