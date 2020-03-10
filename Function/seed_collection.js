@@ -16,7 +16,7 @@ var seed_collection = new Vue
             {
                 "": "Seed Collection", 
                 "tips_": "Tips", 
-                "term_condition": "Warning before collecting" + tree.type + "cones!",
+                "term_condition": this.TermCondition,
                 "congratuations": "CONGRATUATIONS!"
             },
             current_component: "LearnComponent", 
@@ -59,7 +59,21 @@ var seed_collection = new Vue
                     `
                 }
             }    
-        }
+        }, 
+        computed: 
+        {
+            TermCondition()
+            {
+                try 
+                {
+                    return "Warning before collecting" + this.tree.type + "cones!"; 
+                }
+                catch
+                {
+                    return ""; 
+                }
+            }    
+        },
     }
 ); 
 
