@@ -22,11 +22,11 @@ export var TakePictureComponent = Vue.component
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-6" align="left">
-                                <button class="btn"><i class="far fa-times-circle"></i></button>
+                                <button class="btn" @click="show_picture=false"><i class="far fa-times-circle"></i></button>
                             </div>
         
                             <div class="col-6" align="right">
-                                <button class="btn"><i :class="tick_picture_icon[show_picture]"></i></button>
+                                <button class="btn" :disable="!show_picture"><i :class="tick_picture_icon[show_picture]"></i></button>
                             </div>
                         </div>
                     </div>
