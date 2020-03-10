@@ -14,7 +14,7 @@ export var TakePictureComponent = Vue.component
         },
         template: 
         `
-            <div class="full-width full-page">
+            <div class="full-width full-page take-picture">
                 <button>V</button>
                 <button>X</button>
                 <p>I am testing out the water </p>
