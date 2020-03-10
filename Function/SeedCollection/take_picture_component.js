@@ -35,15 +35,26 @@ export var TakePictureComponent = Vue.component
                     <div class="container-fluid">
                         <div class="row">
 
-                            <div class="col-12" style="background-color:red;">
+                            <div class="col-2"></div>
+
+                            <div class="col" style="background-color:red;">
                                 <p>I am the video test</p>
                             </div>
 
-                            <div class="col-12" style="background-color:yellow;">
-                                <p>I am the canvas test</p>
-                            </div>
+                            <div class="col-2"></div>
+
 
                         </div>
+
+                        <div class="row">
+
+                            <div class="col-2"></div>
+                            <div class="col" style="background-color:yellow;">
+                                <p>I am the canvas test</p>
+                            </div>
+                            <div class="col-2"></div>
+                        </div>
+                        
                     </div>
                 </div>
 
