@@ -16,7 +16,7 @@ export var TakePictureComponent = Vue.component
         `
             <div class="full-width full-page take-picture">
 
-                <div class="card">
+                <div class="full-width full-page card">
 
                     <div class="card-header">
                         <div class="container-fluid">
