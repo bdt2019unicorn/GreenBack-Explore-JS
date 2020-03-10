@@ -23,8 +23,10 @@ export var TakePictureComponent = Vue.component
                     </div>
 
                     <div class="col-6" align="right">
-                        <button class="btn btn-link">V</button>
+                        <button class="btn btn-link" hidden>V</button>
                     </div>
+
+                    <br>
 
                     <div class="col-12" style="background-color:red;">
                         <p>ha ha</p>
