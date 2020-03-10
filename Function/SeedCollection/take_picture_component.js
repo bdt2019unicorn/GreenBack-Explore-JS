@@ -1,7 +1,3 @@
-
-
-
-
 export var TakePictureComponent = Vue.component
 (
     "TakePictureComponent", 
@@ -9,7 +5,12 @@ export var TakePictureComponent = Vue.component
         data: function() 
         {  
             return {
-                show_picture: false
+                show_picture: false, 
+                tick_picture_icon: 
+                {
+                    true: "far fa-check-circle", 
+                    false: "far fa-circle"
+                }
             };
         },
         template: 
@@ -21,11 +22,11 @@ export var TakePictureComponent = Vue.component
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-6" align="left">
-                                <button class="btn btn-primary">X</button>
+                                <button class="btn"><i class="far fa-times-circle"></i></button>
                             </div>
         
                             <div class="col-6" align="right">
-                                <button class="btn"><i class="far fa-circle"></i></button>
+                                <button class="btn"><i :class="tick_picture_icon[show_picture]"></i></button>
                             </div>
                         </div>
                     </div>
@@ -36,7 +37,7 @@ export var TakePictureComponent = Vue.component
                         <div class="row">
 
                             <div class="col-2"></div>
-                            <video class="col" ref="video" autoplay></video>
+                            <video v-show="!show_picture" class="col" ref="video" autoplay></video>
                             <div class="col-2"></div>
 
 
@@ -53,7 +54,7 @@ export var TakePictureComponent = Vue.component
                 </div>
 
                 <div class="card-footer bg-light" align="center">
-                    <button>Take picture</button>
+                    <button class="btn"><i class="fas fa-camera"></i></button>
                 </div>
 
             </div>
