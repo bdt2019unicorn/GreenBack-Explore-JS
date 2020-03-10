@@ -5,7 +5,7 @@ export var CongratulationsComponent = Vue.component
         template: 
         `
 
-            <div class="card bg-light">
+            <div class="card bg-light full-width">
 
                 <div class="card-header"></div>
                 <div class="card-body"></div>
