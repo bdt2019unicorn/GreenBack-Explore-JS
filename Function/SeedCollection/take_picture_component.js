@@ -16,23 +16,28 @@ export var TakePictureComponent = Vue.component
         `
             <div class="full-width full-page take-picture">
 
-                <div class="row">
+                <div class="card">
 
-                    <div class="col-6" align="left">
-                        <button class="btn btn-primary">X</button>
+                    <div class="card-header">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-6" align="left">
+                                    <button class="btn btn-primary">X</button>
+                                </div>
+            
+                                <div class="col-6" align="right">
+                                    <button class="btn btn-link" hidden>V</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="col-6" align="right">
-                        <button class="btn btn-link" hidden>V</button>
+                    <div class="card-body">
+                        Content
                     </div>
 
-                    <br>
-
-                    <div class="col-12" style="background-color:red;">
-                        <p>ha ha</p>
-                    </div>
-                    <div class="col-12" style="background-color:blue;">
-                        <p>ha ha </p>
+                    <div class="card-footer">
+                        Footer
                     </div>
 
                 </div>
