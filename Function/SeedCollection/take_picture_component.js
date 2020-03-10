@@ -54,7 +54,7 @@ export var TakePictureComponent = Vue.component
                 </div>
 
                 <div class="card-footer bg-light" align="center">
-                    <button class="btn"><i class="fas fa-camera"></i></button>
+                    <button class="btn" @click="TakePicture"><i class="fas fa-camera"></i></button>
                 </div>
 
             </div>
@@ -67,7 +67,7 @@ export var TakePictureComponent = Vue.component
         },
         methods: 
         { 
-            TakePicture: function()
+            TakePicture: function(event)
             {
                 var context = $this.$refs.canvas.getContext('2d');
                 var width = $this.$refs.video.offsetWidth; 
