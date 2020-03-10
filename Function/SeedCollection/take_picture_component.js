@@ -62,7 +62,7 @@ export var TakePictureComponent = Vue.component
         `,
         created() 
         {
-            var video = this.$refs.video;
+            var video = this.$refs['video'];
             // RunCamera(video); 
             console.log(video); 
             console.log(this.$refs); 
