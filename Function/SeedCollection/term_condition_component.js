@@ -77,10 +77,7 @@ var TermConditionComponent = Vue.component
         {
             count()
             {
-                if(this.count==this.TotalTermCondition)
-                {
-                    alert("I am bigger than 0 now"); 
-                }
+                this.accept_button = (this.count==this.TotalTermCondition); 
             }
         },
     }, 
