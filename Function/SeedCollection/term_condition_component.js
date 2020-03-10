@@ -71,16 +71,13 @@ var TermConditionComponent = Vue.component
                 var value = Number(checked); 
                 value = 2*value - 1; 
                 this.count+=value; 
-                console.log(checked);
-                console.log(value);
-                console.log("I am updating the checking"); 
             }   
         },
         watch: 
         {
             count()
             {
-                if(this.count>0)
+                if(this.count==this.TotalTermCondition)
                 {
                     alert("I am bigger than 0 now"); 
                 }
