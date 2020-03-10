@@ -18,13 +18,13 @@ var TermConditionWrapper = Vue.component
         `, 
         methods: 
         {
-            OnCheckChanged(event)
-            {
-                var checked = event.currentTarget.checked; 
-                console.log("I have just got checked"); 
-                console.log(checked);
-                // this.$emit("check-changed", checked); 
-            }  
+            // OnCheckChanged(event)
+            // {
+            //     var checked = event.currentTarget.checked; 
+            //     console.log("I have just got checked"); 
+            //     console.log(checked);
+            //     // this.$emit("check-changed", checked); 
+            // }  
         },
     } 
 ); 
@@ -50,7 +50,17 @@ var TermCondition = Vue.component
         `
             <p class="card-text" v-html="text+checkbox">
             </p>
-        `
+        `, 
+        methods: 
+        {
+            OnCheckChanged: function(event)
+            {
+                var checked = event.currentTarget.checked; 
+                console.log("I have just got checked"); 
+                console.log(checked);
+                // this.$emit("check-changed", checked); 
+            }  
+        },
     }
 ); 
 
