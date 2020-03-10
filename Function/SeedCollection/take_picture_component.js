@@ -28,7 +28,7 @@ export var TakePictureComponent = Vue.component
                             <div class="col-6" align="right">
                                 <button 
                                     class="btn" 
-                                    :disable="!show_picture"
+                                    :disabled="!show_picture"
                                     data-db_top_key="congratuations" 
                                     data-current_component="CongratulationsComponent"
                                     onclick="ChangeComponent(this)"

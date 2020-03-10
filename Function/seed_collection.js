@@ -66,7 +66,7 @@ var seed_collection = new Vue
             {
                 try 
                 {
-                    this.db_key_title["term_condition"] = "Warning before collecting" + this.tree.type + "cones!"; 
+                    this.db_key_title["term_condition"] = "Warning before collecting " + this.tree.type + " cones!"; 
                 }
                 catch
                 {
