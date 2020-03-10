@@ -32,7 +32,19 @@ export var TakePictureComponent = Vue.component
                 </div>
 
                 <div class="card-body">
-                    Content
+                    <div class="container-fluid">
+                        <div class="row">
+
+                            <div class="col" style="background-color:red;">
+                                <p>I am the video test</p>
+                            </div>
+
+                            <div class="col" style="background-color:yellow;">
+                                <p>I am the canvas test</p>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
 
                 <div class="card-footer" align="center">
