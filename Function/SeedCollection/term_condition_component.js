@@ -35,7 +35,6 @@ var TermConditionComponent = Vue.component
                     <TermConditionWrapper
                         :collapse_id="collapse_id"
                         :term_condition="terms[collapse_id]"
-                        @check-changed="OnCheckChanged"
                     >
 
                     </TermConditionWrapper>
