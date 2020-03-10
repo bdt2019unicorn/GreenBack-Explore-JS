@@ -20,15 +20,15 @@ export var TakePictureComponent = Vue.component
 
                     // <div class="col-12">
                         <div class="col-6">
-                            <p style="background-color:purple;">
+                            // <p style="background-color:purple;">
                                 <button>V</button>
-                            </p>
+                            // </p>
                         </div>
 
                         <div class="col-6">
-                            <p style="background-color:green;">
+                            // <p style="background-color:green;">
                                 <button>X</button>
-                            </p>
+                            // </p>
                         </div>
                     // </div>
 
