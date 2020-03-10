@@ -60,8 +60,31 @@ export var TakePictureComponent = Vue.component
             </div>
 
         `,
+        created() 
+        {
+            var video = this.$ref.video;
+            RunCamera(video); 
+        },
         methods: 
         { 
         },
     }, 
 ); 
+
+
+function RunCamera(video)
+{
+    var constraint = 
+    {
+        video: true
+    }
+    var get_media = navigator.mediaDevices.getUserMedia(constraint); 
+    get_media.then 
+    (
+        function(stream)
+        {
+            video.srcObject = stream;
+            video.play();
+        }
+    ); 
+}
