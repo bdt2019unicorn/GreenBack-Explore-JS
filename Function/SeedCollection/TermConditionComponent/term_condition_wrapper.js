@@ -15,17 +15,7 @@ var TermConditionWrapper = Vue.component
                     </TermCondition>
                 </div>
             </div>
-        `, 
-        methods: 
-        {
-            // OnCheckChanged(event)
-            // {
-            //     var checked = event.currentTarget.checked; 
-            //     console.log("I have just got checked"); 
-            //     console.log(checked);
-            //     // this.$emit("check-changed", checked); 
-            // }  
-        },
+        `
     } 
 ); 
 
@@ -40,7 +30,7 @@ var TermCondition = Vue.component
                 checkbox: 
                 `
                     <span class="form-check" style="float: right;">
-                        <input type="checkbox" class="form-check-input" @change="GetChecked">
+                        <input type="checkbox" class="form-check-input" onchange="GetChecked">
                     </span>
 
                 `
@@ -48,24 +38,23 @@ var TermCondition = Vue.component
         },
         template: 
         `
-            <div>
-
-                {{text}}
-
+            <p class="card-text">
+                <p v-html="text">
+                </p>
                 <span class="form-check" style="float: right;">
-                    <input type="checkbox" class="form-check-input" @change="GetChecked">
+                    <input type="checkbox" class="form-check-input" onchange="GetChecked">
                 </span>
-            </div>
+            </p>
+
         `, 
         methods: 
         {
-            // GetChecked: function(event)
-            // {
-            //     var checked = event.currentTarget.checked; 
-            //     console.log("I have just got checked"); 
-            //     console.log(checked);
-            //     // this.$emit("check-changed", checked); 
-            // }  
+            GetChecked: function(event)
+            {
+                console.log(event); 
+                var checked = event.currentTarget.checked; 
+                console.log(checked); 
+            }
         },
     }
 ); 
