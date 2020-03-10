@@ -1,5 +1,6 @@
 import * as learn_component from "./SeedCollection/learn_component.js"; 
 import * as term_condition_component from "./SeedCollection/term_condition_component.js"; 
+import * as take_picture_component from "./SeedCollection/take_picture_component.js"; 
 
 
 var seed_collection = new Vue 
