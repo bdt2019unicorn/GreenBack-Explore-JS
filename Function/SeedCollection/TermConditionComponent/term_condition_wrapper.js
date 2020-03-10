@@ -11,11 +11,19 @@ var TermConditionWrapper = Vue.component
                     <TermCondition 
                         v-for="term in term_condition.text"
                         :text="term"
+                        @check-changed="PassOnMyCheck"
                     >
                     </TermCondition>
                 </div>
             </div>
-        `
+        `, 
+        methods: 
+        {
+            PassOnMyCheck: function(checked)
+            {
+                this.$emit("check-changed", checked); 
+            }    
+        },
     } 
 ); 
 
