@@ -67,6 +67,16 @@ export var TakePictureComponent = Vue.component
         },
         methods: 
         { 
+            TakePicture: function()
+            {
+                var context = $this.$refs.canvas.getContext('2d');
+                var width = $this.$refs.video.offsetWidth; 
+                var height = $this.$refs.video.offsetHeight; 
+                canvas.width = width; 
+                canvas.height = height; 
+                context.drawImage(video, 0, 0, width, height);
+                this.show_picture = true; 
+            }
         },
     }, 
 ); 
@@ -87,4 +97,13 @@ function RunCamera(video)
             video.play();
         }
     ); 
+}
+
+function SavePicture(canvas)
+{
+    var dataURI = canvas.toDataURL('image/jpeg');
+    var a = document.createElement("a"); 
+    a.download = dataURI; 
+    a.href = dataURI; 
+    a.click(); 
 }
