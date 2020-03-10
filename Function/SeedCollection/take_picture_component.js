@@ -69,9 +69,9 @@ export var TakePictureComponent = Vue.component
         { 
             TakePicture: function(event)
             {
-                var context = $this.$refs.canvas.getContext('2d');
-                var width = $this.$refs.video.offsetWidth; 
-                var height = $this.$refs.video.offsetHeight; 
+                var context = this.$refs.canvas.getContext('2d');
+                var width = this.$refs.video.offsetWidth; 
+                var height = this.$refs.video.offsetHeight; 
                 canvas.width = width; 
                 canvas.height = height; 
                 context.drawImage(video, 0, 0, width, height);
