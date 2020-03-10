@@ -35,6 +35,7 @@ var TermConditionComponent = Vue.component
                     <TermConditionWrapper
                         :collapse_id="collapse_id"
                         :term_condition="terms[collapse_id]"
+                        @check-changed="OnCheckChanged"
                     >
 
                     </TermConditionWrapper>
@@ -71,6 +72,16 @@ var TermConditionComponent = Vue.component
                 value = 2*value - 1; 
                 this.count+=value; 
             }   
+        },
+        watch: 
+        {
+            count()
+            {
+                if(this.count>0)
+                {
+                    alert("I am bigger than 0 now"); 
+                }
+            }
         },
     }, 
 ); 
