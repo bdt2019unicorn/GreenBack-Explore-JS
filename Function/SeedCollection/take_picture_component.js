@@ -35,8 +35,8 @@ export var TakePictureComponent = Vue.component
                     Content
                 </div>
 
-                <div class="card-footer">
-                    Footer
+                <div class="card-footer" align="center">
+                    <button>Take picture</button>
                 </div>
 
             </div>
