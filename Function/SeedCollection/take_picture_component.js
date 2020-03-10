@@ -18,12 +18,12 @@ export var TakePictureComponent = Vue.component
 
                 <div class="row">
 
-                    <div class="col-6">
-                            <button class="top-left">V</button>
+                    <div class="col-6" align="left">
+                        <button class="btn btn-primary">X</button>
                     </div>
 
-                    <div class="col-6">
-                            <button class="top-right">X</button>
+                    <div class="col-6" align="right">
+                        <button class="btn btn-link">V</button>
                     </div>
 
                     <div class="col-12" style="background-color:red;">
