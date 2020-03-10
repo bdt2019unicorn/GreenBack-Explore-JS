@@ -20,8 +20,10 @@ export var TakePictureComponent = Vue.component
                 
                 <div class="row">
                     <div class="col-12" style="background-color:red;">
+                        <p>ha ha</p>
                     </div>
                     <div class="col-12" style="background-color:blue;">
+                        <p>ha ha </p>
                     </div>
                 </div>
             </div>
