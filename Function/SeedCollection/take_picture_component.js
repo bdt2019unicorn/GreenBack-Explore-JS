@@ -25,7 +25,7 @@ export var TakePictureComponent = Vue.component
                             </div>
         
                             <div class="col-6" align="right">
-                                <button><i class="fa fa-circle"></i></button>
+                                <button class="btn"><i class="far fa-circle"></i></button>
                             </div>
                         </div>
                     </div>
