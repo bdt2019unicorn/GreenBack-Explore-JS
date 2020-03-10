@@ -36,11 +36,7 @@ export var TakePictureComponent = Vue.component
                         <div class="row">
 
                             <div class="col-2"></div>
-
-                            <div class="col" style="background-color:red;">
-                                <p>I am the video test</p>
-                            </div>
-
+                            <video class="col" ref="video" autoplay></video>
                             <div class="col-2"></div>
 
 
@@ -49,12 +45,10 @@ export var TakePictureComponent = Vue.component
                         <div class="row">
 
                             <div class="col-2"></div>
-                            <div class="col" style="background-color:yellow;">
-                                <p>I am the canvas test</p>
-                            </div>
+                            <canvas class="col" ref="canvas"></canvas>
                             <div class="col-2"></div>
                         </div>
-                        
+
                     </div>
                 </div>
 
