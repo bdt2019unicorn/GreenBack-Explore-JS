@@ -11,6 +11,7 @@ var TermConditionWrapper = Vue.component
                     <TermCondition 
                         v-for="term in term_condition.text"
                         :text="term"
+                        @check-changed="$this.$emit('check-changed',1);"
                     >
                     </TermCondition>
                 </div>
