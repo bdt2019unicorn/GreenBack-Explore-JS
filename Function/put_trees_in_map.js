@@ -26,10 +26,10 @@ function PopUpTemplate(tree)
             let button = document.createElement("button"); 
             button.setAttribute("onclick","TrackMyLocation(this)"); 
             button.setAttribute("data-tree",JSON.stringify(tree)); 
-            button.classList.add("btn","btn-primary","btn-circle","btn-lg"); 
+            button.classList.add("btn","btn-circle","btn-lg"); 
             button.title = "Go to this tree"; 
             let button_icon = document.createElement("i"); 
-            button_icon.classList.add("fas", "fa-directions"); 
+            button_icon.classList.add("fas", "fa-walking");
             button.append(button_icon); 
             paragraph.append(button); 
             return paragraph; 

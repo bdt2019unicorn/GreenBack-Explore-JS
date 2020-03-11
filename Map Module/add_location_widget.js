@@ -11,6 +11,7 @@ export function AddLocationWidget(Locate, view)
                 }
             ); 
             view.ui.add(locate, ui_position);
+            window.location_widget = locate; 
         }
     }
     support_functions.PutLocationWidget("top-left");   
