@@ -13,22 +13,15 @@ export function CreateStoreTrack()
             {
                 UpdateAcceptButton(state, checked)
                 {
-                    var support_functions = 
+                    var NewCount = function()
                     {
-                        NewCount()
-                        {
-                            var value = Number(checked); 
-                            value = 2*value - 1; 
-                            let new_count = state.term_condition_count+value; 
-                            return (isNaN(new_count))? state.term_condition_count:new_count; 
-                        }, 
-                        ModifyAccept(new_count)
-                        {
-                            state.accept_button = (new_count==state.total_terms); 
-                        }
+                        var value = Number(checked); 
+                        value = 2*value - 1; 
+                        let new_count = state.term_condition_count+value; 
+                        return (isNaN(new_count))? state.term_condition_count:new_count; 
                     }
-                    var new_count = support_functions.NewCount(); 
-                    support_functions.ModifyAccept(new_count); 
+                    state.term_condition_count = NewCount(); 
+                    state.accept_button = (state.term_condition_count==state.total_terms);
                 }, 
                 GetTotalTerms(state,total)
                 {
