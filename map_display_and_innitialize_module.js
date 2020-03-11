@@ -13,9 +13,14 @@ InnitizeMap.then(DetectCurrentLocation).then
                 AddLocationWidget(window.ArcGis.Locate, window.map_view); 
                 GetDataAroundLocation();
                 FindDirectionToPoint(); 
-                console.log(window.location_widget); 
-                window.location_widget.locate(); 
                 resolve(); 
+            }
+        ). then 
+        (
+            function()
+            {
+                console.log("I should locate the user now"); 
+                window.location_widget.locate(); 
             }
         ); 
     }
