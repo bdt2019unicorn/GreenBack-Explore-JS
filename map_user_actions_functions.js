@@ -3,6 +3,7 @@ function TrackMyLocation(button)
     var close_button = $("div.esri-popup__main-container.esri-widget.esri-popup--is-collapsible header div.esri-popup__header-buttons div.esri-popup__button[title='Close']"); 
     try 
     {
+        console.log("try to click this thing now"); 
         close_button[0].click(); 
     }
     catch(error)
