@@ -1,3 +1,5 @@
+window.location_widget.locate(); 
+
 function TrackMyLocation(button)
 {
     var CurrentLocationGraphic = function(uid)

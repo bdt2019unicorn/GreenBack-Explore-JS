@@ -15,13 +15,6 @@ InnitizeMap.then(DetectCurrentLocation).then
                 FindDirectionToPoint(); 
                 resolve(); 
             }
-        ). then 
-        (
-            function()
-            {
-                console.log("I should locate the user now"); 
-                window.location_widget.locate(); 
-            }
-        ); 
+        );
     }
 ); 
