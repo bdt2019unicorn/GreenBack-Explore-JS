@@ -62,6 +62,9 @@ var TermConditionComponent = Vue.component
                     return total; 
                 }
                 var total = TotalTermCondition(this.terms); 
+                console.log("I am checking the acceptance and the state is ",window.term_condition_store_track.getState()); 
+                console.log(window.term_condition_store_track.getState() ==total); 
+                console.log(total); 
                 return (window.term_condition_store_track.getState() ==total); 
             }
         }
