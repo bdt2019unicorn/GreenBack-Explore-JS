@@ -51,19 +51,19 @@ var TermConditionComponent = Vue.component
         `, 
         mounted() 
         {
-            var TotalTerms = function()
+            var TotalTerms = function(terms)
             {
                 var total = 0; 
-                for (var term in this.terms)
+                for (var term in terms)
                 {
-                    total+=this.terms[term].text.length; 
+                    total+=terms[term].text.length; 
                 }
                 return total; 
             }
 
             window.term_condition_store_track.commit
             (
-                "GetTotalTerms", TotalTerms()
+                "GetTotalTerms", TotalTerms(this.terms)
             ); 
         },
     }, 
