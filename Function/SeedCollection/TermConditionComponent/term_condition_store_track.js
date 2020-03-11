@@ -29,6 +29,10 @@ export function CreateStoreTrack()
                     }
                     var new_count = support_functions.NewCount(); 
                     support_functions.ModifyAccept(new_count); 
+                }, 
+                GetTotalTerms(state,total)
+                {
+                    state.total_terms = total; 
                 }
             }
         }
