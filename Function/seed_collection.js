@@ -5,6 +5,7 @@ import * as congratuations_component from "./SeedCollection/congratuations_compo
 
 var term_condition_store_track = term_condition_component.CreateStoreTrack(); 
 console.log(term_condition_store_track); 
+window.term_condition_store_track = term_condition_store_track; 
 
 var seed_collection = new Vue 
 (
