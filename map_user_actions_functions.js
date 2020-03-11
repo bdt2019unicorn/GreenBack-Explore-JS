@@ -1,7 +1,10 @@
 function TrackMyLocation(button)
 {
     var close_button = $("div.esri-popup__main-container.esri-widget.esri-popup--is-collapsible header div.esri-popup__header-buttons div.esri-popup__button[title='Close']"); 
-    close_button[0].click(); 
+    // close_button[0].click(); 
+    console.log(close_button); 
+    window.close_button = close_button; 
+    return; 
 
     var CurrentLocationGraphic = function(uid)
     {
