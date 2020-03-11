@@ -6,12 +6,13 @@ export function CreateStoreTrack()
         {
             var value = Number(action.checked); 
             value = 2*value - 1; 
+            var new_state = state+value; 
             console.log("state",state); 
             console.log("value",value);
             console.log("state+value=",state+value); 
             console.log("I have just got run, reducer");
             console.log(action);  
-            return state+value; 
+            return (isNaN(new_state))? state:new_state; 
         }, 
         current_state_count: 0
     } 
