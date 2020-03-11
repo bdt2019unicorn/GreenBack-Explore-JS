@@ -7,15 +7,22 @@ InnitizeMap.then(DetectCurrentLocation).then
     {
         window.map_view.center = point;
         var location_widget = AddLocationWidget(window.ArcGis.Locate, window.map_view); 
-        return location_widget.locate().then(()=>{console.log("ha ha ha ha ha");}); 
-        // return new Promise 
-        // (
-        //     (resolve, reject)=>
-        //     {
-        //         GetDataAroundLocation();
-        //         FindDirectionToPoint(); 
-        //         resolve(); 
-        //     }
-        // );
+        return new Promise 
+        (
+            (resolve, reject)=>
+            {
+                GetDataAroundLocation();
+                FindDirectionToPoint(); 
+                resolve(location_widget); 
+            }
+        ).then 
+        (
+            function(location_widget)
+            {
+                console.log(location_widget); 
+                console.log("I should be working now"); 
+                return location_widget.locate(); 
+            }
+        );
     }
 ); 
