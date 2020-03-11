@@ -19,9 +19,10 @@ InnitizeMap.then(DetectCurrentLocation).then
         (
             function(location_widget)
             {
-                console.log(location_widget); 
-                console.log("I should be working now"); 
-                return location_widget.locate(); 
+                // console.log(location_widget); 
+                // console.log("I should be working now"); 
+                // return location_widget.locate(); 
+                window.location_widget = location_widget; 
             }
         );
     }
