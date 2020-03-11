@@ -12,7 +12,7 @@ function TrackMyLocation(button)
         console.log("error"); 
     }
     // close_button[0].click(); 
-    console.log(close_button); 
+    // console.log(close_button); 
     window.close_button = close_button; 
     return; 
 
