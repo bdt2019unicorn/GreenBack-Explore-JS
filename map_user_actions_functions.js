@@ -4,6 +4,7 @@ function TrackMyLocation(button)
     try 
     {
         close_button[0].click(); 
+        alert("Your challenge is started. You can start going to the tree now");
     }
     catch(error)
     {
