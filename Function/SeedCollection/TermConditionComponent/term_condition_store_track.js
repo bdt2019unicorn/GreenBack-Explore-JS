@@ -2,7 +2,7 @@ export function CreateStoreTrack()
 {
     var redux_store_support =
     {
-        ReducerFunctionNextStateFromCurrentStateAction(state=this.current_state_count,action)
+        ReducerFunctionNextStateFromCurrentStateAction(state=redux_store_support.current_state_count,action)
         {
             var value = Number(action); 
             value = 2*value - 1; 
