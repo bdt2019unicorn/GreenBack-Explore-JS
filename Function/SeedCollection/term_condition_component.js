@@ -61,7 +61,7 @@ var TermConditionComponent = Vue.component
             }, 
             AcceptButton()
             {
-                var total = this.TotalTermCondition; 
+                var total = this.TotalTermCondition(); 
                 return (window.term_condition_store_track ==total); 
             }
         }
