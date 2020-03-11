@@ -3,12 +3,9 @@ import * as term_condition_component from "./SeedCollection/term_condition_compo
 import * as take_picture_component from "./SeedCollection/take_picture_component.js"; 
 import * as congratuations_component from "./SeedCollection/congratuations_component.js"; 
 
-// var term_condition_store_track = term_condition_component.CreateStoreTrack(); 
-// console.log(term_condition_store_track); 
 window.term_condition_store_track = term_condition_component.CreateStoreTrack();
-console.log(window.term_condition_store_track);  
 
-var seed_collection = new Vue 
+window.seed_collection = new Vue 
 (
     {
         el: "#seed_collection", 
@@ -81,5 +78,3 @@ var seed_collection = new Vue
         },
     }
 ); 
-
-window.seed_collection = seed_collection; 
