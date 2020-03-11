@@ -6,15 +6,16 @@ InnitizeMap.then(DetectCurrentLocation).then
     function(point)
     {
         window.map_view.center = point;
-        return new Promise 
-        (
-            (resolve, reject)=>
-            {
-                AddLocationWidget(window.ArcGis.Locate, window.map_view); 
-                GetDataAroundLocation();
-                FindDirectionToPoint(); 
-                resolve(); 
-            }
-        );
+        var location_widget = AddLocationWidget(window.ArcGis.Locate, window.map_view); 
+        return location_widget.locate().then(()=>{console.log("ha ha ha ha ha");}); 
+        // return new Promise 
+        // (
+        //     (resolve, reject)=>
+        //     {
+        //         GetDataAroundLocation();
+        //         FindDirectionToPoint(); 
+        //         resolve(); 
+        //     }
+        // );
     }
 ); 
