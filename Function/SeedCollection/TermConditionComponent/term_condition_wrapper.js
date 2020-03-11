@@ -40,12 +40,9 @@ var TermCondition = Vue.component
             OnCheckChanged: function(event)
             {
                 var checked = event.currentTarget.checked; 
-                window.term_condition_store_track.dispatch
+                window.term_condition_store_track.commit
                 (
-                    {
-                        checked: checked, 
-                        type: ""
-                    }
+                    "UpdateAcceptButton", checked
                 ); 
             }
         },
