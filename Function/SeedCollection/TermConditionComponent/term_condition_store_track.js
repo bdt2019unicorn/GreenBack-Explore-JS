@@ -2,14 +2,15 @@ export function CreateStoreTrack()
 {
     var redux_store_support =
     {
-        ReducerFunctionNextStateFromCurrentStateAction(state=0,action)
+        ReducerFunctionNextStateFromCurrentStateAction(state=this.current_state_count,action)
         {
             var value = Number(action.checked); 
             value = 2*value - 1; 
             console.log("state",state); 
             console.log("value",value);
             console.log("state+value=",state+value); 
-            console.log("I have just got run, reducer"); 
+            console.log("I have just got run, reducer");
+            console.log(action);  
             return state+value; 
         }, 
         current_state_count: 0
