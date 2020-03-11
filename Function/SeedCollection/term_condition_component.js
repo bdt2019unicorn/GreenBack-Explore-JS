@@ -12,8 +12,6 @@ var TermConditionComponent = Vue.component
         {  
             return {
                 terms: term_condition_data, 
-                count: 0, 
-                accept_button: false
             };
         },
         template: 
@@ -34,7 +32,6 @@ var TermConditionComponent = Vue.component
                     <TermConditionWrapper
                         :collapse_id="collapse_id"
                         :term_condition="terms[collapse_id]"
-                        @check-changed="UpdateChecking"
                     >
 
                     </TermConditionWrapper>
@@ -43,7 +40,7 @@ var TermConditionComponent = Vue.component
                 <div class="card">
                     <div class="row">
                         <div class="col"></div>
-                        <button class="btn btn-success col" :disabled="!accept_button">Accept</button>
+                        <button class="btn btn-success col" :disabled="!AcceptButton">Accept</button>
                         <div class="col"></div>
                         <button class="btn btn-danger col">Decline</button>
                         <div class="col"></div>
@@ -61,24 +58,13 @@ var TermConditionComponent = Vue.component
                     total+= this.terms[term].text.length; 
                 }
                 return total; 
-            } 
-        },
-        methods: 
-        {
-            UpdateChecking(checked)
+            }, 
+            AcceptButton()
             {
-                var value = Number(checked); 
-                value = 2*value - 1; 
-                this.count+=value; 
-            }   
-        },
-        watch: 
-        {
-            count()
-            {
-                this.accept_button = (this.count==this.TotalTermCondition); 
+                var total = this.TotalTermCondition; 
+                return (window.term_condition_store_track ==total); 
             }
-        },
+        }
     }, 
 ); 
 
