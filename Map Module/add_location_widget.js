@@ -10,7 +10,7 @@ export function AddLocationWidget(Locate, view)
                     view: view
                 }
             ); 
-            // view.ui.add(locate, ui_position);
+            view.ui.add(locate, ui_position);
             return locate; 
         }
     }
