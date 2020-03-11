@@ -40,7 +40,7 @@ var TermConditionComponent = Vue.component
                 <div class="card">
                     <div class="row">
                         <div class="col"></div>
-                        <button class="btn btn-success col" disabled="{{AcceptButton()}}">Accept</button>
+                        <button class="btn btn-success col" :disabled="AcceptButton()">Accept</button>
                         <div class="col"></div>
                         <button class="btn btn-danger col">Decline</button>
                         <div class="col"></div>
