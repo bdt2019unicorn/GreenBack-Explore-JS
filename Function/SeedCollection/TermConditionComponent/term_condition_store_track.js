@@ -6,6 +6,9 @@ export function CreateStoreTrack()
         {
             var value = Number(action.checked); 
             value = 2*value - 1; 
+            console.log("state",state); 
+            console.log("value",value);
+            console.log("state+value=",state+value); 
             console.log("I have just got run, reducer"); 
             return state+value; 
         }, 
