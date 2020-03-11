@@ -13,6 +13,7 @@ InnitizeMap.then(DetectCurrentLocation).then
                 AddLocationWidget(window.ArcGis.Locate, window.map_view); 
                 GetDataAroundLocation();
                 FindDirectionToPoint(); 
+                window.location_widget.locate(); 
                 resolve(); 
             }
         ); 
