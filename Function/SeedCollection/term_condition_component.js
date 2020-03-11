@@ -52,16 +52,16 @@ var TermConditionComponent = Vue.component
         {
             AcceptButton()
             {
-                var TotalTermCondition = function()
+                var TotalTermCondition = function(terms)
                 {
                     var total = 0; 
-                    for(var term in this.terms)
+                    for(var term in terms)
                     {
-                        total+= this.terms[term].text.length; 
+                        total+= terms[term].text.length; 
                     }
                     return total; 
                 }
-                var total = TotalTermCondition(); 
+                var total = TotalTermCondition(this.terms); 
                 return (window.term_condition_store_track ==total); 
             }
         }
