@@ -48,7 +48,7 @@ var TermConditionComponent = Vue.component
                 </div>
             </div>
         `,
-        computed: 
+        methods: 
         {
             AcceptButton()
             {
