@@ -8,7 +8,6 @@ var TermConditionComponent = Vue.component
 (
     "TermConditionComponent", 
     {
-        props:["accept_term_condition"],
         data: function() 
         {  
             return {
