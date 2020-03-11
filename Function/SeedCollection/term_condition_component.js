@@ -62,7 +62,7 @@ var TermConditionComponent = Vue.component
                     return total; 
                 }
                 var total = TotalTermCondition(this.terms); 
-                return (window.term_condition_store_track ==total); 
+                return (window.term_condition_store_track.getState() ==total); 
             }
         }
     }, 
