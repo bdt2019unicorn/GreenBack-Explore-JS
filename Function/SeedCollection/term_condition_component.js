@@ -11,7 +11,9 @@ var TermConditionComponent = Vue.component
         data: function() 
         {  
             return {
-                terms: term_condition_data
+                terms: term_condition_data, 
+                count: 0,
+                accept_button: false 
             };
         },
         template: 
@@ -40,17 +42,17 @@ var TermConditionComponent = Vue.component
                 <div class="card">
                     <div class="row">
                         <div class="col"></div>
-                        <button class="btn btn-success col" :disabled="!AcceptButton()">Accept</button>
+                        <button class="btn btn-success col" :disabled="accept_button">Accept</button>
                         <div class="col"></div>
                         <button class="btn btn-danger col">Decline</button>
                         <div class="col"></div>
                     </div>
                 </div>
             </div>
-        `,
-        methods: 
+        `, 
+        watch: 
         {
-            AcceptButton()
+            count()
             {
                 var TotalTermCondition = function(terms)
                 {
@@ -66,9 +68,9 @@ var TermConditionComponent = Vue.component
                 console.log("this.count=",this.count); 
                 console.log(window.term_condition_store_track.getState() ==total); 
                 console.log(total); 
-                return (window.term_condition_store_track.getState() ==total); 
+                this.accept_button = this.count ==total; 
             }
-        }
+        },
     }, 
 ); 
 
