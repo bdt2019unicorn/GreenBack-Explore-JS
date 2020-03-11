@@ -4,7 +4,7 @@ export function CreateStoreTrack()
     {
         ReducerFunctionNextStateFromCurrentStateAction(state=redux_store_support.current_state_count,action)
         {
-            var value = Number(action); 
+            var value = Number(action.checked); 
             value = 2*value - 1; 
             return state+value; 
         }, 
