@@ -20,7 +20,7 @@ export function CreateStoreTrack()
                             var value = Number(checked); 
                             value = 2*value - 1; 
                             let new_count = state.term_condition_count+value; 
-                            return (isNaN(new_count))? state.term_condition_count:new_state; 
+                            return (isNaN(new_count))? state.term_condition_count:new_count; 
                         }, 
                         ModifyAccept(new_count)
                         {
