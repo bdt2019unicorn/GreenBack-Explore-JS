@@ -1,8 +1,11 @@
 import {term_condition_data} from "./TermConditionComponent/term_condition_data.js"; 
 import {TermConditionHeader} from "./TermConditionComponent/term_condition_header.js"; 
 import * as term_condition_wrapper from "./TermConditionComponent/term_condition_wrapper.js"; 
+import {CreateStoreTrack} from "./TermConditionComponent/term_condition_store_track.js"; 
 
-
+var tracking_term_condition_count = CreateStoreTrack(); 
+window.tracking_term_condition_count = tracking_term_condition_count; 
+console.log(tracking_term_condition_count); 
 
 
 var TermConditionComponent = Vue.component
