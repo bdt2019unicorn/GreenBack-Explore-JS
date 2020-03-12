@@ -9,8 +9,8 @@ export var ListItem = Vue.component
 
                 <div class="row">
 
-                    <div class="col-3">
-                        <i class="fas fa-lightbulb flex-grow-1"></i>
+                    <div class="col-3 d-flex">
+                        <i class="fas fa-lightbulb align-self-center"></i>
                     </div>
                     <div class="col-9 bg-secondary rounded">
                         <p class="text-white">
