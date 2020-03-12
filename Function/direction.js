@@ -54,13 +54,13 @@ function Directions(destination_graphic)
             return window.location_widget.locate(); 
         },
 
-        CreateGraphicCurrentLocation(coordinate)
+        CreateGraphicCurrentLocation(location)
         {
             window.location_widget.goToLocationEnabled = true; 
             var graphic = new window.ArcGis.Graphic 
             (
                 {
-                    geometry: [coordinate.coords.longitude, coordinate.coords.latitude], 
+                    geometry: new window.ArcGis.Point(location.coords.longitude,location.coords.latitude), 
                     symbol: 
                     {
                         type: "simple-marker",
