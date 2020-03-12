@@ -9,9 +9,10 @@ export var ListItem = Vue.component
 
                 <div class="d-flex justify-content-between align-items-start">
 
-                    <i class="fas fa-lightbulb flex-grow-1"></i>
-                    <br class="flex-grow-1">
-                    <div class="bg-secondary rounded flex-grow-3">
+                    <span style="flex-grow:2;">
+                        <i class="fas fa-lightbulb flex-grow-1"></i>
+                    </span>
+                    <div class="bg-secondary rounded" style="flex-grow:3;">
                         <p class="text-white">
                             {{value}}
                         </p>
