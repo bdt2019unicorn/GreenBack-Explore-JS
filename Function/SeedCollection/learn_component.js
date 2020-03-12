@@ -6,13 +6,7 @@ var Learn = Vue.component
 (
     "LearnComponent", 
     {
-        data() 
-        {
-            return {
-                current_tab: menu[0]
-            }
-        },
-        props: ["tree", "db_top_key", "db_key_title", "menu"], 
+        props: ["tree","current_tab", "db_top_key", "db_key_title", "menu"], 
         template:
         `
             <div class="card-body">
