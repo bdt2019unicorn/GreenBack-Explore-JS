@@ -13,6 +13,7 @@ export var ListItem = Vue.component
                     {{value}}
                 <div>
                 <div class="col-12">
+                    <br>
                 </div>
             </div>
         `
