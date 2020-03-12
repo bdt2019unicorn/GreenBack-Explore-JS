@@ -6,7 +6,7 @@ var TermConditionWrapper = Vue.component
         
         template: 
         `
-            <div :id="collapse_id" class="collapse show">
+            <div :id="collapse_id" class="collapse">
                 <div class="card-body">
                     <TermCondition 
                         v-for="term in term_condition.text"
