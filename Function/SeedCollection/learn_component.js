@@ -30,7 +30,7 @@ var Learn = Vue.component
         {
             ButtonClass(item)
             {
-                let btn_class = ["btn","bg-light", "col"]; 
+                let btn_class = ["btn","bg-btn-default", "col"]; 
                 if(this.current_tab==item)
                 {
                     btn_class.push("active"); 
