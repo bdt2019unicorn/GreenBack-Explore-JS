@@ -57,10 +57,11 @@ function Directions(destination_graphic)
         CreateGraphicCurrentLocation(location)
         {
             window.location_widget.goToLocationEnabled = true; 
+            var geometry = new window.ArcGis.Point(location.coords.longitude,location.coords.latitude); 
             var graphic = new window.ArcGis.Graphic 
             (
                 {
-                    geometry: new window.ArcGis.Point(location.coords.longitude,location.coords.latitude), 
+                    geometry: geometry, 
                     symbol: 
                     {
                         type: "simple-marker",
