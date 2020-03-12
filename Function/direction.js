@@ -51,6 +51,7 @@ function Directions(destination_graphic)
         DetectCurrentLocation()
         {
             window.location_widget.goToLocationEnabled = false; 
+            console.log("I am here at detect current location"); 
             return window.location_widget.locate(); 
         },
 
@@ -92,6 +93,7 @@ function Directions(destination_graphic)
                 }
             ); 
             window.map_view.removeMany(irrelevant_graphics); 
+            return Promise.resolve(); 
         }, 
         GetDirection(current_location_graphic)
         {
@@ -138,9 +140,7 @@ function Directions(destination_graphic)
         }
     }
 
-    support_functions.RemoveIrrelevantGraphics(); 
-
-    support_functions.DetectCurrentLocation().then(support_functions.GraphicalLocation).then(support_functions.GetDirection); 
+    support_functions.RemoveIrrelevantGraphics().then(support_functions.DetectCurrentLocation).then(support_functions.GraphicalLocation).then(support_functions.GetDirection); 
 
 }
 
