@@ -5,7 +5,7 @@ export var TermConditionHeader = Vue.component
         props:["collapse_id","title"], 
         template: 
         `
-            <div class="card-header">
+            <div class="card-header collapse">
                 <h5>
                         <span>{{title}}</span>
                         <a 
