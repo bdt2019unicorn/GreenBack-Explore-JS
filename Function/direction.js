@@ -149,6 +149,7 @@ function Directions(destination_graphic)
     // support_functions.RemoveIrrelevantGraphics().then(support_functions.FindCurrentLocation).then(support_functions.GraphicalLocation).then(support_functions.GetDirection); 
     var promise = support_functions.RemoveIrrelevantGraphics(); 
     window.promise_fails = promise; 
+    console.log(support_functions); 
 
     // support_functions.RemoveIrrelevantGraphics().then(support_functions.FindCurrentLocation); 
 
