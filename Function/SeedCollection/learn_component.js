@@ -35,6 +35,8 @@ var Learn = Vue.component
                 {
                     btn_class.push("active"); 
                 }
+                console.log(item);
+                console.log(btn_class); 
                 return btn_class; 
             },
         },
