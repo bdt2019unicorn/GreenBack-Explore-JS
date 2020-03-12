@@ -74,8 +74,8 @@ function ChangeTipsAndCollection(button)
 
 function GiveMeAFakeTree()
 {
-    window.seed_collection.tree = 
-    {
+    console.log("I am giving you a fake tree now"); 
+    window.seed_collection.tree = {
         name: "Tree 2", 
         type: "Kauri", 
         store: 
