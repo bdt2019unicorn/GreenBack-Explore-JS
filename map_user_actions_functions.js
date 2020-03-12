@@ -83,29 +83,29 @@ function GiveMeAFakeTree()
             type: "Kauri", 
             store: 
             `
-                Do a
-                Do b
-                Do c
+                Store cones in a Warm and dry area
+                Wait until cones crack open and reveal the winged seed
+                Remove winged seeds from cone segments
+                Place in clean, sterile, dry glass jar for storage
             `,
             collect: 
             `
-                collect 1
-                collect 2
-                collect 3
+                Look for the green, round shaped cones around its branches
+                Detach cone from the healthy tree if in reach
+                Place in a large paper bag or container
+                With a pen or pencil, write the date and name of tree
             `, 
             tips_store: 
             `
-                tips store 1
-                tips store 2 
-                tips store 3
-                tips store 4
+                Cones placed in a dry room will naturally disintegrate within 5-10 days.
+                To make your seeds shelf-life longer, keep them in an airtight container in the refrigerator.
+                To seperate the seeds from opened cones, sieve and hand pick them from cone debris and scales.
             `,
             tips_collect: 
             `
-                tips collect 1
-                tips collect 2
-                tips collect 3
-                tips collect 4
+                A good  sign for collecting is when scales first start to appear on the tree floor.
+                If cones are too high, place a raised sheet or tray below the canopy to catch the seeds and cones.
+                If you leave a tray or sheet, don’t forget to come back and collect it in a couple days!
             `
         };
     }

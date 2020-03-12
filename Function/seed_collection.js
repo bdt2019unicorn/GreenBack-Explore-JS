@@ -16,7 +16,7 @@ window.seed_collection = new Vue
             db_top_key: "", 
             db_key_title: 
             {
-                "": "Seed Collection", 
+                "": "Collection and Storage", 
                 "tips_": "Tips", 
                 "term_condition": "",
                 "congratuations": "CONGRATUATIONS!"
