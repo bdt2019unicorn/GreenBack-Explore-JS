@@ -9,11 +9,11 @@ export var ListItem = Vue.component
 
                 <div class="row">
 
-                    <div class="col-3 d-flex">
+                    <div class="col-2 d-flex">
                         <i class="fas fa-lightbulb align-self-center"></i>
                     </div>
-                    <div class="col-9 bg-secondary rounded">
-                        <p class="text-white">
+                    <div class="col-10 bg-secondary rounded d-flex">
+                        <p class="text-white align-self-center">
                             {{value}}
                         </p>
                     </div>
