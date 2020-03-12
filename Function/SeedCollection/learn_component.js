@@ -6,7 +6,13 @@ var Learn = Vue.component
 (
     "LearnComponent", 
     {
-        props: ["tree","current_tab", "db_top_key", "db_key_title", "menu"], 
+        data() 
+        {
+            return {
+                current_tab: this.menu[0]
+            }
+        },
+        props: ["tree", "db_top_key", "db_key_title", "menu"], 
         template:
         `
             <div class="card-body">
@@ -20,7 +26,7 @@ var Learn = Vue.component
                     </button>
                 </div>
                 <div class="row">
-                    <Information :data="tree[db_top_key+current_tab.toLowerCase()]">
+                    <Information :data="tree[db_top_key+this.current_tab.toLowerCase()]">
                     </Information>
                 </div>
             </div>
@@ -34,9 +40,7 @@ var Learn = Vue.component
                 if(this.current_tab==item)
                 {
                     btn_class.push("active"); 
-                }
-                console.log(item);
-                console.log(btn_class); 
+                } 
                 return btn_class; 
             },
         },
