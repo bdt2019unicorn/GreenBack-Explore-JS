@@ -148,6 +148,9 @@ function Directions(destination_graphic)
 
     // support_functions.RemoveIrrelevantGraphics().then(support_functions.FindCurrentLocation).then(support_functions.GraphicalLocation).then(support_functions.GetDirection); 
 
+    console.log("I am at the directions function"); 
+    console.log(destination_graphic); 
+
     support_functions.RemoveIrrelevantGraphics().then(support_functions.FindCurrentLocation); 
 
 }
