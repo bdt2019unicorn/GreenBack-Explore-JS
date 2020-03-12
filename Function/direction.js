@@ -165,6 +165,8 @@ function FindDirectionToPoint()
                             let graphic = response.results[index].graphic; 
                             if(window.map_view.graphics.includes(graphic))
                             {
+                                console.log("I found you here boy"); 
+                                console.log(graphic); 
                                 resolve(graphic); 
                             }
                         }
