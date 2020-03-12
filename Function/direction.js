@@ -81,22 +81,22 @@ function Directions(destination_graphic)
 
         RemoveIrrelevantGraphics()
         {
-            var irrelevant_graphics = []; 
-            window.map_view.graphics.items.forEach 
-            (
-                graphic=>
-                {
-                    if(graphic.geometry.type!="point")
-                    {
-                        irrelevant_graphics.push(graphic); 
-                    }
-                }
-            ); 
-            window.map_view.removeMany(irrelevant_graphics); 
             return new Promise
             (
                 (resolve,reject)=>
                 {
+                    var irrelevant_graphics = []; 
+                    window.map_view.graphics.items.forEach 
+                    (
+                        graphic=>
+                        {
+                            if(graphic.geometry.type!="point")
+                            {
+                                irrelevant_graphics.push(graphic); 
+                            }
+                        }
+                    ); 
+                    window.map_view.removeMany(irrelevant_graphics); 
                     resolve(); 
                 }
             );
@@ -147,7 +147,7 @@ function Directions(destination_graphic)
     }
 
     // support_functions.RemoveIrrelevantGraphics().then(support_functions.FindCurrentLocation).then(support_functions.GraphicalLocation).then(support_functions.GetDirection); 
-    var promise = support_functions.RemoveIrrelevantGraphics().then(support_functions.FindCurrentLocation); 
+    var promise = support_functions.RemoveIrrelevantGraphics(); 
     window.promise_fails = promise; 
 
     // support_functions.RemoveIrrelevantGraphics().then(support_functions.FindCurrentLocation); 
