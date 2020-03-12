@@ -50,9 +50,9 @@ function Directions(destination_graphic)
     {
         FindCurrentLocation()
         {
-            // window.location_widget.goToLocationEnabled = false; 
+            window.location_widget.goToLocationEnabled = false; 
             console.log("I am here at detect current location"); 
-            // return window.location_widget.locate(); 
+            return window.location_widget.locate(); 
         },
 
         GraphicalLocation(location)
@@ -96,7 +96,7 @@ function Directions(destination_graphic)
                             }
                         }
                     ); 
-                    window.map_view.removeMany(irrelevant_graphics); 
+                    window.map_view.graphics.removeMany(irrelevant_graphics); 
                     resolve(); 
                 }
             );
