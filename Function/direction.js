@@ -56,26 +56,24 @@ function Directions(destination_graphic)
 
         CreateGraphicCurrentLocation(location)
         {
-            console.log(location); 
-            // window.location_widget.goToLocationEnabled = true; 
-            // var geometry = new window.ArcGis.Point(location.coords.longitude,location.coords.latitude); 
-            // var graphic = new window.ArcGis.Graphic 
-            // (
-            //     {
-            //         geometry: geometry, 
-            //         symbol: 
-            //         {
-            //             type: "simple-marker",
-            //             color: "blue",  
-            //             size: "8px"
-            //         }
-            //     }
-            // ); 
+            window.location_widget.goToLocationEnabled = true; 
+            var graphic = new window.ArcGis.Graphic 
+            (
+                {
+                    geometry: [location.coords.longitude,location.coords.latitude], 
+                    symbol: 
+                    {
+                        type: "simple-marker",
+                        color: "blue",  
+                        size: "8px"
+                    }
+                }
+            ); 
             return new Promise
             (
                 (resolve,reject)=>
                 {
-                    resolve(location); 
+                    resolve(graphic); 
                 }
             ); 
         },
@@ -162,7 +160,7 @@ function Directions(destination_graphic)
     //     }
     // );
 
-    support_functions.DetectCurrentLocation().then(CreateGraphicCurrentLocation).then
+    support_functions.DetectCurrentLocation().then(support_functions.CreateGraphicCurrentLocation).then
     (
         function(current_location_graphic)
         {
