@@ -46,6 +46,9 @@ function CreateGraphicCurrentLocation(point)
 
 function Directions(destination_graphic)
 {
+    console.log(" i am at the direction function "); 
+    console.log(destination_graphic);
+    return; 
     var support_functions = 
     {
         DetectCurrentLocation()
@@ -154,8 +157,6 @@ function FindDirectionToPoint()
         {
             let PointDestination = function(response)
             {
-                console.log(response); 
-                console.log("i am here at the point destination "); 
                 return new Promise 
                 (
                     (resolve, reject)=>
@@ -165,8 +166,6 @@ function FindDirectionToPoint()
                             let graphic = response.results[index].graphic; 
                             if(window.map_view.graphics.includes(graphic))
                             {
-                                console.log("I found you here boy"); 
-                                console.log(graphic); 
                                 resolve(graphic); 
                             }
                         }
