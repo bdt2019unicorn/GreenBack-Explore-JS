@@ -54,7 +54,31 @@ function Directions(destination_graphic)
             return window.location_widget.locate(); 
         },
 
-        PutRelevantPoints(current_location_point)
+        CreateGraphicCurrentLocation(coordinate)
+        {
+            window.location_widget.goToLocationEnabled = true; 
+            var graphic = new window.ArcGis.Graphic 
+            (
+                {
+                    geometry: [coordinate.coords.longitude, coordinate.coords.latitude], 
+                    symbol: 
+                    {
+                        type: "simple-marker",
+                        color: "blue",  
+                        size: "8px"
+                    }
+                }
+            ); 
+            return new Promise
+            (
+                (resolve,reject)=>
+                {
+                    resolve(graphic); 
+                }
+            ); 
+        },
+
+        PutRelevantGraphics(current_location_point)
         {
             return new Promise
             (
@@ -126,15 +150,23 @@ function Directions(destination_graphic)
     // DetectCurrentLocation().then(support_functions.PutRelevantPoints).then(support_functions.GetDirection);
     // support_functions.StartTracking();  
     // graphic.geometry
-    var current_location = support_functions.DetectCurrentLocation(); 
-    console.log(current_location);
-    current_location.then
+    // var current_location = support_functions.DetectCurrentLocation(); 
+    // console.log(current_location);
+    // current_location.then
+    // (
+    //     function(data)
+    //     {
+    //         console.log(data); 
+    //     }
+    // );
+
+    support_functions.DetectCurrentLocation().then(CreateGraphicCurrentLocation).then
     (
-        function(data)
+        function(current_location_graphic)
         {
-            console.log(data); 
+            console.log(current_location_graphic); 
         }
-    );
+    ); 
 
 }
 
