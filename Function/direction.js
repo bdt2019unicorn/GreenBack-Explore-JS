@@ -56,9 +56,6 @@ function Directions(destination_graphic)
 
         GraphicalLocation(location)
         {
-            console.log(location); 
-            var geometry = new window.ArcGis.Point(location.coords.longitude,location.coords.latitude); 
-            console.log(geometry); 
             window.location_widget.goToLocationEnabled = true; 
             var graphic = new window.ArcGis.Graphic 
             (
@@ -81,7 +78,7 @@ function Directions(destination_graphic)
             ); 
         },
 
-        PutRelevantGraphics(current_location_point)
+        PutRelevantGraphics(current_location_graphic)
         {
             return new Promise
             (
@@ -99,9 +96,10 @@ function Directions(destination_graphic)
                         );
                         resolve(points); 
                     }; 
-                    var current_location_graphic = CreateGraphicCurrentLocation(current_location_point); 
-                    var points = [current_location_graphic, destination_graphic]; 
-                    RemoveIrrelevantPoints(points); 
+                    // var points = [current_location_graphic, destination_graphic]; 
+                    // RemoveIrrelevantPoints(points); 
+                    console.log(window.map_view.graphics); 
+
                 }
             );  
         }, 
