@@ -5,19 +5,17 @@ export var ListItem = Vue.component
         props: ["value"], 
         template: 
         `
-            <div class="row">
-                <div class="col-2">
-                    <i class="fas fa-lightbulb"></i>
+            <li class="list-group-item borderless">
+
+                <div class="d-flex justify-content-between">
+                    <span class="bg-secondary">{{value}}</span>
+                    <span><i class="fas fa-lightbulb"></i></span>
                 </div>
-                <div class="col-10 bg-secondary text-white rounded">
-                    <p class="text-center">
-                        {{value}}
-                    </p>
-                </div>
-                <div class="col-12">
+                <div>
                     <br>
                 </div>
-            </div>
+                
+            </li>
         `
     }
 ); 
