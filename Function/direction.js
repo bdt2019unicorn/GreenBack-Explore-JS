@@ -46,9 +46,6 @@ function CreateGraphicCurrentLocation(point)
 
 function Directions(destination_graphic)
 {
-    console.log(" i am at the direction function "); 
-    console.log(destination_graphic);
-    return; 
     var support_functions = 
     {
         DetectCurrentLocation()
@@ -84,17 +81,20 @@ function Directions(destination_graphic)
 
         RemoveIrrelevantGraphics()
         {
+            console.log("I am at remove bad things"); 
             var irrelevant_graphics = []; 
             window.map_view.graphics.items.forEach 
             (
                 graphic=>
                 {
+                    console.log(graphic); 
                     if(graphic.geometry.type!="point")
                     {
                         irrelevant_graphics.push(graphic); 
                     }
                 }
             ); 
+            console.log(irrelevant_graphics); 
             window.map_view.removeMany(irrelevant_graphics); 
             return Promise.resolve(); 
         }, 
