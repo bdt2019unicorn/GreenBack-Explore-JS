@@ -7,22 +7,15 @@ InnitizeMap.then
 (
     function()
     {
-        var location_widget = AddLocationWidget(window.ArcGis.Locate, window.map_view); 
+        window.location_widget = AddLocationWidget(window.ArcGis.Locate, window.map_view); 
         window.track_widget = AddTrackWidget(window.ArcGis.Track,window.map_view); 
         window.map_view.when 
         (
             function()
             {
-                location_widget.locate(); 
-            }
-        ); 
-        return new Promise 
-        (
-            (resolve, reject)=>
-            {
+                window.location_widget.locate(); 
                 GetDataAroundLocation();
                 FindDirectionToPoint(); 
-                resolve(); 
             }
         );
     }
