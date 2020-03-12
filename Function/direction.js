@@ -78,32 +78,22 @@ function Directions(destination_graphic)
             ); 
         },
 
-        PutRelevantGraphics(current_location_graphic)
+        RemoveIrrelevantGraphics()
         {
-            return new Promise
+            var irrelevant_graphics = []; 
+            window.map_view.graphics.items.forEach 
             (
-                (resolve,reject)=>
+                graphic=>
                 {
-                    var RemoveIrrelevantPoints = function(points)
+                    if(graphic.geometry.type!="point")
                     {
-                        window.map_view.graphics.removeAll();
-                        points.forEach
-                        (
-                            point => 
-                            {
-                                window.map_view.graphics.add(point); 
-                            }
-                        );
-                        resolve(points); 
-                    }; 
-                    // var points = [current_location_graphic, destination_graphic]; 
-                    // RemoveIrrelevantPoints(points); 
-                    console.log(window.map_view.graphics); 
-
+                        irrelevant_graphics.push(graphic); 
+                    }
                 }
-            );  
+            ); 
+            window.map_view.removeMany(irrelevant_graphics); 
         }, 
-        GetDirection(points)
+        GetDirection(current_location_graphic)
         {
             var routeTask = new window.ArcGis.RouteTask
             (
@@ -118,7 +108,7 @@ function Directions(destination_graphic)
                     stops: new window.ArcGis.FeatureSet
                     (
                         {
-                            features: points
+                            features: [current_location_graphic,destination_graphic]
                         }
                     ),
                     returnDirections: true
@@ -148,13 +138,9 @@ function Directions(destination_graphic)
         }
     }
 
-    support_functions.DetectCurrentLocation().then(support_functions.GraphicalLocation).then
-    (
-        function(current_location_graphic)
-        {
-            console.log(current_location_graphic); 
-        }
-    ); 
+    support_functions.RemoveIrrelevantGraphics(); 
+
+    support_functions.DetectCurrentLocation().then(support_functions.GraphicalLocation).then(support_functions.GetDirection); 
 
 }
 
