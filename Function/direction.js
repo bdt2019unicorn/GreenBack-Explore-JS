@@ -54,8 +54,9 @@ function Directions(destination_graphic)
             return window.location_widget.locate(); 
         },
 
-        CreateGraphicCurrentLocation(location)
+        GraphicalLocation(location)
         {
+            console.log(location); 
             window.location_widget.goToLocationEnabled = true; 
             var graphic = new window.ArcGis.Graphic 
             (
@@ -160,7 +161,7 @@ function Directions(destination_graphic)
     //     }
     // );
 
-    support_functions.DetectCurrentLocation().then(support_functions.CreateGraphicCurrentLocation).then
+    support_functions.DetectCurrentLocation().then(support_functions.GraphicalLocation).then
     (
         function(current_location_graphic)
         {
