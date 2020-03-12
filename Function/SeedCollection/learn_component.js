@@ -9,7 +9,7 @@ var Learn = Vue.component
         props: ["tree", "current_tab", "db_top_key", "db_key_title", "menu"], 
         template:
         `
-            <div class="card-body bg-light" style="width:100%;">
+            <div class="card-body">
                 <div class="row">
                     <button 
                         v-for="item in menu" 
@@ -19,7 +19,7 @@ var Learn = Vue.component
                         {{item}}
                     </button>
                 </div>
-                <div class="row">
+                <div class="row bg-light">
                     <Information :data="tree[db_top_key+current_tab.toLowerCase()]">
                     </Information>
                 </div>
