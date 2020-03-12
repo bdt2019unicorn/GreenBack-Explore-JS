@@ -1,74 +1,120 @@
 function TrackMyLocation(button)
 {
-    var close_button = $("div.esri-popup__main-container.esri-widget.esri-popup--is-collapsible header div.esri-popup__header-buttons div.esri-popup__button[title='Close']"); 
-    try 
+    var support_functions = 
     {
-        close_button[0].click(); 
-        alert("Your challenge is started. You can start going to the tree now");
-    }
-    catch(error)
-    {
-        console.log(error.message); 
-    }
-
-    var CurrentLocationGraphic = function(uid)
-    {
-        for(var graphic of window.map_view.graphics.items)
+        ClosePopUpAndLetUserGo()
         {
-            if((graphic.uid!=uid)&&(graphic.geometry.type=="point"))
+            var close_button = $("div.esri-popup__main-container.esri-widget.esri-popup--is-collapsible header div.esri-popup__header-buttons div.esri-popup__button[title='Close']"); 
+            try 
             {
-                return graphic; 
+                close_button[0].click(); 
+                alert("Your challenge is started. You can start going to the tree now");
             }
-            return undefined; 
+            catch(error)
+            {
+                console.log(error.message); 
+            }
+        }, 
+        CurrentLocationGraphic(uid)
+        {
+            for(var graphic of window.map_view.graphics.items)
+            {
+                if((graphic.uid!=uid)&&(graphic.geometry.type=="point"))
+                {
+                    return graphic; 
+                }
+                return undefined; 
+            }
         }
     }
+
+
+
+
+
+
     var tree = $(button).attr("data-tree"); 
     tree = JSON.parse(tree); 
-    var current_location_graphic = CurrentLocationGraphic(tree.uid); 
-    var track_my_location = navigator.geolocation.watchPosition
+    // var current_location_graphic = CurrentLocationGraphic(tree.uid); 
+    // var track_my_location = navigator.geolocation.watchPosition
+    // (
+    //     function(location)
+    //     {
+    //         const max_distance_to_destination = 50; 
+    //         var support_functions =
+    //         {
+    //             DistanceTowardDestination()
+    //             {
+    //                 let points_object = 
+    //                 {
+    //                     destination: 
+    //                     {
+    //                         longitude: tree.longitude, 
+    //                         latitude: tree.latitude
+    //                     }, 
+    //                     current_location: 
+    //                     {
+    //                         longitude: location.coords.longitude, 
+    //                         latitude: location.coords.latitude
+    //                     }
+    //                 }; 
+    //                 return 1000* Distance(points_object); 
+    //             }, 
+    //             MoveLocationPoint()
+    //             {
+    //                 let location_point = new ArcGis.Point(location.coords.longitude, location.coords.latitude); 
+    //                 if(current_location_graphic==undefined)
+    //                 {
+    //                     current_location_graphic = CreateGraphicCurrentLocation(location_point); 
+    //                     window.map_view.graphics.add(current_location_graphic); 
+    //                 }
+    //                 current_location_graphic.geometry = location_point; 
+    //             }
+    //         }
+    //         var distance_in_m = support_functions.DistanceTowardDestination(); 
+    //         support_functions.MoveLocationPoint(); 
+    //         if(distance_in_m<=max_distance_to_destination)
+    //         {
+    //             navigator.geolocation.clearWatch(track_my_location);
+    //             alert("I am here"); 
+    //         }
+    //     }
+    // ); 
+
+
+    support_functions.ClosePopUpAndLetUserGo(); 
+    window.track_widget.on 
     (
-        function(location)
+        "track",
+        function()
         {
             const max_distance_to_destination = 50; 
-            var support_functions =
+            var DistanceTowardDestination =function()
             {
-                DistanceTowardDestination()
+                let points_object = 
                 {
-                    let points_object = 
+                    destination: 
                     {
-                        destination: 
-                        {
-                            longitude: tree.longitude, 
-                            latitude: tree.latitude
-                        }, 
-                        current_location: 
-                        {
-                            longitude: location.coords.longitude, 
-                            latitude: location.coords.latitude
-                        }
-                    }; 
-                    return 1000* Distance(points_object); 
-                }, 
-                MoveLocationPoint()
-                {
-                    let location_point = new ArcGis.Point(location.coords.longitude, location.coords.latitude); 
-                    if(current_location_graphic==undefined)
+                        longitude: tree.longitude, 
+                        latitude: tree.latitude
+                    }, 
+                    current_location: 
                     {
-                        current_location_graphic = CreateGraphicCurrentLocation(location_point); 
-                        window.map_view.graphics.add(current_location_graphic); 
+                        longitude: window.track_widget.graphic.geometry.longitude, 
+                        latitude: window.track_widget.graphic.geometry.latitude
                     }
-                    current_location_graphic.geometry = location_point; 
-                }
+                }; 
+                return 1000* Distance(points_object); 
             }
-            var distance_in_m = support_functions.DistanceTowardDestination(); 
-            support_functions.MoveLocationPoint(); 
+            var distance_in_m = DistanceTowardDestination(); 
             if(distance_in_m<=max_distance_to_destination)
             {
-                navigator.geolocation.clearWatch(track_my_location);
+                window.track_widget.stop(); 
                 alert("I am here"); 
             }
         }
     ); 
+    window.track_widget.start();
 }
 
 

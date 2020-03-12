@@ -145,7 +145,7 @@ function Directions(destination_graphic)
         }
     }
 
-    window.promise_fails = support_functions.RemoveIrrelevantGraphics().then(support_functions.FindCurrentLocation).then(support_functions.GraphicalLocation).then(support_functions.GetDirection); 
+    support_functions.RemoveIrrelevantGraphics().then(support_functions.FindCurrentLocation).then(support_functions.GraphicalLocation).then(support_functions.GetDirection); 
 }
 
 
