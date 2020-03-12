@@ -7,8 +7,8 @@ export var ListItem = Vue.component
         `
             <li class="list-group-item borderless">
 
-                <div class="d-flex justify-content-between">
-                
+                <div class="d-flex justify-content-between align-items-center">
+
                     <i class="fas fa-lightbulb"></i>
                     <br>
                     <div class="bg-secondary round">
