@@ -19,7 +19,7 @@ var Learn = Vue.component
                         {{item}}
                     </button>
                 </div>
-                <div class="row bg-light">
+                <div class="row">
                     <Information :data="tree[db_top_key+current_tab.toLowerCase()]">
                     </Information>
                 </div>
@@ -30,7 +30,7 @@ var Learn = Vue.component
         {
             ButtonClass(item)
             {
-                let btn_class = ["btn","bg-light", "btn-link", "col"]; 
+                let btn_class = ["btn","bg-light", "col"]; 
                 if(this.current_tab==item)
                 {
                     btn_class.push("active"); 
