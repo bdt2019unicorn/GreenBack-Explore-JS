@@ -9,7 +9,7 @@ export var ListItem = Vue.component
                 <div class="col-2">
                     <i class="fas fa-lightbulb"></i>
                 </div>
-                <div class="col-10 bg-secondary text-white rounded-circle">
+                <div class="col-10 bg-secondary text-white rounded">
                     <p class="text-center">
                         {{value}}
                     </p>
