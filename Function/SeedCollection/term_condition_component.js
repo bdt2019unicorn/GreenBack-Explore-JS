@@ -17,33 +17,35 @@ var TermConditionComponent = Vue.component
         template: 
         `
             <div class="full-width">
-                <div 
-                    class="card" 
-                    v-for="collapse_id of Object.keys(terms)"
-                > 
+                <div class="card-body">
+                    <div 
+                        class="card" 
+                        v-for="collapse_id of Object.keys(terms)"
+                    > 
 
-                    <TermConditionHeader
-                        :collapse_id="collapse_id"
-                        :title="terms[collapse_id].title"
-                    >
+                        <TermConditionHeader
+                            :collapse_id="collapse_id"
+                            :title="terms[collapse_id].title"
+                        >
 
-                    </TermConditionHeader>
+                        </TermConditionHeader>
 
-                    <TermConditionWrapper
-                        :collapse_id="collapse_id"
-                        :term_condition="terms[collapse_id]"
-                    >
+                        <TermConditionWrapper
+                            :collapse_id="collapse_id"
+                            :term_condition="terms[collapse_id]"
+                        >
 
-                    </TermConditionWrapper>
-                </div>
+                        </TermConditionWrapper>
+                    </div>
 
-                <div class="card">
-                    <div class="row">
-                        <div class="col"></div>
-                        <button class="btn btn-success col" :disabled="!AcceptButton">Accept</button>
-                        <div class="col"></div>
-                        <button class="btn btn-danger col">Decline</button>
-                        <div class="col"></div>
+                    <div class="card-footer">
+                        <div class="row">
+                            <div class="col"></div>
+                            <button class="btn btn-success col" :disabled="!AcceptButton">Accept</button>
+                            <div class="col"></div>
+                            <button class="btn btn-danger col">Decline</button>
+                            <div class="col"></div>
+                        </div>
                     </div>
                 </div>
             </div>
