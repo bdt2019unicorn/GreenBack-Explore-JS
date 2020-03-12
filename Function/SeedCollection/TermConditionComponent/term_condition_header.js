@@ -6,7 +6,7 @@ export var TermConditionHeader = Vue.component
         template: 
         `
             <div class="card-header">
-                <h5>
+                <h6>
                         <span>{{title}}</span>
                         <a 
                             data-toggle="collapse" 
@@ -14,7 +14,7 @@ export var TermConditionHeader = Vue.component
                         >
                             <i class="fa fa-plus" style="float: right;"></i>
                         </a>
-                </h5>
+                </h6>
             </div>
         `
     }
