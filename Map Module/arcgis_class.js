@@ -6,8 +6,8 @@ function ArcGis()
         {
             require
             (
-                ["esri/Map","esri/views/MapView", "esri/layers/GraphicsLayer", "esri/Graphic", "esri/tasks/RouteTask","esri/tasks/support/RouteParameters","esri/tasks/support/FeatureSet","esri/geometry/Point", "esri/widgets/Locate", "esri/widgets/Directions"], 
-                function(Map, MapView,GraphicsLayer, Graphic, RouteTask,RouteParameters,FeatureSet, Point, Locate, Directions) 
+                ["esri/Map","esri/views/MapView", "esri/layers/GraphicsLayer", "esri/Graphic", "esri/tasks/RouteTask","esri/tasks/support/RouteParameters","esri/tasks/support/FeatureSet","esri/geometry/Point", "esri/widgets/Locate","esri/widgets/Track", "esri/widgets/Directions"], 
+                function(Map, MapView,GraphicsLayer, Graphic, RouteTask,RouteParameters,FeatureSet, Point, Locate, Track, Directions) 
                 {
                     resolve
                     (
@@ -21,6 +21,7 @@ function ArcGis()
                             FeatureSet: FeatureSet, 
                             Point: Point,
                             Locate: Locate,
+                            Track: Track,
                             Directions: Directions
                         }
                     );
