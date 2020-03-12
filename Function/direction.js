@@ -57,11 +57,13 @@ function Directions(destination_graphic)
         GraphicalLocation(location)
         {
             console.log(location); 
+            var geometry = new window.ArcGis.Point(location.coords.longitude,location.coords.latitude); 
+            console.log(geometry); 
             window.location_widget.goToLocationEnabled = true; 
             var graphic = new window.ArcGis.Graphic 
             (
                 {
-                    geometry: [location.coords.longitude,location.coords.latitude], 
+                    geometry: new window.ArcGis.Point(location.coords.longitude,location.coords.latitude), 
                     symbol: 
                     {
                         type: "simple-marker",
@@ -147,19 +149,6 @@ function Directions(destination_graphic)
             ); 
         }
     }
-
-    // DetectCurrentLocation().then(support_functions.PutRelevantPoints).then(support_functions.GetDirection);
-    // support_functions.StartTracking();  
-    // graphic.geometry
-    // var current_location = support_functions.DetectCurrentLocation(); 
-    // console.log(current_location);
-    // current_location.then
-    // (
-    //     function(data)
-    //     {
-    //         console.log(data); 
-    //     }
-    // );
 
     support_functions.DetectCurrentLocation().then(support_functions.GraphicalLocation).then
     (
