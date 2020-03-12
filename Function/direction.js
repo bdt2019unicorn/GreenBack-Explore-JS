@@ -50,21 +50,8 @@ function Directions(destination_graphic)
     {
         DetectCurrentLocation()
         {
-            window.location_widget.graphic.geometry = null; 
-            var current_location_point = null; 
-
-            window.track_widget.on 
-            (
-                "track", 
-                function()
-                {
-                    current_location_point = window.track_widget.geometry; 
-                }
-            ); 
-
-            window.track_widget.start(); 
-            window.track_widget.stop(); 
-            console.log(current_location_point); 
+            window.location_widget.goToLocationEnabled = false; 
+            return window.location_widget.locate(); 
         },
 
         PutRelevantPoints(current_location_point)
@@ -139,7 +126,15 @@ function Directions(destination_graphic)
     // DetectCurrentLocation().then(support_functions.PutRelevantPoints).then(support_functions.GetDirection);
     // support_functions.StartTracking();  
     // graphic.geometry
-    support_functions.DetectCurrentLocation(); 
+    var current_location = support_functions.DetectCurrentLocation(); 
+    console.log(current_location);
+    current_location.then
+    (
+        function(data)
+        {
+            console.log(data); 
+        }
+    );
 
 }
 
