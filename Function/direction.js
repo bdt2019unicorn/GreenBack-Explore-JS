@@ -81,22 +81,25 @@ function Directions(destination_graphic)
 
         RemoveIrrelevantGraphics()
         {
-            console.log("I am at remove bad things"); 
             var irrelevant_graphics = []; 
             window.map_view.graphics.items.forEach 
             (
                 graphic=>
                 {
-                    console.log(graphic); 
                     if(graphic.geometry.type!="point")
                     {
                         irrelevant_graphics.push(graphic); 
                     }
                 }
             ); 
-            console.log(irrelevant_graphics); 
             window.map_view.removeMany(irrelevant_graphics); 
-            return Promise.resolve(); 
+            return new Promise
+            (
+                (resolve,reject)=>
+                {
+                    resolve(); 
+                }
+            );
         }, 
         GetDirection(current_location_graphic)
         {
