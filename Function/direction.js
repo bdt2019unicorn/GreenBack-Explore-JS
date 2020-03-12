@@ -56,7 +56,8 @@ function Directions(destination_graphic)
 
         CreateGraphicCurrentLocation(location)
         {
-            window.location_widget.goToLocationEnabled = true; 
+            console.log(location); 
+            // window.location_widget.goToLocationEnabled = true; 
             // var geometry = new window.ArcGis.Point(location.coords.longitude,location.coords.latitude); 
             // var graphic = new window.ArcGis.Graphic 
             // (
