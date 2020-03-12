@@ -9,7 +9,7 @@ export var ListItem = Vue.component
                 <div class="col-2">
                     <i class="fas fa-lightbulb"></i>
                 <div>
-                <div class="col bg-secondary">
+                <div class="col-10 bg-secondary">
                     {{value}}
                 <div>
             </div>

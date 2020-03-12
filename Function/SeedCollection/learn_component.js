@@ -25,10 +25,9 @@ var Learn = Vue.component
                         {{item}}
                     </button>
                 </div>
-                <div class="row">
-                    <Information :data="tree[db_top_key+this.current_tab.toLowerCase()]">
-                    </Information>
-                </div>
+                
+                <Information :data="tree[db_top_key+this.current_tab.toLowerCase()]">
+                </Information>
             </div>
 
         `, 
