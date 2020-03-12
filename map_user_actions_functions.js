@@ -83,6 +83,7 @@ function TrackMyLocation(button)
 
 
     support_functions.ClosePopUpAndLetUserGo(); 
+    window.location_widget.graphic.geometry = null; 
     window.track_widget.on 
     (
         "track",
