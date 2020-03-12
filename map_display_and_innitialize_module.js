@@ -9,13 +9,14 @@ InnitizeMap.then
     {
         window.location_widget = AddLocationWidget(window.ArcGis.Locate, window.map_view); 
         window.track_widget = AddTrackWidget(window.ArcGis.Track,window.map_view); 
+        GetDataAroundLocation();
+        FindDirectionToPoint(); 
         window.map_view.when 
         (
             function()
             {
                 window.location_widget.locate(); 
-                GetDataAroundLocation();
-                FindDirectionToPoint(); 
+
             }
         );
     }
