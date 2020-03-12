@@ -12,13 +12,13 @@ export var Information = Vue.component
         },
         template:
         `
-            <ul>
+            <div class="container-fluid">
                 <ListItem
                     v-for="item in ItemArray"
                     :value="item"
                 >
                 </ListItem>
-            </ul>
+            </div>
         `
     }
 ); 

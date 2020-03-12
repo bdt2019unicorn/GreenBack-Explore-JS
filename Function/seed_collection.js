@@ -12,7 +12,6 @@ window.seed_collection = new Vue
         data: 
         {
             menu: ["Collect","Store"], 
-            // current_tab: "Collect", 
             db_top_key: "", 
             db_key_title: 
             {
