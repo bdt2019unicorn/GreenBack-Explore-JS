@@ -11,7 +11,6 @@ export var TermConditionHeader = Vue.component
                         <a 
                             data-toggle="collapse" 
                             data-parent="#term_condition_accordion"
-                            class="collapse"
                             :href="'#'+collapse_id" 
                         >
                             <i class="fa fa-plus" style="float: right;"></i>

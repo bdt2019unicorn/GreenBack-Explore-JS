@@ -16,7 +16,7 @@ var TermConditionComponent = Vue.component
         },
         template: 
         `
-            <div class="full-width" id="term_condition_accordion">
+            <div id="term_condition_accordion">
                 <div class="card-body">
                     <div 
                         class="card" 
