@@ -9,7 +9,7 @@ var Learn = Vue.component
         props: ["tree", "current_tab", "db_top_key", "db_key_title", "menu"], 
         template:
         `
-            <div class="card-body" style="width:100%;">
+            <div class="card-body bg-light" style="width:100%;">
                 <div class="row">
                     <button 
                         v-for="item in menu" 
@@ -30,7 +30,7 @@ var Learn = Vue.component
         {
             ButtonClass(item)
             {
-                let btn_class = ["btn", "btn-link", "col"]; 
+                let btn_class = ["btn","bg-light", "btn-link", "col"]; 
                 if(this.current_tab==item)
                 {
                     btn_class.push("active"); 
