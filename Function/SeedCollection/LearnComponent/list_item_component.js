@@ -7,20 +7,17 @@ export var ListItem = Vue.component
         `
             <li class="list-group-item borderless">
 
-                <div class="d-flex justify-content-between align-items-start">
+                <div class="row">
 
-                    <span style="flex-grow:2;">
+                    <div class="col-3">
                         <i class="fas fa-lightbulb flex-grow-1"></i>
-                    </span>
-                    <div class="bg-secondary rounded" style="flex-grow:3;">
+                    </div>
+                    <div class="col-9 bg-secondary rounded">
                         <p class="text-white">
                             {{value}}
                         </p>
                     </div>
                     
-                </div>
-                <div>
-                    <br>
                 </div>
 
             </li>
