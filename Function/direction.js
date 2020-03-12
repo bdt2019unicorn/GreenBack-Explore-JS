@@ -154,6 +154,8 @@ function FindDirectionToPoint()
         {
             let PointDestination = function(response)
             {
+                console.log(response); 
+                console.log("i am here at the point destination "); 
                 return new Promise 
                 (
                     (resolve, reject)=>

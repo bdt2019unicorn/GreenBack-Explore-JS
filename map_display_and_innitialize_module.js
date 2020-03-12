@@ -16,7 +16,6 @@ InnitizeMap.then
             function()
             {
                 window.location_widget.locate(); 
-
             }
         );
     }
