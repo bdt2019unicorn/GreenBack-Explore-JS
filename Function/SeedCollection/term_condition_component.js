@@ -42,9 +42,9 @@ var TermConditionComponent = Vue.component
                     <div class="card-footer">
                         <div class="row">
                             <div class="col"></div>
-                            <button :class="this.btn_class+' btn-success';" :disabled="!AcceptButton">Accept</button>
+                            <button :class="this.btn_class+' btn-success'" :disabled="!AcceptButton">Accept</button>
                             <div class="col"></div>
-                            <button :class="this.btn_class+' btn-danger';">Decline</button>
+                            <button :class="this.btn_class+' btn-danger'">Decline</button>
                             <div class="col"></div>
                         </div>
                     </div>
