@@ -25,7 +25,7 @@ var Learn = Vue.component
                         {{item}}
                     </button>
                 </div>
-                
+
                 <Information :data="tree[db_top_key+this.current_tab.toLowerCase()]">
                 </Information>
             </div>
@@ -35,7 +35,7 @@ var Learn = Vue.component
         {
             ButtonClass(item)
             {
-                let btn_class = ["btn","btn-light", "col"]; 
+                let btn_class = ["btn","btn-light","sm-font-bootstrap-btn", "col"]; 
                 if(this.current_tab==item)
                 {
                     btn_class.push("active"); 
