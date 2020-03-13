@@ -110,7 +110,7 @@ export var TakePictureComponent = Vue.component
         { 
             TakePicture: function(event)
             {
-                var DrawPictureToCanvas = function()
+                DrawPictureToCanvas:
                 {
                     var context = this.$refs.canvas.getContext('2d');
                     var width = this.$refs.video.videoWidth; 
@@ -120,7 +120,6 @@ export var TakePictureComponent = Vue.component
                     context.drawImage(this.$refs.video, 0, 0, width, height);
                 }
 
-                DrawPictureToCanvas(); 
                 this.$refs.img.src = this.$refs.canvas.toDataURL('image/jpeg'); 
                 this.show_picture = true; 
             }
