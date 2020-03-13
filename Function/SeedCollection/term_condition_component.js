@@ -12,7 +12,7 @@ var TermConditionComponent = Vue.component
         {  
             return {
                 terms: term_condition_data, 
-                btn_class: "btn btn-sm btn-block col-lg-3 col-md-2 col-sm-1"
+                btn_class: "btn btn-sm btn-block col-3"
             };
         },
         template: 
@@ -42,9 +42,18 @@ var TermConditionComponent = Vue.component
                     <div class="card-footer">
                         <div class="row">
                             <div class="col"></div>
-                            <button :class="this.btn_class+' btn-success'" :disabled="!AcceptButton">Accept</button>
+                            <button 
+                                :class="this.btn_class+' btn-success'" 
+                                :disabled="!AcceptButton"
+                            >
+                                Accept
+                            </button>
                             <div class="col"></div>
-                            <button :class="this.btn_class+' btn-danger'">Decline</button>
+                            <button 
+                                :class="this.btn_class+' btn-danger'"
+                            >
+                                Decline
+                            </button>
                             <div class="col"></div>
                         </div>
                     </div>
