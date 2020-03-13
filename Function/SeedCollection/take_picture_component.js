@@ -10,7 +10,8 @@ export var TakePictureComponent = Vue.component
                 {
                     true: "far fa-check-circle", 
                     false: "far fa-circle"
-                }
+                }, 
+                video_canvas_class: "col align-self-center"
             };
         },
         template: 
@@ -44,13 +45,26 @@ export var TakePictureComponent = Vue.component
                     <div class="container-fluid">
                         <div class="row d-flex">
 
-                            <video class="align-self-center" v-show="!show_picture" class="col" ref="video" autoplay></video>
+                            <video 
+                                v-show="!show_picture" 
+                                :class="this.video_canvas_class" 
+                                ref="video" 
+                                autoplay
+                            >
+                            
+                            </video>
 
                         </div>
 
                         <div class="row d-flex">
 
-                            <canvas class="align-self-center" v-show="show_picture" class="col" ref="canvas"></canvas>
+                            <canvas 
+                                v-show="show_picture" 
+                                :class="this.video_canvas_class" 
+                                ref="canvas"
+                            >
+                            
+                            </canvas>
 
                         </div>
 
