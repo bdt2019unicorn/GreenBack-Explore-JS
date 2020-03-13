@@ -11,7 +11,7 @@ export var TakePictureComponent = Vue.component
                     true: "far fa-check-circle", 
                     false: "far fa-circle"
                 }, 
-                video_canvas_class: "col align-self-center picture-video-canvas"
+                video_canvas_class: "col align-self-center"
             };
         },
         template: 
@@ -47,7 +47,7 @@ export var TakePictureComponent = Vue.component
 
                             <video 
                                 v-show="!show_picture" 
-                                :class="this.video_canvas_class" 
+                                :class="this.video_canvas_class + ' picture-video-canvas'" 
                                 ref="video" 
                                 autoplay
                             >
@@ -59,26 +59,14 @@ export var TakePictureComponent = Vue.component
                         <div class="row d-flex">
 
                             <canvas 
-                                hidden
+                                v-show="show_picture" 
+                                :class="this.video_canvas_class" 
                                 ref="canvas"
                             >
                             
                             </canvas>
 
                         </div>
-
-                        <div class="row d-flex">
-
-                        <img 
-                            v-show="show_picture" 
-                            :class="this.video_canvas_class" 
-                            ref="img"
-                            src=""
-                        >
-                        
-                        </img>
-
-                    </div>
 
                         <div class="row">
 
@@ -110,18 +98,13 @@ export var TakePictureComponent = Vue.component
         { 
             TakePicture: function(event)
             {
-                var DrawPictureToCanvas = function()
-                {
-                    var context = this.$refs.canvas.getContext('2d');
-                    var width = this.$refs.video.videoWidth; 
-                    var height = this.$refs.video.videoHeight; 
-                    this.$refs.canvas.width = width; 
-                    this.$refs.canvas.height = height; 
-                    context.drawImage(this.$refs.video, 0, 0, width, height);
-                }
-
-                DrawPictureToCanvas(); 
-                this.$refs.img.src = this.$refs.canvas.toDataURL('image/jpeg'); 
+                var context = this.$refs.canvas.getContext('2d');
+                var width = this.$refs.video.videoWidth; 
+                var height = this.$refs.video.videoHeight; 
+                console.log("width, height",width,height); 
+                this.$refs.canvas.width = width; 
+                this.$refs.canvas.height = height; 
+                context.drawImage(this.$refs.video, 0, 0, width, height);
                 this.show_picture = true; 
             }
         },
@@ -145,7 +128,6 @@ function RunCamera(video)
         }
     ); 
 }
-
 
 function SavePicture(canvas)
 {
