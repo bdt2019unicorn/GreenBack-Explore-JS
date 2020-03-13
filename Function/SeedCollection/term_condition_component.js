@@ -12,7 +12,7 @@ var TermConditionComponent = Vue.component
         {  
             return {
                 terms: term_condition_data, 
-                btn_class: "btn btn-sm btn-block col-3"
+                btn_class: "btn btn-sm btn-block col sm-font-bootstrap-btn"
             };
         },
         template: 
