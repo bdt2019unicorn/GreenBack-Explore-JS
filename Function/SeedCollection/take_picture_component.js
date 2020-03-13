@@ -11,7 +11,7 @@ export var TakePictureComponent = Vue.component
                     true: "far fa-check-circle", 
                     false: "far fa-circle"
                 }, 
-                video_canvas_class: "col align-self-center picture-video-canvas"
+                video_canvas_class: "col align-self-center"
             };
         },
         template: 
@@ -47,7 +47,7 @@ export var TakePictureComponent = Vue.component
 
                             <video 
                                 v-show="!show_picture" 
-                                :class="this.video_canvas_class" 
+                                :class="this.video_canvas_class + ' picture-video-canvas'" 
                                 ref="video" 
                                 autoplay
                             >
@@ -101,7 +101,7 @@ export var TakePictureComponent = Vue.component
                 var context = this.$refs.canvas.getContext('2d');
                 var width = this.$refs.video.videoWidth; 
                 var height = this.$refs.video.videoHeight; 
-                console.log("width, height",(width,height)); 
+                console.log("width, height",width,height); 
                 this.$refs.canvas.width = width; 
                 this.$refs.canvas.height = height; 
                 context.drawImage(this.$refs.video, 0, 0, width, height);
