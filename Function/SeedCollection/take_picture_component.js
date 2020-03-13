@@ -42,20 +42,16 @@ export var TakePictureComponent = Vue.component
 
                 <div class="card-body bg-secondary">
                     <div class="container-fluid">
-                        <div class="row">
+                        <div class="row d-flex">
 
-                            <div class="col-2"></div>
-                            <video v-show="!show_picture" class="col" ref="video" autoplay></video>
-                            <div class="col-2"></div>
-
+                            <video class="align-self-center" v-show="!show_picture" class="col" ref="video" autoplay></video>
 
                         </div>
 
-                        <div class="row">
+                        <div class="row d-flex">
 
-                            <div class="col-2"></div>
-                            <canvas v-show="show_picture" class="col" ref="canvas"></canvas>
-                            <div class="col-2"></div>
+                            <canvas class="align-self-center" v-show="show_picture" class="col" ref="canvas"></canvas>
+
                         </div>
 
                         <div class="row">
