@@ -110,7 +110,6 @@ export var TakePictureComponent = Vue.component
         { 
             TakePicture: function(event)
             {
-<<<<<<< HEAD
                 DrawPictureToCanvas:
                 {
                     var context = this.$refs.canvas.getContext('2d');
@@ -122,15 +121,6 @@ export var TakePictureComponent = Vue.component
                 }
 
                 this.$refs.img.src = this.$refs.canvas.toDataURL('image/jpeg'); 
-=======
-                var context = this.$refs.canvas.getContext('2d');
-                var width = this.$refs.video.videoWidth; 
-                var height = this.$refs.video.videoHeight; 
-                console.log("width, height",(width,height)); 
-                this.$refs.canvas.width = width; 
-                this.$refs.canvas.height = height; 
-                context.drawImage(this.$refs.video, 0, 0, width, height);
->>>>>>> parent of b950e8a... Update take_picture_component.js
                 this.show_picture = true; 
             }
         },
