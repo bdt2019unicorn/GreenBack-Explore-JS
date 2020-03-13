@@ -20,6 +20,14 @@ window.seed_collection = new Vue
                 "term_condition": "",
                 "congratuations": "CONGRATUATIONS!"
             },
+            class_lists: 
+            {
+                "LearnComponent": "common-popup main-components learn-term-components learn-component", 
+                "TermConditionComponent": "common-popup main-components learn-term-components term-component",
+                "TakePictureComponent": "common-popup main-components picture-component", 
+                "CongratulationsComponent": "common-popup congrat-component"
+
+            }, 
             current_component: "LearnComponent", 
             tree: {}
         },

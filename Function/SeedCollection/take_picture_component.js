@@ -11,7 +11,7 @@ export var TakePictureComponent = Vue.component
                     true: "far fa-check-circle", 
                     false: "far fa-circle"
                 }, 
-                video_canvas_class: "col align-self-center"
+                video_canvas_class: "col align-self-center picture-video-canvas"
             };
         },
         template: 
@@ -136,3 +136,18 @@ function SavePicture(canvas)
     a.href = dataURI; 
     a.click(); 
 }
+
+
+var learn_styles = "position: absolute; display: block; right: 3%; top: 7%; width: 80vw; height: 60vh;"; 
+// common-popup main-components learn-term-components learn-component 
+var term_styles = "position: absolute; display: block; right: 3%; top: 7%; width: 80vw; height: 80vh;"; 
+// common-popup main-components learn-term-components term-component 
+var picture_styles = "position: absolute; display: block; top: 7%; width: 100vw; height: 93vh;"; 
+// common-popup main-components picture-component  
+var congrat_styles = "position: absolute; display: block; top: 25%; left: 25%; width: 40vw;"; 
+// common-popup congrat-component   
+
+//when take picture is here, no need to show the header. Make sure the show is gone. 
+// style="height: 93vh;" - picture component style
+// video and canvas width: 50vw; height: 50vh;
+
