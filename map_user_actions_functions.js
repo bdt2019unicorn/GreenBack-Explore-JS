@@ -114,3 +114,20 @@ function GiveMeAFakeTree()
         console.log(exception); 
     }
 }
+
+
+function PutUiInMap()
+{
+
+}
+
+
+function RemoveUiMap()
+{
+
+}
+
+function DisplayTheDiv()
+{
+    $("#controller").css("display","block"); 
+}
