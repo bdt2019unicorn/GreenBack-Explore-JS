@@ -118,16 +118,33 @@ function GiveMeAFakeTree()
 
 function PutUiInMap()
 {
+    var div = document.createElement("div"); 
+    div.classList.add("bg-transparent"); 
+    div.id = "map_ui_controller"; 
+    var html = 
+    `
+        <div class="container-fluid" >
+            <div class="row">
+                <button class="btn"><img style="height: 5vh;" src="https://plantme.co.nz/img/Web2App/Explore/information_icon.png"></button>
+            
+                <button class="btn"><img style="height: 5vh;" src="https://plantme.co.nz/img/Web2App/Explore/information_icon.png"></button>
+                <button class="btn"><img style="height: 5vh;" src="https://plantme.co.nz/img/Web2App/Explore/information_icon.png"></button>
 
+
+                <div style="position: absolute; left: 4vw;top: 5vh;">
+                    <button style="transform: translate(2vmax,-1vmin);" class="btn bg-transparent"><img style="height: 2vh;" src="https://plantme.co.nz/img/Web2App/Explore/paper_icon.png"></button>
+                    <button style="transform: translateX(4vmax);" class="btn bg-transparent"><img style="height: 2vh;" src="https://plantme.co.nz/img/Web2App/Explore/paper_icon.png"></button>
+                    <button style="transform: translate(2vmax, 1vmin);" class="btn bg-transparent"><img style="height: 2vh;" src="https://plantme.co.nz/img/Web2App/Explore/paper_icon.png"></button>
+                </div>
+            </div>
+        </div>
+    `; 
+    div.innerHTML = html; 
+    window.map_view.ui.add(div); 
 }
 
 
 function RemoveUiMap()
 {
 
-}
-
-function DisplayTheDiv()
-{
-    $("#controller").css("display","block"); 
 }
