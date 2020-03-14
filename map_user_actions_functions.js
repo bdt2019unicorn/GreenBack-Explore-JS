@@ -154,14 +154,16 @@ function PutUiInMap()
         button.append(img); 
         return button; 
     }
-    var btn_big = create_btn("https://plantme.co.nz/img/Web2App/Explore/information_icon.png",5,"none"); 
+    
     for(var i=0;i<3;i++)
     {
+        var btn_big = create_btn("https://plantme.co.nz/img/Web2App/Explore/information_icon.png",5,"none"); 
         window.map_view.ui.add(btn_big,"bottom-left"); 
     }
-    var btn_small = create_btn("https://plantme.co.nz/img/Web2App/Explore/paper_icon.png",2,"translate(2vmax, 1vmin)");
+    
     for(var i=0;i<3;i++)
     {
+        var btn_small = create_btn("https://plantme.co.nz/img/Web2App/Explore/paper_icon.png",2,"translate(2vmax, 1vmin)");
         window.map_view.ui.add(btn_small,"bottom-left"); 
     }
 }
