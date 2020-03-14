@@ -140,7 +140,7 @@ function PutUiInMap()
         </div>
     `; 
     div.innerHTML = html; 
-    window.map_view.ui.add(div); 
+    window.map_view.ui.add(div, "bottom-left"); 
 }
 
 
