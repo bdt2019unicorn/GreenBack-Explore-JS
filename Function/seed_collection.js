@@ -11,6 +11,7 @@ window.seed_collection = new Vue
         el: "#seed_collection", 
         data: 
         {
+            show: false, 
             menu: ["Collect","Store"], 
             db_top_key: "", 
             db_key_title: 
