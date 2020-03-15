@@ -15,6 +15,7 @@ function TrackMyLocation(button)
     }
 
     var tree = JSON.parse($(button).attr("data-tree")); 
+    console.log(tree); 
     ClosePopUpAndLetUserGo(); 
     window.location_widget.graphic.geometry = null; 
     window.track_widget.on 
