@@ -7,7 +7,7 @@ window.seed_collection_controller = new Vue
         data: 
         {
             controller: ["information_icon","seed_collection_icon","paper_icon"], 
-            seed_collection_icon:
+            seed_collection_icon: 
             {
                 "add_seeds_icon": 
                 {
