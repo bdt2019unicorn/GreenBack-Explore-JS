@@ -125,3 +125,8 @@ function GiveMeAFakeTree()
         console.log(exception); 
     }
 }
+
+function TestSubIcons(btn)
+{
+    console.log(btn); 
+}

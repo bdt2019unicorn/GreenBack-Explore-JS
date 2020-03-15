@@ -7,25 +7,22 @@ window.seed_collection_controller = new Vue
         data: 
         {
             controller: ["information_icon","seed_collection_icon","paper_icon"], 
-            sub_icon:
+            seed_collection_icon:
             {
-                "seed_collection_icon": 
+                "add_seeds_icon": 
                 {
-                    "add_seeds_icon": 
-                    {
-                        "db_top_key": "term_condition",
-                        "current_component": "TermConditionComponent"
-                    },
-                    "colection_storage_icon": 
-                    {
-                        "db_top_key": "",
-                        "current_component": "LearnComponent"
-                    },
-                    "tips_icon": 
-                    {
-                        "db_top_key": "tips_",
-                        "current_component": "LearnComponent"
-                    }
+                    "db_top_key": "term_condition",
+                    "current_component": "TermConditionComponent"
+                },
+                "colection_storage_icon": 
+                {
+                    "db_top_key": "",
+                    "current_component": "LearnComponent"
+                },
+                "tips_icon": 
+                {
+                    "db_top_key": "tips_",
+                    "current_component": "LearnComponent"
                 }
             }
         },
