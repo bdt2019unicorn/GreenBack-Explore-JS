@@ -45,12 +45,15 @@ var TermConditionComponent = Vue.component
                             <button 
                                 :class="this.btn_class+' btn-success'" 
                                 :disabled="!AcceptButton"
+                                data-current_component="TakePictureComponent"
+                                onclick="ChangeComponent(this)"
                             >
                                 Accept
                             </button>
                             <div class="col"></div>
                             <button 
                                 :class="this.btn_class+' btn-danger'"
+                                onclick="window.seed_collection.show=false;"
                             >
                                 Decline
                             </button>

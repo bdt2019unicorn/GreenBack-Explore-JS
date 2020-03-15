@@ -13,11 +13,24 @@ export var CongratulationsComponent = Vue.component
                     </h1>
                 </div>
                 <div class="card-footer" align="right">   
-                    <button class="btn"><i class="fas fa-times-circle"></i></button>
+                    <button 
+                        class="btn"
+                        @click="FinishCollectingSeeds"
+                    >
+                        <i class="fas fa-times-circle"></i>
+                    </button>
                 </div>
 
             </div>
 
-        `
+        `, 
+        methods: 
+        {
+            FinishCollectingSeeds()
+            {
+                window.seed_collection.show = false; 
+                window.seed_collection_controller.show = false; 
+            }    
+        },
     }, 
 ); 

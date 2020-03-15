@@ -6,6 +6,7 @@ window.seed_collection_controller = new Vue
         el: "#seed_collection_controller", 
         data: 
         {
+            show: false, 
             controller: ["information_icon","seed_collection_icon","paper_icon"], 
             seed_collection_icon: 
             {

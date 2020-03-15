@@ -131,3 +131,9 @@ function TestSubIcons(btn)
 {
     console.log(btn); 
 }
+
+function TestWhenReachTheTree()
+{
+    GiveMeAFakeTree(); 
+    window.seed_collection_controller.show = true; 
+}
