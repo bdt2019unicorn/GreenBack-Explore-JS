@@ -1,7 +1,7 @@
 var symbol = 
 {
     type: "picture-marker",
-    url: "https://plantme.co.nz/img/Web2App/Explore/tree-icon.png"
+    url: "img/Web2App/Explore/tree-icon.png"
 }
 
 function PopUpTemplate(tree)
