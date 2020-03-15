@@ -15,7 +15,6 @@ function TrackMyLocation(button)
     }
 
     var tree = JSON.parse($(button).attr("data-tree")); 
-    console.log(tree); 
     ClosePopUpAndLetUserGo(); 
     window.location_widget.graphic.geometry = null; 
     window.track_widget.on 
@@ -73,70 +72,4 @@ function ShowHideSubIcon()
     }
     var current_status = $("#seed_collection_sub_icon").css("display"); 
     $("#seed_collection_sub_icon").css("display",display[current_status]); 
-}
-
-
-
-//see if you can get rid of this at the end
-function ChangeTipsAndCollection(button)
-{
-    var attributes = ["","tips_"]; 
-    var db_top_key = button.getAttribute("data-db_top_key"); 
-    window.seed_collection.db_top_key = db_top_key; 
-    let new_index = (attributes.indexOf(db_top_key) + 1)%2; 
-    button.setAttribute("data-db_top_key",attributes[new_index]); 
-}
-
-function GiveMeAFakeTree()
-{
-    console.log("I am giving you a fake tree now"); 
-    try 
-    {
-        window.seed_collection.tree = 
-        {
-            name: "Tree 2", 
-            type: "Kauri", 
-            store: 
-            `
-                Store cones in a Warm and dry area
-                Wait until cones crack open and reveal the winged seed
-                Remove winged seeds from cone segments
-                Place in clean, sterile, dry glass jar for storage
-            `,
-            collect: 
-            `
-                Look for the green, round shaped cones around its branches
-                Detach cone from the healthy tree if in reach
-                Place in a large paper bag or container
-                With a pen or pencil, write the date and name of tree
-            `, 
-            tips_store: 
-            `
-                Cones placed in a dry room will naturally disintegrate within 5-10 days.
-                To make your seeds shelf-life longer, keep them in an airtight container in the refrigerator.
-                To seperate the seeds from opened cones, sieve and hand pick them from cone debris and scales.
-            `,
-            tips_collect: 
-            `
-                A good  sign for collecting is when scales first start to appear on the tree floor.
-                If cones are too high, place a raised sheet or tray below the canopy to catch the seeds and cones.
-                If you leave a tray or sheet, don’t forget to come back and collect it in a couple days!
-            `
-        };
-    }
-    catch(exception)
-    {
-        console.log(exception); 
-    }
-}
-
-function TestSubIcons(btn)
-{
-    console.log(btn); 
-}
-
-function TestWhenReachTheTree()
-{
-    GiveMeAFakeTree(); 
-    window.seed_collection_controller.show = true; 
 }
