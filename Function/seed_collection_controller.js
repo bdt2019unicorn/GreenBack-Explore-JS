@@ -1,5 +1,6 @@
 import {ButtonController} from "./SeedCollectionController/button_controller.js"; 
 
+console.log(ButtonController); 
 
 
 
