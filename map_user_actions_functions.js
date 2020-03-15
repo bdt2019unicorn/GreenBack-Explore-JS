@@ -46,7 +46,9 @@ function TrackMyLocation(button)
             {
                 window.track_widget.stop(); 
                 window.location_widget.locate(); 
-                alert("I am here"); 
+                alert("Congratuations! You have reached the tree. You can start collecting seeds now");
+                window.seed_collection.tree = tree.tree_types; 
+                window.seed_collection_controller.show = true;  
             }
         }
     ); 
