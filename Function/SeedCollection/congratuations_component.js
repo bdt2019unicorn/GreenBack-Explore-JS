@@ -18,9 +18,6 @@ export var CongratulationsComponent = Vue.component
 
             </div>
 
-        `,
-        methods: 
-        { 
-        },
+        `
     }, 
 ); 

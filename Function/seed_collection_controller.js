@@ -1,9 +1,5 @@
 import {ButtonController} from "./SeedCollectionController/button_controller.js"; 
 
-console.log(ButtonController); 
-
-
-
 window.seed_collection_controller = new Vue 
 (
     {

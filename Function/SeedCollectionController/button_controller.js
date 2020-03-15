@@ -1,6 +1,6 @@
 export var ButtonController = Vue.component
 (
-    "ButtonController", 
+    "button-controller", 
     {
         props: ["controller_name", "subset","db_top_key", "current_component", "onclick"],
         data: function() 
