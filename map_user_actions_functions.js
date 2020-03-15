@@ -60,6 +60,17 @@ function ChangeComponent(button)
     window.seed_collection.db_top_key = button.getAttribute("data-db_top_key"); 
 }
 
+function ShowHideSubIcon()
+{
+    var display =
+    {
+        "none": "block",
+        "block": "none"
+    }
+    var current_status = $("#seed_collection_sub_icon").css("display"); 
+    $("#seed_collection_sub_icon").css("display",display[current_status]); 
+}
+
 
 
 //see if you can get rid of this at the end
